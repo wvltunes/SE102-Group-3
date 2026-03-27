@@ -42,7 +42,6 @@ public class DiscMenuController : MonoBehaviour
 
     public void Next()
     {
-        Debug.Log("Next clicked");
 
         int count = segmentParent.childCount;
         currentIndex = (currentIndex + 1) % count;
@@ -52,7 +51,6 @@ public class DiscMenuController : MonoBehaviour
 
     public void Back()
     {
-        Debug.Log("Back clicked");
 
         int count = segmentParent.childCount;
         currentIndex = (currentIndex - 1 + count) % count;
