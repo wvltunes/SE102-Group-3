@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator; // Reference to the Animator component
     private int currentLane = 0; // Current lane index (0 = bottom lane)
     private Vector3 startPosition; // Starting position of the player
+    private bool reversedGravity = false;
 
     void Start()
     {
@@ -50,6 +51,13 @@ public class PlayerController : MonoBehaviour
             UpdateLanePosition();
         }
     }
+
+    public void JumpPlayer(int  lane)
+    {
+        isGrounded = true;
+        currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane;
+        UpdateLanePosition();
+    }
     
     private void UpdateLanePosition()
     {
@@ -71,8 +79,15 @@ public class PlayerController : MonoBehaviour
         // Lower the player by one lane
         if (currentLane > 0)
         {
-            currentLane--;
+            if (reversedGravity)
+                currentLane++;
+            else
+                currentLane--;
             UpdateLanePosition();
         }
+    }
+    public void ToggleReverseGravity()
+    {
+        this.reversedGravity = !this.reversedGravity;
     }
 }
