@@ -3,12 +3,12 @@ using UnityEngine.UIElements;
 using System.Collections.Generic;
 using System.Collections;
 
-public class PadSpawner : MonoBehaviour
+public class JumpPadSpawner : MonoBehaviour
 {
 
     public GameObject padToSpawnPrefab;
     public bool randomSpawn; //not true random, use for testing
-    public float bpm;
+    public float bpm = 120;
     public Vector2 spawnPoint;
     private Coroutine spawnCoroutine;
     public int padLaneMultiplierToSpawn;
@@ -66,7 +66,7 @@ public class PadSpawner : MonoBehaviour
                     newPad = Instantiate(padToSpawnPrefab, lane1Spawn, Quaternion.identity);
                     break;
             }
-            PadVariables padVariables = newPad.GetComponent<PadVariables>();
+            JumpPadVariables padVariables = newPad.GetComponent<JumpPadVariables>();
             padVariables.setLaneMultiplier (Random.Range(1, 4));
             
             yield return new WaitForSeconds(secondsPerPad);

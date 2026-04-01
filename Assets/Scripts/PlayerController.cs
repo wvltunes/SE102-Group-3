@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float laneHeight = 2f; // Height between each lane
     [SerializeField] private int maxLanes = 3; // Maximum number of lanes
+    [SerializeField] private int minLanes = 0;
     
     private bool isGrounded;
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
@@ -37,25 +38,60 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             // Move to the next lane (up)
-            if (currentLane < maxLanes - 1)
+            if (!reversedGravity)
             {
-                currentLane++;
-                UpdateLanePosition();
+                if (currentLane < maxLanes - 1)
+                {
+                    currentLane++;
+                    UpdateLanePosition();
+                }
+            }
+            else
+            {
+                if (currentLane > minLanes)
+                {
+                    currentLane--;
+                    UpdateLanePosition();
+                }
+            }
+            
+        }
+
+        // Check for lane switch input (optional: down arrow or S key to move down)
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (!reversedGravity)
+            {
+                if (currentLane > 0)
+                {
+                    currentLane--;
+                    UpdateLanePosition();
+                }
+            }
+            else
+            {
+                if (currentLane < maxLanes)
+                {
+                    currentLane++;
+                    UpdateLanePosition();
+                }
             }
         }
         
-        // Check for lane switch input (optional: down arrow or S key to move down)
-        if (Input.GetKeyDown(KeyCode.S) && currentLane > 0)
-        {
-            currentLane--;
-            UpdateLanePosition();
-        }
+        
     }
 
     public void JumpPlayer(int  lane)
     {
         isGrounded = true;
-        currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane;
+        if (!reversedGravity)
+        { 
+            currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane; 
+        }
+        else
+        {
+            currentLane = (currentLane - lane) <= minLanes ? minLanes : currentLane - lane;
+        }
         UpdateLanePosition();
     }
     
@@ -77,17 +113,26 @@ public class PlayerController : MonoBehaviour
     public void ReduceLane()
     {
         // Lower the player by one lane
-        if (currentLane > 0)
+        if (!reversedGravity)
         {
-            if (reversedGravity)
-                currentLane++;
-            else
+            if (currentLane > 0)
+            {
                 currentLane--;
-            UpdateLanePosition();
+            }
         }
+        else
+        {
+            if (currentLane < maxLanes - 1)
+            {
+                currentLane++;
+            }
+        }
+        UpdateLanePosition();
     }
     public void ToggleReverseGravity()
     {
+        SpriteRenderer rb = GetComponent<SpriteRenderer>();
         this.reversedGravity = !this.reversedGravity;
+        rb.flipY = reversedGravity;
     }
 }

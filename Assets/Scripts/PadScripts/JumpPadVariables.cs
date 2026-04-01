@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PadVariables : MonoBehaviour
+public class JumpPadVariables : MonoBehaviour
 {
     [SerializeField] private int laneMultiplier = 1;
     private SpriteRenderer spriteRenderer;

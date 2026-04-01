@@ -6,7 +6,8 @@ using System.Collections;
 public class TestObjectSpawner : MonoBehaviour
 {
 
-    public GameObject padToSpawnPrefab;
+    public GameObject jumpPadToSpawnPrefab;
+    public GameObject gravityPadToSpawnPrefab;
     public GameObject orbToSpawnPrefab;
     public bool randomSpawn; //not true random, use for testing
     public float bpm;
@@ -26,7 +27,7 @@ public class TestObjectSpawner : MonoBehaviour
         }
         else
         {
-            Instantiate(padToSpawnPrefab, spawnPoint, Quaternion.identity);
+            Instantiate(jumpPadToSpawnPrefab, spawnPoint, Quaternion.identity);
         }
     }
 
@@ -47,38 +48,77 @@ public class TestObjectSpawner : MonoBehaviour
         while (true)
         {
             float secondsPerPad = 240f / bpm;
+
+            int objectTypeToSpawn = Random.Range(0, 2); //0 for jump pads, 1 for gravity pads, 2 for orbs
+            switch (objectTypeToSpawn)
+            {
+                case 0:
+                    SpawnRandomJumpPads(); break;
+                case 1:
+                    SpawnRandomGravityPads(); break;
+                default:
+                    SpawnRandomJumpPads(); break;
+            }
             //Spawn jump orbs
 
 
             //Spawn gravity pad
 
 
-            //Spawn jump pads
-            int laneToSpawn = Random.Range(1, 4);
-            GameObject newPad;
-            switch (laneToSpawn)
-            {
-                case 1:
-                    newPad = Instantiate(padToSpawnPrefab, lane1Spawn, Quaternion.identity);
-                    break;
-                case 2:
-                    newPad = Instantiate(padToSpawnPrefab, lane2Spawn, Quaternion.identity);
-                    break;
-                case 3:
-                    newPad = Instantiate(padToSpawnPrefab, lane3Spawn, Quaternion.identity);
-                    break;
-                case 4:
-                    newPad = Instantiate(padToSpawnPrefab, lane4Spawn, Quaternion.identity);
-                    break;
-                default:
-                    newPad = Instantiate(padToSpawnPrefab, lane1Spawn, Quaternion.identity);
-                    break;
-            }
-            PadVariables padVariables = newPad.GetComponent<PadVariables>();
-            padVariables.setLaneMultiplier (Random.Range(1, 4));
+            //Spawn j
+            
             
             yield return new WaitForSeconds(secondsPerPad);
         }
+    }
+    private void SpawnRandomGravityPads()
+    {
+        int laneToSpawn = Random.Range(1, 4);
+        GameObject newPad;
+        switch (laneToSpawn)
+        {
+            case 1:
+                newPad = Instantiate(gravityPadToSpawnPrefab, lane1Spawn, Quaternion.identity);
+                break;
+            case 2:
+                newPad = Instantiate(gravityPadToSpawnPrefab, lane2Spawn, Quaternion.identity);
+                break;
+            case 3:
+                newPad = Instantiate(gravityPadToSpawnPrefab, lane3Spawn, Quaternion.identity);
+                break;
+            case 4:
+                newPad = Instantiate(gravityPadToSpawnPrefab, lane4Spawn, Quaternion.identity);
+                break;
+            default:
+                newPad = Instantiate(gravityPadToSpawnPrefab, lane1Spawn, Quaternion.identity);
+                break;
+        }
+        GravityPadVariables padVariables = newPad.GetComponent<GravityPadVariables>();
+    }
+    private void SpawnRandomJumpPads ()
+    {
+        int laneToSpawn = Random.Range(1, 4);
+        GameObject newPad;
+        switch (laneToSpawn)
+        {
+            case 1:
+                newPad = Instantiate(jumpPadToSpawnPrefab, lane1Spawn, Quaternion.identity);
+                break;
+            case 2:
+                newPad = Instantiate(jumpPadToSpawnPrefab, lane2Spawn, Quaternion.identity);
+                break;
+            case 3:
+                newPad = Instantiate(jumpPadToSpawnPrefab, lane3Spawn, Quaternion.identity);
+                break;
+            case 4:
+                newPad = Instantiate(jumpPadToSpawnPrefab, lane4Spawn, Quaternion.identity);
+                break;
+            default:
+                newPad = Instantiate(jumpPadToSpawnPrefab, lane1Spawn, Quaternion.identity);
+                break;
+        }
+        JumpPadVariables padVariables = newPad.GetComponent<JumpPadVariables>();
+        padVariables.setLaneMultiplier(Random.Range(1, 4));
     }
 
     // Update is called once per frame
