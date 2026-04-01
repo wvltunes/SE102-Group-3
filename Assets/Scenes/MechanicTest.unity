@@ -593,31 +593,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484770058}
-  - component: {fileID: 484770057}
+  - component: {fileID: 484770059}
   m_Layer: 0
-  m_Name: PadSpawner
+  m_Name: TestObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &484770057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484770056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac5719d3b70a364d9d9f7409e394aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PadSpawner
-  padToSpawnPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
-  randomSpawn: 1
-  bpm: 120
-  spawnPoint: {x: 1, y: 1}
-  padLaneMultiplierToSpawn: 0
 --- !u!4 &484770058
 Transform:
   m_ObjectHideFlags: 0
@@ -633,6 +616,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484770059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484770056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676f73b1263bf1f46a448e0214ac129b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestObjectSpawner
+  jumpPadToSpawnPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+  gravityPadToSpawnPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
+  orbToSpawnPrefab: {fileID: 0}
+  randomSpawn: 1
+  bpm: 120
+  spawnPoint: {x: 0, y: 0}
+  padLaneMultiplierToSpawn: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
