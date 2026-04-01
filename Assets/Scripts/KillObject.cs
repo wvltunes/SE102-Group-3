@@ -17,6 +17,9 @@ public class UniversalKillZone : MonoBehaviour
 
             case "Obstacle":
             case "Enemy":
+            case "Pad":
+                Destroy(other.gameObject);
+                break;
             case "Projectile":
                 // If these tags also have originals in the scene, 
                 // you can wrap these in the (Clone) check too.
