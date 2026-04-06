@@ -5191,11 +5191,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottomCategoryUI
   contentParent: {fileID: 1268288518}
   itemPrefab: {fileID: 3745730565563890410, guid: 026904b3347239b40a2728d82596487b, type: 3}
-  blockButtonImage: {fileID: 0}
-  spikeButtonImage: {fileID: 0}
-  portalButtonImage: {fileID: 0}
-  orbButtonImage: {fileID: 0}
-  triggerButtonImage: {fileID: 0}
+  blockButtonImage: {fileID: 216506073}
+  spikeButtonImage: {fileID: 2058058319}
+  portalButtonImage: {fileID: 1694829606}
+  orbButtonImage: {fileID: 1790438669}
+  triggerButtonImage: {fileID: 676880404}
   leftButton: {fileID: 882467616}
   rightButton: {fileID: 997075246}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
