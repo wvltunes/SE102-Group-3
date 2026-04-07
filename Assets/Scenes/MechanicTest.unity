@@ -719,7 +719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484770056}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 676f73b1263bf1f46a448e0214ac129b, type: 3}
   m_Name: 
@@ -1350,6 +1350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 10
   triggerRangeX: 1
+  isEnabled: 0
 --- !u!61 &851272087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2228,6 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 5
   triggerRangeX: 1
+  isEnabled: 1
 --- !u!61 &1516368102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2486,6 +2488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 5
   triggerRangeX: 1
+  isEnabled: 1
 --- !u!1 &1566250453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,6 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 5
   triggerRangeX: 1
+  isEnabled: 1
 --- !u!61 &1566250456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2830,6 +2834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 5
   triggerRangeX: 1
+  isEnabled: 1
 --- !u!61 &1806619697
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3406,3 +3411,4 @@ SceneRoots:
   - {fileID: 637399543}
   - {fileID: 74544438}
   - {fileID: 484770058}
+  - {fileID: 2007541069}
