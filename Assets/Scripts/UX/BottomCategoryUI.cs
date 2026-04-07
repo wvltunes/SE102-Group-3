@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum EditorMode { Build, Edit, Delete }
+
 public class BottomCategoryUI : MonoBehaviour
 {
     [Header("Content")]
@@ -33,13 +35,80 @@ public class BottomCategoryUI : MonoBehaviour
     [Header("Page Setting")]
     public int itemsPerPage = 12;
 
+    [Header("Mode Buttons")]
+    public Image buildButtonImage;
+    public Image editButtonImage;
+    public Image deleteButtonImage;
+
+    [Header("Mode Panels")]
+    public GameObject categoryBar;
+    public GameObject actionButtons;
+
+    [Header("Mode Button Colors")]
+    public Color modeNormalColor = Color.white;
+    public Color modeSelectedColor = new Color(0.5f, 0.9f, 0.85f, 1f);
+
     private List<Sprite> currentSprites = new List<Sprite>();
     private int currentPage = 0;
+    private EditorMode currentMode = EditorMode.Build;
 
     void Start()
     {
+        SwitchToBuild();
+    }
+
+    // ==================== Mode Switching ====================
+
+    public void SwitchToBuild()
+    {
+        currentMode = EditorMode.Build;
+        UpdateSelectedMode(buildButtonImage);
+
+        if (categoryBar != null) categoryBar.SetActive(true);
+        if (actionButtons != null) actionButtons.SetActive(true);
+
+        leftButton.gameObject.SetActive(true);
+        rightButton.gameObject.SetActive(true);
+
         ShowBlock();
     }
+
+    public void SwitchToEdit()
+    {
+        currentMode = EditorMode.Edit;
+        UpdateSelectedMode(editButtonImage);
+
+        if (categoryBar != null) categoryBar.SetActive(false);
+        if (actionButtons != null) actionButtons.SetActive(true);
+
+        ClearItems();
+        leftButton.gameObject.SetActive(false);
+        rightButton.gameObject.SetActive(false);
+    }
+
+    public void SwitchToDelete()
+    {
+        currentMode = EditorMode.Delete;
+        UpdateSelectedMode(deleteButtonImage);
+
+        if (categoryBar != null) categoryBar.SetActive(false);
+        if (actionButtons != null) actionButtons.SetActive(false);
+
+        ClearItems();
+        leftButton.gameObject.SetActive(false);
+        rightButton.gameObject.SetActive(false);
+    }
+
+    void UpdateSelectedMode(Image selectedButton)
+    {
+        if (buildButtonImage != null) buildButtonImage.color = modeNormalColor;
+        if (editButtonImage != null) editButtonImage.color = modeNormalColor;
+        if (deleteButtonImage != null) deleteButtonImage.color = modeNormalColor;
+
+        if (selectedButton != null) selectedButton.color = modeSelectedColor;
+    }
+
+    // ==================== Category Switching ====================
 
     public void ShowBlock()
     {
@@ -80,6 +149,8 @@ public class BottomCategoryUI : MonoBehaviour
         ShowCurrentPage();
         UpdateSelectedButton(triggerButtonImage);
     }
+
+    // ==================== Pagination ====================
 
     public void NextPage()
     {
