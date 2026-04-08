@@ -5,14 +5,14 @@ public class JumpOrbBehaviour : MonoBehaviour
     [SerializeField] private int laneToJump = 1;
     private bool isTriggered = false;
     private bool isPlayerInZone = false;
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && Input.GetMouseButtonDown(0))
         {
             PlayerController playerController = other.GetComponent<PlayerController>();
             playerController.JumpPlayer(laneToJump);
             isTriggered = true;
-            isPlayerInZone = true;
+            //isPlayerInZone = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)

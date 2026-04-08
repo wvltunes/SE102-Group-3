@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     
     private void HandleEnergyRecovery()
     {
-        if (isOnGround)
+        if (true/*isOnGround*/)
         {
             energyRecoveryTimer += Time.deltaTime;
             if (energyRecoveryTimer >= energyRecoveryRate)
@@ -92,14 +92,17 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    private void HandleJump()
+    private void HandleJump(bool consumesEnergy = true)
     {
         if (Input.GetButtonDown("Jump"))
         {
             // Check if has energy first
-            if (currentEnergy <= 0)
+            if (consumesEnergy)
             {
-                return; // No energy, can't jump
+                if (currentEnergy <= 0)
+                {
+                    return; // No energy, can't jump
+                }
             }
             
             // Move to the next lane (up)
@@ -109,7 +112,8 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
-                    ConsumeEnergy();
+                    if (consumesEnergy)
+                        ConsumeEnergy();
                 }
             }
             else
@@ -118,7 +122,8 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
-                    ConsumeEnergy();
+                    if (consumesEnergy)
+                        ConsumeEnergy();
                 }
             }
             
@@ -128,9 +133,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             // Check if has energy first
-            if (currentEnergy <= 0)
+            if (consumesEnergy)
             {
-                return; // No energy, can't move down
+                if (currentEnergy <= 0)
+                {
+                    return; // No energy, can't move down
+                }
             }
             
             if (!reversedGravity)
@@ -139,7 +147,8 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
-                    ConsumeEnergy();
+                    if (consumesEnergy)
+                        ConsumeEnergy();
                 }
             }
             else
@@ -148,7 +157,8 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
-                    ConsumeEnergy();
+                    if (consumesEnergy)
+                        ConsumeEnergy();
                 }
             }
         }
@@ -156,14 +166,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void JumpPlayer(int  lane)
-    {
-        // Check if has energy first
-        if (currentEnergy <= 0)
-        {
-            return; // No energy, can't jump
-        }
-        
+    public void JumpPlayer(int  lane) //used by pads and orbs
+    {        
         if (!reversedGravity)
         { 
             currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane; 

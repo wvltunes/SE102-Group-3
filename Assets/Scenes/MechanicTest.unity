@@ -253,6 +253,7 @@ MonoBehaviour:
   laneHeight: 2
   maxLanes: 4
   minLanes: 0
+  energyRecoveryRate: 1
 --- !u!50 &1643091
 Rigidbody2D:
   serializedVersion: 5
@@ -719,14 +720,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484770056}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 676f73b1263bf1f46a448e0214ac129b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestObjectSpawner
   jumpPadToSpawnPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
   gravityPadToSpawnPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
-  orbToSpawnPrefab: {fileID: 0}
+  jumpOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
   randomSpawn: 1
   bpm: 120
   spawnPoint: {x: 0, y: 0}
@@ -1036,6 +1037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 637399543}
+  - component: {fileID: 637399544}
   m_Layer: 0
   m_Name: BeatLine
   m_TagString: Untagged
@@ -1060,6 +1062,18 @@ Transform:
   - {fileID: 2136597419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &637399544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637399542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bfaf90d6f1c1245b2d160b15d50e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BeatLine
 --- !u!1 &674019283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
   gameSpeed: 10
   triggerRangeX: 1
-  isEnabled: 0
+  isEnabled: 1
 --- !u!61 &851272087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1777,6 +1791,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207946672}
   m_CullTransparentMesh: 1
+--- !u!1 &1254774182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254774184}
+  - component: {fileID: 1254774185}
+  m_Layer: 0
+  m_Name: TestOrbSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1254774184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254774182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.62845, y: -3.31501, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254774185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254774182}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5879de8bdba2c048b154f326c90b167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestOrbSpawner
+  jumpOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
+  gravityOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
+  randomSpawn: 1
+  bpm: 120
+  spawnPoint: {x: 0, y: 0}
+  orbLaneMultiplierToSpawn: 0
 --- !u!1 &1348388103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,4 +3475,4 @@ SceneRoots:
   - {fileID: 637399543}
   - {fileID: 74544438}
   - {fileID: 484770058}
-  - {fileID: 2007541069}
+  - {fileID: 1254774184}

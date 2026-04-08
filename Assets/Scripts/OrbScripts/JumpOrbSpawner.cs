@@ -12,10 +12,10 @@ public class JumpOrbSpawner : MonoBehaviour
     public Vector2 spawnPoint;
     private Coroutine spawnCoroutine;
     public int orbLaneMultiplierToSpawn;
-    private Vector2 lane1Spawn = new Vector2 (7, -2.9f);
-    private Vector2 lane2Spawn = new Vector2(7, -0.9f);
-    private Vector2 lane3Spawn = new Vector2(7, 1.1f);
-    private Vector2 lane4Spawn = new Vector2(7, 3.1f);
+    private Vector2 lane1Spawn = new Vector2 (7, -2f);
+    private Vector2 lane2Spawn = new Vector2(7, 0f);
+    private Vector2 lane3Spawn = new Vector2(7, 2f);
+    private Vector2 lane4Spawn = new Vector2(7, 4f);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -7,6 +7,8 @@ TagManager:
   - LaneReducer
   - Pad
   - Orb
+  - Ground
+  - Line
   layers:
   - Default
   - TransparentFX
