@@ -29,6 +29,9 @@ public class UniversalKillZone : MonoBehaviour
             case "Player":
                 // Do nothing
                 break;
+            case "Orb":
+                Destroy (other.gameObject);
+                break;
         }
     }
 }
