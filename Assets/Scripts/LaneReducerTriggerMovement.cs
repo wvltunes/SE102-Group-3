@@ -10,7 +10,7 @@ public class LaneReducerTriggerMovement : MonoBehaviour
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindFirstObjectByType<PlayerController>();
     }
 
     void Update()
