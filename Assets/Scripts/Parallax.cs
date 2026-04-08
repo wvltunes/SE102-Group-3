@@ -10,13 +10,24 @@ public class Parallax : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        material = GetComponent<Renderer>().material;
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            material = renderer.material;
+        }
+        else
+        {
+            Debug.LogError("Renderer component not found on " + gameObject.name);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        ParalaxScroll();
+        if (material != null)
+        {
+            ParalaxScroll();
+        }
     }
     private void ParalaxScroll()
     {
