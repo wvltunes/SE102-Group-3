@@ -60,7 +60,7 @@ public class TestObjectSpawner : MonoBehaviour
         {
             float secondsPerPad = 240f / bpm;
 
-            int objectTypeToSpawn = Random.Range(0,3); //0 for jump pads, 1 for gravity pads, 2 for orbs, 3 for spikes
+            int objectTypeToSpawn = Random.Range(0,4); //0 for jump pads, 1 for gravity pads, 2 for orbs, 3 for spikes, 4 is exclusive
             switch (objectTypeToSpawn)
             {
                 case 0:
@@ -107,12 +107,7 @@ public class TestObjectSpawner : MonoBehaviour
                     }
                         break;
             }
-            //Spawn jump orbs
-
-
-
-
-            //Spawn j
+            
             
             
             yield return new WaitForSeconds(secondsPerPad);
