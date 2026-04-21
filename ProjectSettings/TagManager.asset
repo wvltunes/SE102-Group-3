@@ -9,6 +9,7 @@ TagManager:
   - Orb
   - Ground
   - Line
+  - MapObject
   layers:
   - Default
   - TransparentFX
