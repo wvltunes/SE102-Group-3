@@ -15,10 +15,8 @@ public class PlayerController : MonoBehaviour
     // Energy system
     private int currentEnergy = 0;
     private int maxEnergy = 4;
-    private bool isOnGround = false;
-    private GroundDetector groundDetector; // Reference to GroundDetector
     private float energyRecoveryTimer = 0f;
-    [SerializeField] private float energyRecoveryRate = 1f; // Recover energy every 1 second
+    private BpmSpawner bpmSpawner; // Reference to BPM spawner
 
     void Start()
     {
@@ -30,64 +28,28 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component attached to the player
         animator = GetComponent<Animator>(); // Get the Animator component attached to the player
         rb.gravityScale = 0; // Disable gravity so player doesn't fall
-        groundDetector = GetComponentInChildren<GroundDetector>(); // Get GroundDetector
+        bpmSpawner = FindObjectOfType<BpmSpawner>(); // Find BPM spawner in the scene
     }
     // Update is called once per frame
     void Update()
     {
-        // Check ground using raycast
-        CheckGroundWithRaycast();
-        
-        // Handle energy recovery when on ground
+        // Handle energy recovery based on BPM
         HandleEnergyRecovery();
         
         HandleJump();
         UpdateAnimation();
     }
     
-    private void CheckGroundWithRaycast()
-    {
-        // Raycast from GroundCheckPoint position
-        Vector2 raycastPosition = transform.position;
-        
-        if (groundDetector != null)
-        {
-            raycastPosition = groundDetector.transform.position;
-        }
-        
-        // Create layer mask: exclude "Player" layer to avoid hitting self
-        // This way it safely hits Ground/Line objects on "Default" layer
-        int layerMask = ~LayerMask.GetMask("Player");
-        
-        // Raycast downward
-        RaycastHit2D hit = Physics2D.Raycast(raycastPosition, Vector2.down, 1.5f, layerMask);
-        
-        // Check if we hit something with "Ground" or "Line" tag
-        if (hit.collider != null)
-        {
-            Debug.Log($"Raycast hit: {hit.collider.gameObject.name}, Tag: {hit.collider.tag}, Energy: {currentEnergy}/{maxEnergy}");
-            isOnGround = hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Line");
-        }
-        else
-        {
-            isOnGround = false;
-        }
-    }
-    
     private void HandleEnergyRecovery()
     {
-        if (true/*isOnGround*/)
+        // Calculate seconds per beat based on BPM (no ground condition needed)
+        float secondsPerBeat = bpmSpawner != null ? (60.0f / bpmSpawner.bpm) : 0.5f;
+        
+        energyRecoveryTimer += Time.deltaTime;
+        if (energyRecoveryTimer >= secondsPerBeat)
         {
-            energyRecoveryTimer += Time.deltaTime;
-            if (energyRecoveryTimer >= energyRecoveryRate)
-            {
-                RecoverEnergy();
-                energyRecoveryTimer = 0f;
-            }
-        }
-        else
-        {
-            energyRecoveryTimer = 0f; // Reset timer when not on ground
+            RecoverEnergy();
+            energyRecoveryTimer = 0f;
         }
     }
     
@@ -248,8 +210,5 @@ public class PlayerController : MonoBehaviour
         return maxEnergy;
     }
     
-    public bool IsOnGround()
-    {
-        return isOnGround;
-    }
+
 }
