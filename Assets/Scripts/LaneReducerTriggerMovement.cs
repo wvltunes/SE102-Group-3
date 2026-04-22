@@ -3,7 +3,8 @@ using UnityEngine;
 public class LaneReducerTriggerMovement : MonoBehaviour
 {
     [SerializeField] private float gameSpeed = 5f; 
-    [SerializeField] private float triggerRangeX = 1f; 
+    [SerializeField] private float triggerRangeX = 1f;
+    [SerializeField] private bool isEnabled = true;
     
     private PlayerController playerController;
     private bool hasTriggered = false; 
@@ -23,7 +24,7 @@ public class LaneReducerTriggerMovement : MonoBehaviour
         {
             float distanceX = Mathf.Abs(playerController.transform.position.x - transform.position.x);
             
-            if (distanceX < triggerRangeX)
+            if (distanceX < triggerRangeX && this.isEnabled)
             {
                 playerController.ReduceLane();
                 hasTriggered = true;

@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - LaneReducer
+  - Pad
+  - Orb
+  - Ground
+  - Line
+  - MapObject
   layers:
   - Default
   - TransparentFX
