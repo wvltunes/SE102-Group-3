@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayMenuController : MonoBehaviour
 {
+
     public CanvasGroup optionCanvas;
     public Animator buttonsAnim;
     public OptionController optionController; 
@@ -81,5 +83,15 @@ public class PlayMenuController : MonoBehaviour
         }
 
         isPlaying = false;
+    }
+
+    public void LoadCampaignScene()
+    {
+        SceneManager.LoadScene("GameSelection");
+    }
+
+    public void LoadCustomScene()
+    {
+        SceneManager.LoadScene("LevelEditor");
     }
 }
