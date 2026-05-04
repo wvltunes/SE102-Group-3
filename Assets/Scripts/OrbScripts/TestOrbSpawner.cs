@@ -9,7 +9,7 @@ public class TestOrbSpawner : MonoBehaviour
     public GameObject jumpOrbToSpawnPrefab;
     public GameObject gravityOrbToSpawnPrefab;
 
-    public bool randomSpawn; //not true random, use for testing
+    public bool randomSpawn; 
     public float bpm = 120;
     public Vector2 spawnPoint;
     private Coroutine spawnCoroutine;
@@ -18,7 +18,7 @@ public class TestOrbSpawner : MonoBehaviour
     private Vector2 lane2Spawn = new Vector2(7, 0f);
     private Vector2 lane3Spawn = new Vector2(7, 2f);
     private Vector2 lane4Spawn = new Vector2(7, 4f);
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         if (randomSpawn || spawnPoint == null)
@@ -48,7 +48,7 @@ public class TestOrbSpawner : MonoBehaviour
         while (true)
         {
             float secondsPerOrb = 240f / bpm;
-            int objectTypeToSpawn = Random.Range(0, 1); //0 for jump pads, 1 for gravity pads, 2 for orbs
+            int objectTypeToSpawn = Random.Range(0, 2); //0 for jump pads, 1 for gravity pads, 2 for orbs
             switch (objectTypeToSpawn)
             {
                 case 0:
