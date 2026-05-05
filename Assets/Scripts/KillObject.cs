@@ -17,6 +17,7 @@ public class UniversalKillZone : MonoBehaviour
 
             case "Obstacle":
             case "Enemy":
+            case "Block":
             case "Pad":
                 Destroy(other.gameObject);
                 break;

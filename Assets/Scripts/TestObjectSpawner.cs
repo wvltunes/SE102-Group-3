@@ -5,14 +5,20 @@ using System.Collections;
 
 public class TestObjectSpawner : MonoBehaviour
 {
+    [Header("Spawn Toggles")]
     [SerializeField] bool Spikes = true;
     [SerializeField] bool Pads = true;
     [SerializeField] bool Orbs = true;
+    [SerializeField] bool Blocks = true;
+    [SerializeField] bool Enemies = true;
 
+    [Header("Prefabs")]
     public GameObject jumpPadToSpawnPrefab;
     public GameObject gravityPadToSpawnPrefab;
     public GameObject jumpOrbToSpawnPrefab;
     public GameObject spikeToSpawnPrefab;
+    public GameObject blockToSpawnPrefab;
+    public GameObject enemyToSpawnPrefab;
 
     public bool randomSpawn; //not true random, use for testing
     public float bpm;
@@ -29,6 +35,15 @@ public class TestObjectSpawner : MonoBehaviour
     private Vector2 lane4OrbSpawn = new Vector2(7, 4f);
     private Vector2 lane1SpikeSpawn = new Vector2(7, -2.7f);
     private Vector2 spikeSpawnLaneIncrement = new Vector2(0, 2.0f);
+    
+    // Block spawn positions (aligned with lane positions, blocks sit on the lane)
+    private Vector2 lane1BlockSpawn = new Vector2(7, -2.9f);
+    private Vector2 blockSpawnLaneIncrement = new Vector2(0, 2.0f);
+    
+    // Enemy spawn positions (slightly above the lane, floating enemies)
+    private Vector2 lane1EnemySpawn = new Vector2(7, -2f);
+    private Vector2 enemySpawnLaneIncrement = new Vector2(0, 2.0f);
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,7 +75,7 @@ public class TestObjectSpawner : MonoBehaviour
         {
             float secondsPerPad = 240f / bpm;
 
-            int objectTypeToSpawn = Random.Range(0,4); //0 for jump pads, 1 for gravity pads, 2 for orbs, 3 for spikes, 4 is exclusive
+            int objectTypeToSpawn = Random.Range(0, 6); //0-5: pads, orbs, gravity pads, spikes, blocks, enemies
             switch (objectTypeToSpawn)
             {
                 case 0:
@@ -100,6 +115,28 @@ public class TestObjectSpawner : MonoBehaviour
                     if (Spikes)
                     {
                         SpawnRandomSpikes();
+                    }
+                    else
+                    {
+                        goto Case4;
+                    }
+                        break;
+                case 4:
+                Case4:
+                    if (Blocks)
+                    {
+                        SpawnRandomBlock();
+                    }
+                    else
+                    {
+                        goto Case5;
+                    }
+                        break;
+                case 5:
+                Case5:
+                    if (Enemies)
+                    {
+                        SpawnRandomEnemy();
                     }
                     else
                     {
@@ -212,9 +249,28 @@ public class TestObjectSpawner : MonoBehaviour
         }
     }
 
+    private void SpawnRandomBlock()
+    {
+        if (blockToSpawnPrefab == null) return;
+        
+        int laneToSpawn = Random.Range(1, 4);
+        Vector2 spawnPos = lane1BlockSpawn + (laneToSpawn - 1) * blockSpawnLaneIncrement;
+        Instantiate(blockToSpawnPrefab, spawnPos, Quaternion.identity);
+    }
+
+    private void SpawnRandomEnemy()
+    {
+        if (enemyToSpawnPrefab == null) return;
+        
+        int laneToSpawn = Random.Range(1, 4);
+        Vector2 spawnPos = lane1EnemySpawn + (laneToSpawn - 1) * enemySpawnLaneIncrement;
+        Instantiate(enemyToSpawnPrefab, spawnPos, Quaternion.identity);
+    }
+
     // Update is called once per frame
     void Update()
     {
         
     }
 }
+

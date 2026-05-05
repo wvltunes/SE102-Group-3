@@ -10,6 +10,8 @@ TagManager:
   - Ground
   - Line
   - MapObject
+  - Block
+  - Enemy
   layers:
   - Default
   - TransparentFX
