@@ -4,6 +4,7 @@ public class GroundDetector : MonoBehaviour
 {
     private PlayerController playerController;
     private bool isGroundedLocally = false;
+    private bool isOnBlock = false; // Set by BlockBehaviour when player touches top/bottom of a block
     
     private void Start()
     {
@@ -34,8 +35,17 @@ public class GroundDetector : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Called by BlockBehaviour to set whether the player is standing on a block (top or bottom).
+    /// When on a block, the player is considered grounded.
+    /// </summary>
+    public void SetBlockGround(bool onBlock)
+    {
+        isOnBlock = onBlock;
+    }
+    
     public bool IsGrounded()
     {
-        return isGroundedLocally;
+        return isGroundedLocally || isOnBlock;
     }
 }

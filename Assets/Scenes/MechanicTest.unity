@@ -253,7 +253,6 @@ MonoBehaviour:
   laneHeight: 2
   maxLanes: 4
   minLanes: 0
-  energyRecoveryRate: 1
 --- !u!50 &1643091
 Rigidbody2D:
   serializedVersion: 5
@@ -331,7 +330,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -607,6 +606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112881649}
+  - component: {fileID: 112881650}
   m_Layer: 0
   m_Name: GroundCheckPoint
   m_TagString: Untagged
@@ -629,6 +629,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1643089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112881650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112881648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01251cf13bf5d5842a85cbe4a3c75273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundDetector
 --- !u!1 &322816068
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,10 +900,14 @@ MonoBehaviour:
   Spikes: 1
   Pads: 1
   Orbs: 1
+  Blocks: 1
+  Enemies: 1
   jumpPadToSpawnPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
   gravityPadToSpawnPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
   jumpOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
   spikeToSpawnPrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
+  blockToSpawnPrefab: {fileID: 5560530659682682780, guid: ec6d0a5e1ebc4e54488b18eff741626f, type: 3}
+  enemyToSpawnPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
   randomSpawn: 1
   bpm: 120
   spawnPoint: {x: 0, y: 0}
