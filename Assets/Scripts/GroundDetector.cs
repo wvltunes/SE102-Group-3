@@ -6,33 +6,42 @@ public class GroundDetector : MonoBehaviour
     private bool isGroundedLocally = false;
     private bool isOnBlock = false; // Set by BlockBehaviour when player touches top/bottom of a block
     
+    [SerializeField] private float raycastDistance = 2f; // Distance to raycast downward - INCREASED
+    [SerializeField] private bool showDebugRay = true; // Show raycast in editor
+    
+    private int updateCounter = 0; // Track how many times Update runs
+
     private void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
+        raycastDistance = 3f; // Force set raycast distance to be large enough
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGroundedLocally = true;
-        }
+        // Raycast to detect ground instead of trigger collider
+        DetectGroundWithRaycast();
     }
     
-    private void OnTriggerStay2D(Collider2D collision)
+    private void DetectGroundWithRaycast()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        // Cast raycast ignoring player's own colliders
+        Vector3 rayStartPos = transform.position - Vector3.up * 0.2f; // Start raycast from slightly below
+        RaycastHit2D[] hits = Physics2D.RaycastAll(rayStartPos, Vector2.down, raycastDistance);
+        
+        isGroundedLocally = false;
+        
+        // Check all hits
+        foreach (RaycastHit2D hit in hits)
         {
-            isGroundedLocally = true;
+            if (hit.collider != null && hit.collider.CompareTag("Ground"))
+            {
+                isGroundedLocally = true;
+                break;
+            }
         }
-    }
-    
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGroundedLocally = false;
-        }
+        
+
     }
     
     /// <summary>
@@ -46,6 +55,8 @@ public class GroundDetector : MonoBehaviour
     
     public bool IsGrounded()
     {
+        // Always recalculate ground detection when called (to fix execution order issue)
+        DetectGroundWithRaycast();
         return isGroundedLocally || isOnBlock;
     }
 }
