@@ -253,7 +253,6 @@ MonoBehaviour:
   laneHeight: 2
   maxLanes: 4
   minLanes: 0
-  energyRecoveryRate: 1
 --- !u!50 &1643091
 Rigidbody2D:
   serializedVersion: 5
@@ -1994,7 +1993,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254774182}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5879de8bdba2c048b154f326c90b167, type: 3}
   m_Name: 
