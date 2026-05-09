@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private int maxEnergy = 4;
     private float energyRecoveryTimer = 0f;
     private BpmSpawner bpmSpawner; // Reference to BPM spawner
+    private GroundDetector groundDetector; // Reference to GroundDetector component
 
     void Start()
     {
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>(); // Get the Animator component attached to the player
         rb.gravityScale = 0; // Disable gravity so player doesn't fall
         bpmSpawner = FindObjectOfType<BpmSpawner>(); // Find BPM spawner in the scene
+        groundDetector = GetComponentInChildren<GroundDetector>(); // Get GroundDetector component
+        
+
     }
     // Update is called once per frame
     void Update()
@@ -42,13 +46,21 @@ public class PlayerController : MonoBehaviour
     
     private void HandleEnergyRecovery()
     {
-        // Calculate seconds per beat based on BPM (no ground condition needed)
-        float secondsPerBeat = bpmSpawner != null ? (60.0f / bpmSpawner.bpm) : 0.5f;
-        
-        energyRecoveryTimer += Time.deltaTime;
-        if (energyRecoveryTimer >= secondsPerBeat)
+        // Only recover energy when player is on ground or platform
+        if (groundDetector != null && groundDetector.IsGrounded())
         {
-            RecoverEnergy();
+            float secondsPerBeat = bpmSpawner != null ? (60.0f / bpmSpawner.bpm) : 0.5f;
+            
+            energyRecoveryTimer += Time.deltaTime;
+            if (energyRecoveryTimer >= secondsPerBeat)
+            {
+                RecoverEnergy();
+                energyRecoveryTimer = 0f;
+            }
+        }
+        else
+        {
+            // Reset timer when player is not grounded
             energyRecoveryTimer = 0f;
         }
     }
