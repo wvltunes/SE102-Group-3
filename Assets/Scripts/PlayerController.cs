@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             // Move to the next lane (up)
             if (!reversedGravity)
             {
-                if (currentLane < maxLanes - 1)
+                if (currentLane < maxLanes)
                 {
                     currentLane++;
                     UpdateLanePosition();
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void JumpPlayer(int  lane) //used by pads and orbs
+    public void JumpPlayer(int  lane) //used by pads and orbs -> no energy consumed
     {        
         if (!reversedGravity)
         { 
@@ -151,14 +151,26 @@ public class PlayerController : MonoBehaviour
             currentLane = (currentLane - lane) <= minLanes ? minLanes : currentLane - lane;
         }
         UpdateLanePosition();
-        ConsumeEnergy();
+    }
+
+    public void JumpPlayerToGround () //used by pads and orbs -> no energy consumed
+    {
+        if (!reversedGravity)
+        {
+            currentLane = minLanes;
+        }
+        else
+        {
+            currentLane = maxLanes;
+        }
+        UpdateLanePosition();
     }
     
     private void UpdateLanePosition()
     {
         // Update player Y position based on current lane
         Vector3 newPosition = transform.position;
-        newPosition.y = startPosition.y + (currentLane * laneHeight);
+            newPosition.y = startPosition.y + (currentLane * laneHeight);
         transform.position = newPosition;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Stop vertical movement
     }
@@ -181,7 +193,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (currentLane < maxLanes - 1)
+            if (currentLane < maxLanes)
             {
                 currentLane++;
             }
@@ -222,5 +234,8 @@ public class PlayerController : MonoBehaviour
         return maxEnergy;
     }
     
-
+    public bool isReversedGravity()
+    {
+        return reversedGravity;
+    }
 }

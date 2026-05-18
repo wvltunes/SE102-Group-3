@@ -16,9 +16,11 @@ public class TestObjectSpawner : MonoBehaviour
     public GameObject jumpPadToSpawnPrefab;
     public GameObject gravityPadToSpawnPrefab;
     public GameObject jumpOrbToSpawnPrefab;
+    public GameObject gravityOrbToSpawnPrefab;
     public GameObject spikeToSpawnPrefab;
     public GameObject blockToSpawnPrefab;
     public GameObject enemyToSpawnPrefab;
+
 
     public bool randomSpawn; //not true random, use for testing
     public float bpm;
@@ -75,7 +77,7 @@ public class TestObjectSpawner : MonoBehaviour
         {
             float secondsPerPad = 240f / bpm;
 
-            int objectTypeToSpawn = Random.Range(0, 6); //0-5: pads, orbs, gravity pads, spikes, blocks, enemies
+            int objectTypeToSpawn = Random.Range(0, 7); //0-6: pads, gravity pads, orbs, gravity orbs, spikes, blocks, enemies
             switch (objectTypeToSpawn)
             {
                 case 0:
@@ -90,20 +92,20 @@ public class TestObjectSpawner : MonoBehaviour
                     break;
                 case 1:
                 Case1:
-                    if (Orbs)
+                    if (Pads)
                     {
-                        SpawnRandomJumpOrb();
+                        SpawnRandomGravityPads();
                     }
                     else
                     {
                         goto Case2;
                     }
-                        break;
+                    break;
                 case 2:
                 Case2:
-                    if (Pads)
+                    if (Orbs)
                     {
-                        SpawnRandomGravityPads();
+                        SpawnRandomJumpOrb();
                     }
                     else
                     {
@@ -112,9 +114,9 @@ public class TestObjectSpawner : MonoBehaviour
                         break;
                 case 3:
                 Case3:
-                    if (Spikes)
+                    if (Orbs)
                     {
-                        SpawnRandomSpikes();
+                        SpawnRandomGravityOrbs();
                     }
                     else
                     {
@@ -123,9 +125,9 @@ public class TestObjectSpawner : MonoBehaviour
                         break;
                 case 4:
                 Case4:
-                    if (Blocks)
+                    if (Spikes)
                     {
-                        SpawnRandomBlock();
+                        SpawnRandomSpikes();
                     }
                     else
                     {
@@ -134,6 +136,17 @@ public class TestObjectSpawner : MonoBehaviour
                         break;
                 case 5:
                 Case5:
+                    if (Blocks)
+                    {
+                        SpawnRandomBlock();
+                    }
+                    else
+                    {
+                        goto Case6;
+                    }
+                        break;
+                case 6:
+                Case6:
                     if (Enemies)
                     {
                         SpawnRandomEnemy();
@@ -149,6 +162,30 @@ public class TestObjectSpawner : MonoBehaviour
             
             yield return new WaitForSeconds(secondsPerPad);
         }
+    }
+    private void SpawnRandomGravityOrbs()
+    {
+        int laneToSpawn = Random.Range(1, 4);
+        GameObject newPad;
+        switch (laneToSpawn)
+        {
+            case 1:
+                newPad = Instantiate(gravityOrbToSpawnPrefab, lane1OrbSpawn, Quaternion.identity);
+                break;
+            case 2:
+                newPad = Instantiate(gravityOrbToSpawnPrefab, lane2OrbSpawn, Quaternion.identity);
+                break;
+            case 3:
+                newPad = Instantiate(gravityOrbToSpawnPrefab, lane3OrbSpawn, Quaternion.identity);
+                break;
+            case 4:
+                newPad = Instantiate(gravityOrbToSpawnPrefab, lane4OrbSpawn, Quaternion.identity);
+                break;
+            default:
+                newPad = Instantiate(gravityOrbToSpawnPrefab, lane1OrbSpawn, Quaternion.identity);
+                break;
+        }
+        GravityPadVariables padVariables = newPad.GetComponent<GravityPadVariables>();
     }
     private void SpawnRandomJumpOrb()
     {
@@ -173,7 +210,7 @@ public class TestObjectSpawner : MonoBehaviour
                 break;
         }
         JumpOrbVariables padVariables = newPad.GetComponent<JumpOrbVariables>();
-        padVariables.setLaneMultiplier(Random.Range(1, 4));
+        padVariables.setLaneMultiplier(Random.Range(1, 5));
     }
     private void SpawnRandomGravityPads()
     {
