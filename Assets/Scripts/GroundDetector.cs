@@ -26,7 +26,15 @@ public class GroundDetector : MonoBehaviour
     private void DetectGroundWithRaycast()
     {
         // Cast raycast ignoring player's own colliders
-        Vector3 rayStartPos = transform.position - Vector3.up * 0.2f; // Start raycast from slightly below
+        Vector3 rayStartPos;
+        if (!playerController.isReversedGravity())
+        {
+            rayStartPos = transform.position - Vector3.up * 0.2f; // Start raycast from slightly below
+        }
+        else
+        {
+            rayStartPos = transform.position + Vector3.up * 0.2f; // Start raycast from slightly above
+        }
         RaycastHit2D[] hits = Physics2D.RaycastAll(rayStartPos, Vector2.down, raycastDistance);
         
         isGroundedLocally = false;
