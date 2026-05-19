@@ -754,6 +754,7 @@ MonoBehaviour:
   gravityPadToSpawnPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
   jumpOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
   gravityOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
+  jumpToGroundOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: b553136922f636d42827079b972b8a54, type: 3}
   spikeToSpawnPrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
   blockToSpawnPrefab: {fileID: 5560530659682682780, guid: ec6d0a5e1ebc4e54488b18eff741626f, type: 3}
   enemyToSpawnPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
