@@ -7,7 +7,6 @@ public class JumpOrbVariables : MonoBehaviour
     [SerializeField] private Sprite SingleLaneOrbSprite;
     [SerializeField] private Sprite DoubleLaneOrbSprite;
     [SerializeField] private Sprite TripleLaneOrbSprite;
-    [SerializeField] private Sprite JumpToGroundOrbSprite;
 
     void Start()
     {
@@ -33,10 +32,6 @@ public class JumpOrbVariables : MonoBehaviour
                 case 3:
                     spriteRenderer.sprite = TripleLaneOrbSprite;
                     behaviour.setLaneToJump(3);
-                    break;
-                case 4:
-                    spriteRenderer.sprite = JumpToGroundOrbSprite;
-                    behaviour.setLaneToJump(4);
                     break;
                 default:
                     spriteRenderer.sprite = SingleLaneOrbSprite;
