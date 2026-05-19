@@ -1,10 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class JumpOrbBehaviour : MonoBehaviour
+public class JumpToGroundOrbBehaviour : MonoBehaviour
 {
-    [SerializeField] private int laneToJump = 1; //  1,2,3,4 for normal lanes jump
-
     private bool playerInside = false;
     private PlayerController player;
     private bool isTriggered = false;
@@ -51,9 +49,9 @@ public class JumpOrbBehaviour : MonoBehaviour
         }
 
         // kích hoạt
-        if (playerInside && player != null && inputBufferCounter > 0 && laneToJump > 0)
+        if (playerInside && player != null && inputBufferCounter > 0)
         {
-            player.JumpPlayer(laneToJump); 
+            player.JumpPlayerToGround();
             isTriggered = true;
 
             StartCoroutine(ShrinkAndDestroy());
@@ -78,8 +76,4 @@ public class JumpOrbBehaviour : MonoBehaviour
         transform.localScale = Vector3.zero;
         Destroy(gameObject);
     }
-
-  
-    public int getLaneToJump() => laneToJump;
-    public void setLaneToJump(int lane) => laneToJump = lane;
 }
