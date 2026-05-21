@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09be791fa82e134f983ec65e873cc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityOrbVariables
-  gravityOrbSprite: {fileID: -2323475315545171561, guid: 69adddd95da6db9498294f83ce90f716, type: 3}
+  gravityOrbSprite: {fileID: -5113022917671918198, guid: 4fa7684d6932ea74fac25458a985ce8b, type: 3}
 --- !u!114 &-5346597631702725411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4925929316203f64ea7b14421a4818c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GravityOrbBehaviour
+  inputBufferTime: 0.12
+  shrinkDuration: 0.15
 --- !u!61 &3872588093282670983
 BoxCollider2D:
   m_ObjectHideFlags: 0

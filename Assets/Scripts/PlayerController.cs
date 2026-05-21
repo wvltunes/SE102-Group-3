@@ -1,59 +1,58 @@
 using UnityEngine;
-
+using DG.Tweening; 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float laneHeight = 2f; // Height between each lane
-    [SerializeField] private int maxLanes = 3; // Maximum number of lanes
+    [SerializeField] private float laneHeight = 2f;
+    [SerializeField] private int maxLanes = 3;
     [SerializeField] private int minLanes = 0;
-    
-    private Rigidbody2D rb; // Reference to the Rigidbody2D component
-    private Animator animator; // Reference to the Animator component
-    private int currentLane = 0; // Current lane index (0 = bottom lane)
-    private Vector3 startPosition; // Starting position of the player
+
+    [Header("DOTween Settings")]
+    [SerializeField] private float transitionDuration = 0.1f;
+    [SerializeField] private DG.Tweening.Ease laneChangeEase = DG.Tweening.Ease.OutQuad;
+
+    private Rigidbody2D rb;
+    private Animator animator;
+    private int currentLane = 0;
+    private Vector3 startPosition;
     private bool reversedGravity = false;
-    
+
     // Beat bypass: after jumping, skip 1 beat before falling
     private int beatsToSkip = 0;
-    
-    // Energy system
+
     private int currentEnergy = 0;
     private int maxEnergy = 4;
     private float energyRecoveryTimer = 0f;
-    private BpmSpawner bpmSpawner; // Reference to BPM spawner
-    private GroundDetector groundDetector; // Reference to GroundDetector component
+    private BpmSpawner bpmSpawner;
+    private GroundDetector groundDetector;
 
     void Start()
     {
         startPosition = transform.position;
         currentEnergy = maxEnergy;
     }
+
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component attached to the player
-        animator = GetComponent<Animator>(); // Get the Animator component attached to the player
-        rb.gravityScale = 0; // Disable gravity so player doesn't fall
-        bpmSpawner = FindObjectOfType<BpmSpawner>(); // Find BPM spawner in the scene
-        groundDetector = GetComponentInChildren<GroundDetector>(); // Get GroundDetector component
-        
-
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb.gravityScale = 0;
+        bpmSpawner = FindObjectOfType<BpmSpawner>();
+        groundDetector = GetComponentInChildren<GroundDetector>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        // Handle energy recovery based on BPM
         HandleEnergyRecovery();
-        
         HandleJump();
         UpdateAnimation();
     }
-    
+
     private void HandleEnergyRecovery()
     {
-        // Only recover energy when player is on ground or platform
         if (groundDetector != null && groundDetector.IsGrounded())
         {
             float secondsPerBeat = bpmSpawner != null ? (60.0f / bpmSpawner.bpm) : 0.5f;
-            
+
             energyRecoveryTimer += Time.deltaTime;
             if (energyRecoveryTimer >= secondsPerBeat)
             {
@@ -63,35 +62,25 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Reset timer when player is not grounded
             energyRecoveryTimer = 0f;
         }
     }
-    
+
 
     private void HandleJump(bool consumesEnergy = true)
     {
         if (Input.GetButtonDown("Jump"))
         {
-            // Check if has energy first
-            if (consumesEnergy)
-            {
-                if (currentEnergy <= 0)
-                {
-                    return; // No energy, can't jump
-                }
-            }
-            
-            // Move to the next lane (up)
+            if (consumesEnergy && currentEnergy <= 0) return;
+
             if (!reversedGravity)
             {
-                if (currentLane < maxLanes - 1)
+                if (currentLane < maxLanes)
                 {
                     currentLane++;
                     UpdateLanePosition();
                     beatsToSkip = 1; // Bypass the next beat after jumping
-                    if (consumesEnergy)
-                        ConsumeEnergy();
+                    if (consumesEnergy) ConsumeEnergy();
                 }
             }
             else
@@ -101,25 +90,15 @@ public class PlayerController : MonoBehaviour
                     currentLane--;
                     UpdateLanePosition();
                     beatsToSkip = 1; // Bypass the next beat after jumping
-                    if (consumesEnergy)
-                        ConsumeEnergy();
+                    if (consumesEnergy) ConsumeEnergy();
                 }
             }
-            
         }
 
-        // Check for lane switch input (optional: down arrow or S key to move down)
         if (Input.GetKeyDown(KeyCode.S))
         {
-            // Check if has energy first
-            if (consumesEnergy)
-            {
-                if (currentEnergy <= 0)
-                {
-                    return; // No energy, can't move down
-                }
-            }
-            
+            if (consumesEnergy && currentEnergy <= 0) return;
+
             if (!reversedGravity)
             {
                 if (currentLane > 0)
@@ -127,8 +106,7 @@ public class PlayerController : MonoBehaviour
                     currentLane--;
                     UpdateLanePosition();
                     beatsToSkip = 1; // Bypass the next beat after jumping down
-                    if (consumesEnergy)
-                        ConsumeEnergy();
+                    if (consumesEnergy) ConsumeEnergy();
                 }
             }
             else
@@ -138,20 +116,17 @@ public class PlayerController : MonoBehaviour
                     currentLane++;
                     UpdateLanePosition();
                     beatsToSkip = 1; // Bypass the next beat after jumping
-                    if (consumesEnergy)
-                        ConsumeEnergy();
+                    if (consumesEnergy) ConsumeEnergy();
                 }
             }
         }
-        
-        
     }
 
-    public void JumpPlayer(int  lane) //used by pads and orbs
-    {        
+    public void JumpPlayer(int lane)
+    {
         if (!reversedGravity)
-        { 
-            currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane; 
+        {
+            currentLane = (currentLane + lane) >= maxLanes ? maxLanes : currentLane + lane;
         }
         else
         {
@@ -161,20 +136,35 @@ public class PlayerController : MonoBehaviour
         beatsToSkip = 1; // Bypass the next beat after pad/orb jump
         ConsumeEnergy();
     }
-    
+
+    public void JumpPlayerToGround()
+    {
+        currentLane = !reversedGravity ? minLanes : maxLanes;
+        UpdateLanePosition();
+    }
+
     private void UpdateLanePosition()
     {
-        // Update player Y position based on current lane
-        Vector3 newPosition = transform.position;
-        newPosition.y = startPosition.y + (currentLane * laneHeight);
-        transform.position = newPosition;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Stop vertical movement
+        float targetY = startPosition.y + (currentLane * laneHeight);
+
+        transform.DOKill();
+
+        transform.DOMoveY(targetY, transitionDuration)
+                 .SetEase(laneChangeEase);
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+    }
+
+    
+    private void OnDestroy()
+    {
+        transform.DOKill();
     }
 
     private void UpdateAnimation()
     {
-        bool IsRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f; // Check if the player is running based on horizontal velocity
-        animator.SetBool("IsJumping", false); // Player is always grounded in lane system
+        bool IsRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+        animator.SetBool("IsJumping", false);
     }
 
     /// <summary>
@@ -196,56 +186,27 @@ public class PlayerController : MonoBehaviour
     
     public void ReduceLane()
     {
-        // Lower the player by one lane
         if (!reversedGravity)
         {
-            if (currentLane > 0)
-            {
-                currentLane--;
-            }
+            if (currentLane > 0) currentLane--;
         }
         else
         {
-            if (currentLane < maxLanes - 1)
-            {
-                currentLane++;
-            }
+            if (currentLane < maxLanes) currentLane++;
         }
         UpdateLanePosition();
     }
+
     public void ToggleReverseGravity()
     {
-        SpriteRenderer rb = GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>(); 
         this.reversedGravity = !this.reversedGravity;
-        rb.flipY = reversedGravity;
+        if (sr != null) sr.flipY = reversedGravity;
     }
-    
-    // Energy system methods
-    public void RecoverEnergy()
-    {
-        if (currentEnergy < maxEnergy)
-        {
-            currentEnergy++;
-        }
-    }
-    
-    public void ConsumeEnergy()
-    {
-        if (currentEnergy > 0)
-        {
-            currentEnergy--;
-        }
-    }
-    
-    public int GetCurrentEnergy()
-    {
-        return currentEnergy;
-    }
-    
-    public int GetMaxEnergy()
-    {
-        return maxEnergy;
-    }
-    
 
+    public void RecoverEnergy() { if (currentEnergy < maxEnergy) currentEnergy++; }
+    public void ConsumeEnergy() { if (currentEnergy > 0) currentEnergy--; }
+    public int GetCurrentEnergy() => currentEnergy;
+    public int GetMaxEnergy() => maxEnergy;
+    public bool isReversedGravity() => reversedGravity;
 }
