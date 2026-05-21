@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPosition; // Starting position of the player
     private bool reversedGravity = false;
     
+    // Beat bypass: after jumping, skip 1 beat before falling
+    private int beatsToSkip = 0;
+    
     // Energy system
     private int currentEnergy = 0;
     private int maxEnergy = 4;
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
+                    beatsToSkip = 1; // Bypass the next beat after jumping
                     if (consumesEnergy)
                         ConsumeEnergy();
                 }
@@ -96,6 +100,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
+                    beatsToSkip = 1; // Bypass the next beat after jumping
                     if (consumesEnergy)
                         ConsumeEnergy();
                 }
@@ -121,6 +126,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
+                    beatsToSkip = 1; // Bypass the next beat after jumping down
                     if (consumesEnergy)
                         ConsumeEnergy();
                 }
@@ -131,6 +137,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
+                    beatsToSkip = 1; // Bypass the next beat after jumping
                     if (consumesEnergy)
                         ConsumeEnergy();
                 }
@@ -151,6 +158,7 @@ public class PlayerController : MonoBehaviour
             currentLane = (currentLane - lane) <= minLanes ? minLanes : currentLane - lane;
         }
         UpdateLanePosition();
+        beatsToSkip = 1; // Bypass the next beat after pad/orb jump
         ConsumeEnergy();
     }
     
@@ -169,6 +177,23 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsJumping", false); // Player is always grounded in lane system
     }
 
+    /// <summary>
+    /// Called by LaneReducerTriggerMovement (beat lines).
+    /// After a jump, the first beat is bypassed so the player doesn't
+    /// fall immediately. The 2nd beat onward triggers normal falling.
+    /// </summary>
+    public bool TryReduceLane()
+    {
+        if (beatsToSkip > 0)
+        {
+            beatsToSkip--;
+            return false; // Beat bypassed, no lane reduction
+        }
+        
+        ReduceLane();
+        return true;
+    }
+    
     public void ReduceLane()
     {
         // Lower the player by one lane
