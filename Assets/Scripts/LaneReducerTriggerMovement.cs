@@ -26,7 +26,7 @@ public class LaneReducerTriggerMovement : MonoBehaviour
             
             if (distanceX < triggerRangeX && this.isEnabled)
             {
-                playerController.ReduceLane();
+                playerController.TryReduceLane();
                 hasTriggered = true;
             }
         }

@@ -4,9 +4,9 @@ public class JumpOrbVariables : MonoBehaviour
 {
     [SerializeField] private int laneMultiplier = 1;
     private SpriteRenderer spriteRenderer;
-    public Sprite SingleLanePadSprite;
-    public Sprite DoubleLanePadSprite;
-    public Sprite TripleLanePadSprite;
+    [SerializeField] private Sprite SingleLaneOrbSprite;
+    [SerializeField] private Sprite DoubleLaneOrbSprite;
+    [SerializeField] private Sprite TripleLaneOrbSprite;
 
     void Start()
     {
@@ -22,19 +22,19 @@ public class JumpOrbVariables : MonoBehaviour
             switch (laneMultiplier)
             {
                 case 1:
-                    spriteRenderer.sprite = SingleLanePadSprite;
+                    spriteRenderer.sprite = SingleLaneOrbSprite;
                     behaviour.setLaneToJump(1);
                     break;
                 case 2:
-                    spriteRenderer.sprite = DoubleLanePadSprite;
+                    spriteRenderer.sprite = DoubleLaneOrbSprite;
                     behaviour.setLaneToJump(2);
                     break;
                 case 3:
-                    spriteRenderer.sprite = TripleLanePadSprite;
+                    spriteRenderer.sprite = TripleLaneOrbSprite;
                     behaviour.setLaneToJump(3);
                     break;
                 default:
-                    spriteRenderer.sprite = SingleLanePadSprite;
+                    spriteRenderer.sprite = SingleLaneOrbSprite;
                     behaviour.setLaneToJump(1);
                     break;
             }

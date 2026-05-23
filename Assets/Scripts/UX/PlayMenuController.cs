@@ -29,6 +29,10 @@ public class PlayMenuController : MonoBehaviour
         if (isPlaying) return;
         StartCoroutine(HandleMenu());
     }
+    public void OnCharacterClick()
+    {
+        SceneManager.LoadScene("CharacterSelection");
+    }
 
     public void OnOptionsClick()
     {

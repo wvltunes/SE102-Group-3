@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpOrbBehaviour
   laneToJump: 1
+  inputBufferTime: 0.12
+  shrinkDuration: 0.15
 --- !u!114 &-1289034540929026979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,9 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpOrbVariables
   laneMultiplier: 1
-  SingleLanePadSprite: {fileID: 4894958912737950700, guid: 753cd2c2f1d435141b4aa4ffe52c990f, type: 3}
-  DoubleLanePadSprite: {fileID: 582412997527318975, guid: 774134113f948244f8ef23faaec9ebb5, type: 3}
-  TripleLanePadSprite: {fileID: -3874893322918122030, guid: 814ec20d1e1ceb14ba5115f02908b154, type: 3}
+  SingleLaneOrbSprite: {fileID: 4894958912737950700, guid: 753cd2c2f1d435141b4aa4ffe52c990f, type: 3}
+  DoubleLaneOrbSprite: {fileID: 582412997527318975, guid: 774134113f948244f8ef23faaec9ebb5, type: 3}
+  TripleLaneOrbSprite: {fileID: -3874893322918122030, guid: 814ec20d1e1ceb14ba5115f02908b154, type: 3}
+  JumpToGroundOrbSprite: {fileID: -2323475315545171561, guid: 69adddd95da6db9498294f83ce90f716, type: 3}
 --- !u!61 &3872588093282670983
 BoxCollider2D:
   m_ObjectHideFlags: 0

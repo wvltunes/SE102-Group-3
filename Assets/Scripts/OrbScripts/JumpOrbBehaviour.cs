@@ -3,7 +3,7 @@ using System.Collections;
 
 public class JumpOrbBehaviour : MonoBehaviour
 {
-    [SerializeField] private int laneToJump = 1;
+    [SerializeField] private int laneToJump = 1; //  1,2,3,4 for normal lanes jump
 
     private bool playerInside = false;
     private PlayerController player;
@@ -51,9 +51,9 @@ public class JumpOrbBehaviour : MonoBehaviour
         }
 
         // kích hoạt
-        if (playerInside && player != null && inputBufferCounter > 0)
+        if (playerInside && player != null && inputBufferCounter > 0 && laneToJump > 0)
         {
-            player.JumpPlayer(laneToJump);
+            player.JumpPlayer(laneToJump); 
             isTriggered = true;
 
             StartCoroutine(ShrinkAndDestroy());

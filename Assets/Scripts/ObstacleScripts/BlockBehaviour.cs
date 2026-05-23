@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Block object that acts as a solid obstacle.
@@ -11,7 +12,11 @@ public class BlockBehaviour : MonoBehaviour
     [Header("Ground Detection Settings")]
     [Tooltip("How far from the top/bottom edge of the block to consider as ground contact")]
     [SerializeField] private float groundContactThreshold = 0.3f;
-    
+
+    [Header("Death Settings")]
+    [Tooltip("Kill the player when they run head-on into a side (face) of the block")]
+    [SerializeField] private bool killOnSideCollision = true;
+
     [Header("Debug")]
     [SerializeField] private bool showDebugGizmos = true;
 
@@ -76,6 +81,14 @@ public class BlockBehaviour : MonoBehaviour
                 return;
             }
             // Horizontal contact (sides) => NOT ground, acts as wall
+        }
+
+        // No vertical contact was found above — every contact point is dominated
+        // by its horizontal normal, meaning the player ran head-on into a side
+        // face of the block instead of landing on top / under it. Trigger death.
+        if (killOnSideCollision)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
