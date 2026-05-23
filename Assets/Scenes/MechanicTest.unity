@@ -253,6 +253,8 @@ MonoBehaviour:
   laneHeight: 2
   maxLanes: 3
   minLanes: 0
+  transitionDuration: 0.1
+  laneChangeEase: 6
 --- !u!50 &1643091
 Rigidbody2D:
   serializedVersion: 5
@@ -1117,7 +1119,7 @@ GameObject:
   - component: {fileID: 674019285}
   m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1540,7 +1542,7 @@ GameObject:
   - component: {fileID: 870052262}
   m_Layer: 6
   m_Name: Square (5)
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1832,7 +1834,7 @@ GameObject:
   - component: {fileID: 1173358994}
   m_Layer: 6
   m_Name: Line
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2301,7 +2303,7 @@ GameObject:
   - component: {fileID: 1444931080}
   m_Layer: 6
   m_Name: Square (4)
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3233,7 +3235,7 @@ GameObject:
   - component: {fileID: 1834321773}
   m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3525,7 +3527,7 @@ GameObject:
   - component: {fileID: 2128984614}
   m_Layer: 6
   m_Name: Square (3)
-  m_TagString: Ground
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
