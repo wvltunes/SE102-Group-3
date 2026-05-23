@@ -31,6 +31,9 @@
 # Jetbrains Rider personal-layer settings
 *.DotSettings.user
 
+# NuGet plugins (MCP, dependencies)
+/[Aa]ssets/Plugins/NuGet/
+
 # Visual Studio cache directory
 .vs/
 

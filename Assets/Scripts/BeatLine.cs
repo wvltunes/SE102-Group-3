@@ -9,7 +9,12 @@ public class BeatLine : MonoBehaviour
             PlayerController playerController = collision.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.RecoverEnergy();
+                // Only recover energy if player is grounded (touching ground/platform/block)
+                GroundDetector groundDetector = collision.GetComponentInChildren<GroundDetector>();
+                if (groundDetector != null && groundDetector.IsGrounded())
+                {
+                    playerController.RecoverEnergy();
+                }
             }
         }
     }
@@ -21,7 +26,12 @@ public class BeatLine : MonoBehaviour
             PlayerController playerController = collision.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.RecoverEnergy();
+                // Only recover energy if player is grounded (touching ground/platform/block)
+                GroundDetector groundDetector = collision.GetComponentInChildren<GroundDetector>();
+                if (groundDetector != null && groundDetector.IsGrounded())
+                {
+                    playerController.RecoverEnergy();
+                }
             }
         }
     }
