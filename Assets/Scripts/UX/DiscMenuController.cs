@@ -139,4 +139,10 @@ public class DiscMenuController : MonoBehaviour
             yield return null;
         }
     }
+
+   public void LoadSelectedLevel()
+    {
+        string sceneName = "Level" + (currentIndex + 1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
 }

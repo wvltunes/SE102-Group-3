@@ -1326,7 +1326,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 736754233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 922449818}
+        m_TargetAssemblyTypeName: DiscMenuController, Assembly-CSharp
+        m_MethodName: LoadSelectedLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &736754233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,7 +3026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f6b7020ea492499e168453223dbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelItem
-  lockIcon: {fileID: 8450098927479995446, guid: 8c92963bf9285c249bbf2df0e1373c71, type: 3}
   isUnlocked: 0
 --- !u!225 &1754661037
 CanvasGroup:
@@ -3045,7 +3056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f6b7020ea492499e168453223dbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelItem
-  lockIcon: {fileID: 8450098927479995446, guid: 8c92963bf9285c249bbf2df0e1373c71, type: 3}
   isUnlocked: 0
 --- !u!225 &1828497217
 CanvasGroup:
@@ -3235,7 +3245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f6b7020ea492499e168453223dbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelItem
-  lockIcon: {fileID: 8450098927479995446, guid: 8c92963bf9285c249bbf2df0e1373c71, type: 3}
   isUnlocked: 0
 --- !u!225 &1977238641
 CanvasGroup:
@@ -3266,7 +3275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f6b7020ea492499e168453223dbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelItem
-  lockIcon: {fileID: 8450098927479995446, guid: 8c92963bf9285c249bbf2df0e1373c71, type: 3}
   isUnlocked: 0
 --- !u!225 &2079289893
 CanvasGroup:
@@ -3297,7 +3305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18f6b7020ea492499e168453223dbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelItem
-  lockIcon: {fileID: 8450098927479995446, guid: 8c92963bf9285c249bbf2df0e1373c71, type: 3}
   isUnlocked: 0
 --- !u!225 &2092373333
 CanvasGroup:
