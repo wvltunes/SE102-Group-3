@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (groundDetector != null && groundDetector.IsGrounded())
         {
-            float secondsPerBeat = bpmSpawner != null ? (60.0f / bpmSpawner.bpm) : 0.5f;
+            float secondsPerBeat = AudioManager.instance != null ? AudioManager.instance.GetSecondsPerBeat() : 0.5f;
 
             energyRecoveryTimer += Time.deltaTime;
             if (energyRecoveryTimer >= secondsPerBeat)

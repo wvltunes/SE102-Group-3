@@ -5,7 +5,6 @@ using UnityEngine;
 public class BpmSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
-    public float bpm = 120.0f;
 
     private Coroutine spawnCoroutine; // Reference to the running loop
 
@@ -28,9 +27,16 @@ public class BpmSpawner : MonoBehaviour
 
     IEnumerator SpawnRoutine()
     {
+        // Wait for AudioManager to be initialized
+        while (AudioManager.instance == null)
+        {
+            yield return null;
+        }
+
         while (true)
         {
-            float secondsPerBeat = 60.0f / bpm;
+            // Get BPM from AudioManager instead of hardcoding
+            float secondsPerBeat = AudioManager.instance.GetSecondsPerBeat();
             Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(secondsPerBeat);
         }
