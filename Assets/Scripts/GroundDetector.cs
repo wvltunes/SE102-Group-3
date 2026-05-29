@@ -27,18 +27,21 @@ public class GroundDetector : MonoBehaviour
     {
         // Cast raycast ignoring player's own colliders
         Vector3 rayStartPos;
+        Vector2 rayDirection;
         if (!playerController.isReversedGravity())
         {
             rayStartPos = transform.position - Vector3.up * 0.2f; // Start raycast from slightly below
+            rayDirection = Vector2.down;
         }
         else
         {
             rayStartPos = transform.position + Vector3.up * 0.2f; // Start raycast from slightly above
+            rayDirection = Vector2.up;
         }
-        RaycastHit2D[] hits = Physics2D.RaycastAll(rayStartPos, Vector2.down, raycastDistance);
-        
+        RaycastHit2D[] hits = Physics2D.RaycastAll(rayStartPos, rayDirection, raycastDistance);
+
         isGroundedLocally = false;
-        
+
         // Check all hits
         foreach (RaycastHit2D hit in hits)
         {
@@ -48,7 +51,7 @@ public class GroundDetector : MonoBehaviour
                 break;
             }
         }
-        
+
 
     }
     
