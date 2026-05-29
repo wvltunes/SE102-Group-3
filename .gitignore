@@ -23,6 +23,14 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
+# Audio files can get excessive in size
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+*.m4a
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
