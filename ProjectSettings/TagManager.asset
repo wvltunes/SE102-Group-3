@@ -12,6 +12,7 @@ TagManager:
   - MapObject
   - Block
   - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX

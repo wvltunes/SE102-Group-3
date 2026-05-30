@@ -15,7 +15,8 @@ public class ButtonJuice : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Update()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * speed);
+        // Use Time.unscaledDeltaTime so buttons animate smoothly even when Time.timeScale is 0 (paused).
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.unscaledDeltaTime * speed);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
