@@ -1,0 +1,1158 @@
+fileFormatVersion: 2
+guid: b265687d92cb3be41a3bafde21f6f04b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8159102898854799785
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_0
+  - first:
+      213: -3709986498706578503
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_1
+  - first:
+      213: 1987487285287583407
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_2
+  - first:
+      213: 2991427133010278605
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_3
+  - first:
+      213: -7580852412396561104
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_4
+  - first:
+      213: 4511246107737625902
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_5
+  - first:
+      213: 7752429314997869668
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_6
+  - first:
+      213: 7672773469494006558
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_7
+  - first:
+      213: -1951899452459743088
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_8
+  - first:
+      213: 8012358415906472142
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_9
+  - first:
+      213: 1396944812204172680
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_10
+  - first:
+      213: -2509463874263989331
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_11
+  - first:
+      213: 8293916618993080085
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_12
+  - first:
+      213: -7167863901812266935
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_13
+  - first:
+      213: -6214749057792951745
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_14
+  - first:
+      213: -6510009458017693753
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_15
+  - first:
+      213: 1509650507419040683
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_16
+  - first:
+      213: -3077779070055131528
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_17
+  - first:
+      213: -7116479181821069890
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_18
+  - first:
+      213: -4508887167827122241
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_19
+  - first:
+      213: 6859167939222665457
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_20
+  - first:
+      213: -5808530216697217524
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_21
+  - first:
+      213: 61697267174912144
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_22
+  - first:
+      213: 4318765820154889367
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_23
+  - first:
+      213: -7531284448484039027
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_24
+  - first:
+      213: 8113341645960473348
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_25
+  - first:
+      213: -7525503148570666493
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_26
+  - first:
+      213: -7208918263642265193
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_27
+  - first:
+      213: -2110148256608191094
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_28
+  - first:
+      213: 987557405344534312
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_29
+  - first:
+      213: 8690587496914477627
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_30
+  - first:
+      213: 4941693912786492610
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_31
+  - first:
+      213: -551219700565504924
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_32
+  - first:
+      213: -8492264456905635543
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_33
+  - first:
+      213: -737725064816069816
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_34
+  - first:
+      213: -7963146142692222364
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_35
+  - first:
+      213: -5618450013193251058
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_36
+  - first:
+      213: -3296679412987676974
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_37
+  - first:
+      213: -860965794008589012
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_38
+  - first:
+      213: -623613616853456378
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_39
+  - first:
+      213: 4098601587017198635
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_40
+  - first:
+      213: 7628453863258079256
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_41
+  - first:
+      213: -5022062021665678614
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_42
+  - first:
+      213: -7847458619668504830
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_43
+  - first:
+      213: -6629584854326643470
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_44
+  - first:
+      213: 4873802446777843197
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_45
+  - first:
+      213: -3619826685017942950
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_46
+  - first:
+      213: 7936159958850755913
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_47
+  - first:
+      213: -8335710353101498327
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_48
+  - first:
+      213: 1443543923596553746
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_49
+  - first:
+      213: 4819763028004588888
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_50
+  - first:
+      213: -8323843994041341992
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_51
+  - first:
+      213: -9174691174907985248
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_52
+  - first:
+      213: -6920601949168213926
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_53
+  - first:
+      213: 95323063394874474
+    second: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_54
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 145
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75656eb642b05ce80800000000000000
+      internalID: -8159102898854799785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_1
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3691f8fea738cc0800000000000000
+      internalID: -3709986498706578503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_2
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faefb23e729f49b10800000000000000
+      internalID: 1987487285287583407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_3
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8fa82d02fa38920800000000000000
+      internalID: 2991427133010278605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_4
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d907065e66bc690800000000000000
+      internalID: -7580852412396561104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_5
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 7716
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e259012fe6a2b9e30800000000000000
+      internalID: 4511246107737625902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46cd5ca4369269b60800000000000000
+      internalID: 7752429314997869668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_7
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e135b3381da2b7a60800000000000000
+      internalID: 7672773469494006558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_8
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0988bd22ac579e4e0800000000000000
+      internalID: -1951899452459743088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_9
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec08739278d913f60800000000000000
+      internalID: 8012358415906472142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_10
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8852146c7e1f26310800000000000000
+      internalID: 1396944812204172680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_11
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 6430
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3c1dde6e79c2dd0800000000000000
+      internalID: -2509463874263989331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5179acfc839e91370800000000000000
+      internalID: 8293916618993080085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_13
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948622e12c1a68c90800000000000000
+      internalID: -7167863901812266935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_14
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3abe0ab8a6c0c9a0800000000000000
+      internalID: -6214749057792951745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_15
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf0c62b3ecc7a5a0800000000000000
+      internalID: -6510009458017693753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_16
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab33b5532b53f410800000000000000
+      internalID: 1509650507419040683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_17
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 5144
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8765b381e388945d0800000000000000
+      internalID: -3077779070055131528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5b71c83ef2d3d90800000000000000
+      internalID: -7116479181821069890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_19
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7e85d82073d61c0800000000000000
+      internalID: -4508887167827122241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_20
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f87d1836e8a03f50800000000000000
+      internalID: 6859167939222665457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_21
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0eb3a6fa84f36fa0800000000000000
+      internalID: -5808530216697217524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_22
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090b29d66513bd000800000000000000
+      internalID: 61697267174912144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_23
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 3858
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7944e62b1a65feb30800000000000000
+      internalID: 4318765820154889367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d866fa152b08b7790800000000000000
+      internalID: -7531284448484039027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_25
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b6bdc9d31689070800000000000000
+      internalID: 8113341645960473348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_26
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a9c5912ca009790800000000000000
+      internalID: -7525503148570666493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_27
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799e6c0a807c4fb90800000000000000
+      internalID: -7208918263642265193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_28
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d7575375f37b2e0800000000000000
+      internalID: -2110148256608191094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_29
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 2572
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f0ed45a3284bd00800000000000000
+      internalID: 987557405344534312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32e903a84b2b9870800000000000000
+      internalID: 8690587496914477627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_31
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc59547e6c649440800000000000000
+      internalID: 4941693912786492610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_32
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c88925a9ca958f0800000000000000
+      internalID: -551219700565504924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_33
+      rect:
+        serializedVersion: 2
+        x: 3894
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 929c67b687a652a80800000000000000
+      internalID: -8492264456905635543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_34
+      rect:
+        serializedVersion: 2
+        x: 5192
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8437cb156f213c5f0800000000000000
+      internalID: -737725064816069816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_35
+      rect:
+        serializedVersion: 2
+        x: 6490
+        y: 1286
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ade4616c83d7190800000000000000
+      internalID: -7963146142692222364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07d3571b714702b0800000000000000
+      internalID: -5618450013193251058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_37
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 0
+        width: 1298
+        height: 1286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6b68a5a87df32d0800000000000000
+      internalID: -3296679412987676974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 045ba5c35edfb2b4eb09b40dde2bd6e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":7.0},"gridSpriteSize":{"x":1298.0,"y":1286.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_0: -8159102898854799785
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_1: -3709986498706578503
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_10: 1396944812204172680
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_11: -2509463874263989331
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_12: 8293916618993080085
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_13: -7167863901812266935
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_14: -6214749057792951745
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_15: -6510009458017693753
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_16: 1509650507419040683
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_17: -3077779070055131528
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_18: -7116479181821069890
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_19: -4508887167827122241
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_2: 1987487285287583407
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_20: 6859167939222665457
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_21: -5808530216697217524
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_22: 61697267174912144
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_23: 4318765820154889367
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_24: -7531284448484039027
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_25: 8113341645960473348
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_26: -7525503148570666493
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_27: -7208918263642265193
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_28: -2110148256608191094
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_29: 987557405344534312
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_3: 2991427133010278605
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_30: 8690587496914477627
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_31: 4941693912786492610
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_32: -551219700565504924
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_33: -8492264456905635543
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_34: -737725064816069816
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_35: -7963146142692222364
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_36: -5618450013193251058
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_37: -3296679412987676974
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_4: -7580852412396561104
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_5: 4511246107737625902
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_6: 7752429314997869668
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_7: 7672773469494006558
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_8: -1951899452459743088
+      Neko-GameStreamerWinning-ezgif.com-gif-to-sprite-converter_9: 8012358415906472142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

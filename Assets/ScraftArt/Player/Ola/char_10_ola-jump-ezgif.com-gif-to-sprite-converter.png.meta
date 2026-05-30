@@ -184,10 +184,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_0
       rect:
         serializedVersion: 2
-        x: 110
-        y: 7788
-        width: 1013
-        height: 923
+        x: 0
+        y: 7300
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_1
       rect:
         serializedVersion: 2
-        x: 1251
-        y: 7713
-        width: 1006
-        height: 1002
+        x: 1140
+        y: 7300
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_2
       rect:
         serializedVersion: 2
-        x: 2398
-        y: 7574
-        width: 984
-        height: 1151
+        x: 2280
+        y: 7300
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,10 +250,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_3
       rect:
         serializedVersion: 2
-        x: 3512
-        y: 7441
-        width: 991
-        height: 1295
+        x: 3420
+        y: 7300
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +272,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_4
       rect:
         serializedVersion: 2
-        x: 4628
-        y: 7361
-        width: 1001
-        height: 1387
+        x: 4560
+        y: 7300
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 5901
-        width: 1021
-        height: 1388
+        x: 0
+        y: 5840
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,10 +316,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_6
       rect:
         serializedVersion: 2
-        x: 1172
-        y: 5905
-        width: 1037
-        height: 1385
+        x: 1140
+        y: 5840
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,10 +338,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_7
       rect:
         serializedVersion: 2
-        x: 2300
-        y: 5906
-        width: 1050
-        height: 1385
+        x: 2280
+        y: 5840
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +360,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_8
       rect:
         serializedVersion: 2
-        x: 3434
-        y: 5909
-        width: 1057
-        height: 1383
+        x: 3420
+        y: 5840
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +382,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_9
       rect:
         serializedVersion: 2
-        x: 4574
-        y: 5913
-        width: 1057
-        height: 1380
+        x: 4560
+        y: 5840
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +404,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_10
       rect:
         serializedVersion: 2
-        x: 14
-        y: 4457
-        width: 1059
-        height: 1377
+        x: 0
+        y: 4380
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,10 +426,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_11
       rect:
         serializedVersion: 2
-        x: 1154
-        y: 4461
-        width: 1059
-        height: 1374
+        x: 1140
+        y: 4380
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -448,10 +448,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_12
       rect:
         serializedVersion: 2
-        x: 2294
-        y: 4462
-        width: 1060
-        height: 1374
+        x: 2280
+        y: 4380
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,10 +470,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_13
       rect:
         serializedVersion: 2
-        x: 3434
-        y: 4467
-        width: 1061
-        height: 1370
+        x: 3420
+        y: 4380
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -492,10 +492,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_14
       rect:
         serializedVersion: 2
-        x: 4574
-        y: 4470
-        width: 1062
-        height: 1367
+        x: 4560
+        y: 4380
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,10 +514,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_15
       rect:
         serializedVersion: 2
-        x: 15
-        y: 3015
-        width: 1062
-        height: 1363
+        x: 0
+        y: 2920
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,10 +536,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_16
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 3019
-        width: 1062
-        height: 1359
+        x: 1140
+        y: 2920
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -558,10 +558,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_17
       rect:
         serializedVersion: 2
-        x: 2292
-        y: 3022
-        width: 1067
-        height: 1357
+        x: 2280
+        y: 2920
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +580,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_18
       rect:
         serializedVersion: 2
-        x: 3428
-        y: 3025
-        width: 1071
-        height: 1354
+        x: 3420
+        y: 2920
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -602,10 +602,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_19
       rect:
         serializedVersion: 2
-        x: 4566
-        y: 3029
-        width: 1073
-        height: 1351
+        x: 4560
+        y: 2920
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_20
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1570
-        width: 1077
-        height: 1350
+        x: 0
+        y: 1460
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,10 +646,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_21
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 1594
-        width: 1082
-        height: 1323
+        x: 1140
+        y: 1460
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,10 +668,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_22
       rect:
         serializedVersion: 2
-        x: 2284
-        y: 1640
-        width: 1087
-        height: 1271
+        x: 2280
+        y: 1460
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,10 +690,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_23
       rect:
         serializedVersion: 2
-        x: 3424
-        y: 1694
-        width: 1095
-        height: 1209
+        x: 3420
+        y: 1460
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,10 +712,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_24
       rect:
         serializedVersion: 2
-        x: 4564
-        y: 1753
-        width: 1103
-        height: 1142
+        x: 4560
+        y: 1460
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -734,10 +734,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_25
       rect:
         serializedVersion: 2
-        x: 7
-        y: 353
-        width: 1106
-        height: 1074
+        x: 0
+        y: 0
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,10 +756,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_26
       rect:
         serializedVersion: 2
-        x: 1150
-        y: 406
-        width: 1108
-        height: 1014
+        x: 1140
+        y: 0
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -778,10 +778,10 @@ TextureImporter:
       name: char_10_ola-jump-ezgif.com-gif-to-sprite-converter_27
       rect:
         serializedVersion: 2
-        x: 2294
-        y: 448
-        width: 1107
-        height: 966
+        x: 2280
+        y: 0
+        width: 1140
+        height: 1460
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -810,7 +810,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1140.0,"y":1462.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":6.0},"gridSpriteSize":{"x":1140.0,"y":1460.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
       - key: SpriteEditor.SliceOnImport
         value: False
     nameFileIdTable:

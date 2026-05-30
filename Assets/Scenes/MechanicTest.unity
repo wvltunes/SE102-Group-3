@@ -151,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 1643086}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 59490d5166ee7b54186bc550a038b6b8, type: 2}
+  m_Controller: {fileID: 22100000, guid: 9832066e4d0126141b3f2630c511ffba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1512121792642468911, guid: a830a21e713a4b54c83843500e468161, type: 3}
+  m_Sprite: {fileID: 8606606284660913939, guid: aca26f9ca50fc444d8362d458970f904, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -340,7 +340,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.819336, y: 2.1904762}
+    oldSize: {x: 3.42, y: 2.58}
     newSize: {x: 1.3515605, y: 1.8485714}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
