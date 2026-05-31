@@ -13,7 +13,6 @@ public class SpikeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Movement is temporary, might need fundamental changes to move the camera instead of the map
-        transform.position += Vector3.left * gameSpeed * Time.deltaTime;
+        // Horizontal movement removed - obstacles now move with camera
     }
 }

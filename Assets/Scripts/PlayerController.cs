@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float transitionDuration = 0.1f;
     [SerializeField] private DG.Tweening.Ease laneChangeEase = DG.Tweening.Ease.OutQuad;
 
+    [Header("Movement Settings")]
+    [SerializeField] private float runSpeed = 6f;
+    private bool isRunning = true;
+
     private Rigidbody2D rb;
     private Animator animator;
     private int currentLane = 0;
@@ -57,6 +61,12 @@ public class PlayerController : MonoBehaviour
     {
         // A dead player no longer reacts to input or recovers energy.
         if (isDead) return;
+
+        // Constant forward movement
+        if (isRunning)
+        {
+            rb.linearVelocity = new Vector2(runSpeed, rb.linearVelocity.y);
+        }
 
         HandleEnergyRecovery();
         HandleJump();
@@ -218,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        bool IsRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+        animator.SetBool("IsRunning", isRunning);
         animator.SetBool("IsJumping", false);
     }
 
@@ -264,4 +274,9 @@ public class PlayerController : MonoBehaviour
     public int GetCurrentEnergy() => currentEnergy;
     public int GetMaxEnergy() => maxEnergy;
     public bool isReversedGravity() => reversedGravity;
+
+    public void SetRunning(bool running)
+    {
+        isRunning = running;
+    }
 }

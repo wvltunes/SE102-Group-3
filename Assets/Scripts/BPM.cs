@@ -6,10 +6,25 @@ public class BpmSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
 
+    [Header("Look-Ahead Settings")]
+    [SerializeField] private float lookAheadOffset = 5f;
+
+    private Transform playerTransform;
     private Coroutine spawnCoroutine; // Reference to the running loop
 
     void Start()
     {
+        // Auto-find Player
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        if (playerController != null)
+        {
+            playerTransform = playerController.transform;
+        }
+        else
+        {
+            Debug.LogError("[BpmSpawner] Player not found in scene!");
+        }
+
         RestartSpawner();
     }
 
@@ -37,7 +52,23 @@ public class BpmSpawner : MonoBehaviour
         {
             // Get BPM from AudioManager instead of hardcoding
             float secondsPerBeat = AudioManager.instance.GetSecondsPerBeat();
-            Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            
+            // Spawn beat line at player.x + lookAheadOffset
+            if (playerTransform != null)
+            {
+                Vector3 spawnPosition = new Vector3(
+                    playerTransform.position.x + lookAheadOffset,
+                    prefabToSpawn.transform.position.y,
+                    0
+                );
+                Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+            }
+            else
+            {
+                // Fallback to original behavior if player not found
+                Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            }
+
             yield return new WaitForSeconds(secondsPerBeat);
         }
     }

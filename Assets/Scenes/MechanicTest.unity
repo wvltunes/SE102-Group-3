@@ -255,6 +255,7 @@ MonoBehaviour:
   minLanes: 0
   transitionDuration: 0.1
   laneChangeEase: 6
+  runSpeed: 6
 --- !u!50 &1643091
 Rigidbody2D:
   serializedVersion: 5
@@ -898,7 +899,7 @@ MonoBehaviour:
   spikeToSpawnPrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
   blockToSpawnPrefab: {fileID: 5560530659682682780, guid: ec6d0a5e1ebc4e54488b18eff741626f, type: 3}
   enemyToSpawnPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
-  randomSpawn: 1
+  randomSpawn: 0
   bpm: 120
   spawnPoint: {x: 0, y: 0}
   padLaneMultiplierToSpawn: 0
@@ -989,6 +990,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1114,6 +1116,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923c68b57d4eaa4f804796f43f7585a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  followSpeed: 5
+  offset: {x: 5, y: 0, z: -10}
+  minY: 0
+  maxY: 6
 --- !u!1 &529341921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mat: {fileID: 2100000, guid: 5742a109f1b037c4ca97f3c0072b33ba, type: 2}
   speed: 0.03
 --- !u!23 &529341924
 MeshRenderer:
@@ -1266,7 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mat: {fileID: 2100000, guid: b7bfb2e26681c8f42a1ff927ed47bb83, type: 2}
   speed: 0.08
 --- !u!23 &550855845
 MeshRenderer:
@@ -2516,7 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TestOrbSpawner
   jumpOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
   gravityOrbToSpawnPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
-  randomSpawn: 1
+  randomSpawn: 0
   bpm: 120
   spawnPoint: {x: 0, y: 0}
   orbLaneMultiplierToSpawn: 0
@@ -2566,7 +2582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mat: {fileID: 2100000, guid: 365b527c079a7c24abd06fb1f88c70a4, type: 2}
   speed: 0.05
 --- !u!23 &1320248257
 MeshRenderer:
@@ -2672,7 +2687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mat: {fileID: 2100000, guid: 78fdac5df74f68c478ebedec15750b6a, type: 2}
   speed: 0.01
 --- !u!23 &1348388106
 MeshRenderer:
@@ -4014,6 +4028,61 @@ Transform:
   - {fileID: 2045781670}
   m_Father: {fileID: 1508611369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1738552749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1738552751}
+  - component: {fileID: 1738552750}
+  m_Layer: 0
+  m_Name: LevelSequencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1738552750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738552749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8313bf44cafd3b4db184afbdb81a170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
+  levelData: {fileID: 11400000, guid: 9a84752a2a111fa4991a32744bc8f461, type: 2}
+  spawnOffsetX: 16
+  blockPrefab: {fileID: 5560530659682682780, guid: ec6d0a5e1ebc4e54488b18eff741626f, type: 3}
+  enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
+  spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
+  jumpOrbPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
+  gravityOrbPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
+  jumpPadPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+  gravityPadPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
+  laneHeight: 2
+  laneBaseY: 0
+--- !u!4 &1738552751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738552749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.348, y: -1.69143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1786382064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mat: {fileID: 2100000, guid: 6c7e449d9f6ae0c43811093379e3d064, type: 2}
   speed: 0.1
 --- !u!23 &2045781672
 MeshRenderer:
@@ -4782,6 +4850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   prefabToSpawn: {fileID: 851272084}
+  lookAheadOffset: 10
 --- !u!114 &2136597421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4794,7 +4863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048540c283501404692f02b49e1ec0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  mat: {fileID: 0}
   speed: 0.1
 --- !u!212 &2136597422
 SpriteRenderer:
@@ -4875,3 +4943,4 @@ SceneRoots:
   - {fileID: 1047904821}
   - {fileID: 323541145}
   - {fileID: 386931202}
+  - {fileID: 1738552751}
