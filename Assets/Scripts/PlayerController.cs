@@ -191,6 +191,14 @@ public class PlayerController : MonoBehaviour
         // Freeze the player in place by cancelling any in-progress lane tween.
         transform.DOKill();
 
+        // Kill any momentum so a fatal hit (e.g. running into a block face) can never
+        // keep shoving the body around in the frame before time is frozen.
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+
         if (OnPlayerDeath != null)
         {
             // A GameManager (or other system) is listening - let it drive the
