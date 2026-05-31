@@ -9,7 +9,6 @@ public class BlockMovement : MonoBehaviour
 
     void Update()
     {
-        // Move block from right to left, same pattern as other obstacles
-        transform.position += Vector3.left * gameSpeed * Time.deltaTime;
+        // Horizontal movement removed - obstacles now move with camera
     }
 }
