@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Block object that acts as a solid obstacle.
@@ -88,7 +87,13 @@ public class BlockBehaviour : MonoBehaviour
         // face of the block instead of landing on top / under it. Trigger death.
         if (killOnSideCollision)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // Route the kill through the player so the GameManager handles the
+            // game-over flow centrally instead of reloading the scene here.
+            PlayerController player = collision.gameObject.GetComponentInParent<PlayerController>();
+            if (player != null)
+            {
+                player.Die();
+            }
         }
     }
 

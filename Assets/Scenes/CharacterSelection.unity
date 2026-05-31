@@ -214,6 +214,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 72149458}
   - {fileID: 1286045759}
   - {fileID: 1736775786}
   m_Father: {fileID: 588499472}
@@ -223,6 +224,104 @@ RectTransform:
   m_AnchoredPosition: {x: -4.9095, y: -395.76}
   m_SizeDelta: {x: 854.2412, y: 288.48}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &72149457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72149458}
+  - component: {fileID: 72149460}
+  - component: {fileID: 72149459}
+  - component: {fileID: 72149461}
+  m_Layer: 5
+  m_Name: Char
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &72149458
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72149457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 61771668}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.0998, y: 410}
+  m_SizeDelta: {x: 842.39087, y: 1006.4706}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &72149459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72149457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 3989097702769314940, guid: b111348983b44d84f930d2ff8f416189, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &72149460
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72149457}
+  m_CullTransparentMesh: 1
+--- !u!95 &72149461
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72149457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62fa61183eaca6446ad4cf49dde2c161, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &128680839
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 649223268058989734, guid: 9f2ec7822ddaee941bae9257f7384964, type: 3}
+  m_Sprite: {fileID: 2008001677417192386, guid: 63e0bd705aae58b4f95ea5022affdfc7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -597,9 +696,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572bef43a10ccc34fa43c03461da6cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  characterAnimator: {fileID: 72149461}
+  characterImage: {fileID: 72149459}
   champions:
   - characterName: PULSE RUNNER
     traits: THE CORE BEAT
+    characterAnimator: {fileID: 9100000, guid: 0c638cee8a0ebbc428e0b59f2092e0c0, type: 2}
     nameColor: {r: 0.9490197, g: 0.8588236, b: 0.48235297, a: 1}
     titleColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     traitsColor: {r: 0.5764706, g: 0.83137256, b: 1, a: 1}
@@ -642,6 +744,7 @@ MonoBehaviour:
       noteColor: {r: 1, g: 0.9215687, b: 0.015686275, a: 1}
   - characterName: RIFF
     traits: INTENSE RHYHM
+    characterAnimator: {fileID: 9100000, guid: 2f930b09ab552264e8e4187a8dfb4a8e, type: 2}
     nameColor: {r: 0.99215686, g: 1, b: 0.78039217, a: 0}
     titleColor: {r: 0.99215686, g: 1, b: 0.78039217, a: 1}
     traitsColor: {r: 1, g: 0.6666667, b: 0.33333334, a: 1}
@@ -680,6 +783,7 @@ MonoBehaviour:
       noteColor: {r: 1, g: 0.6666667, b: 0.33333334, a: 1}
   - characterName: ARIA
     traits: FLOWING MELODY
+    characterAnimator: {fileID: 9100000, guid: 669b1c122eb87544ca93332b1b594546, type: 2}
     nameColor: {r: 0.99215686, g: 0.9019608, b: 0.22745098, a: 0}
     titleColor: {r: 0.99215686, g: 0.9019608, b: 0.22745098, a: 1}
     traitsColor: {r: 1, g: 1, b: 1, a: 1}
@@ -719,6 +823,7 @@ MonoBehaviour:
       noteColor: {r: 0.9921569, g: 0.90196085, b: 0.227451, a: 1}
   - characterName: BAZE
     traits: DEEP BASS
+    characterAnimator: {fileID: 9100000, guid: d134e13a83c311f4a92baf45a81a6015, type: 2}
     nameColor: {r: 0.49019608, g: 1, b: 1, a: 0}
     titleColor: {r: 0.49019608, g: 1, b: 1, a: 1}
     traitsColor: {r: 0.49803922, g: 1, b: 0.4, a: 1}
@@ -757,6 +862,7 @@ MonoBehaviour:
       noteColor: {r: 0.4901961, g: 1, b: 1, a: 1}
   - characterName: CLEF
     traits: REBELLIOUS STYLE
+    characterAnimator: {fileID: 9100000, guid: 62fa61183eaca6446ad4cf49dde2c161, type: 2}
     nameColor: {r: 0.4745098, g: 0.92156863, b: 0.4627451, a: 0}
     titleColor: {r: 0.4745098, g: 0.92156863, b: 0.4627451, a: 1}
     traitsColor: {r: 0.8666667, g: 0.6, b: 1, a: 1}
@@ -813,39 +919,39 @@ MonoBehaviour:
   charButtonImages:
   - image: {fileID: 158259386}
     spritesPerSelection:
-    - {fileID: 649223268058989734, guid: 9f2ec7822ddaee941bae9257f7384964, type: 3}
-    - {fileID: -3246563186061863986, guid: a4afc857d74af0e40be2fcebe6f032a3, type: 3}
-    - {fileID: -5786171806343803191, guid: 705b485035b44dd49a646a9793ec3be6, type: 3}
+    - {fileID: 2008001677417192386, guid: 63e0bd705aae58b4f95ea5022affdfc7, type: 3}
+    - {fileID: 1945269359277807493, guid: 4b069fb353d78bc4cb974f423ff5df6a, type: 3}
+    - {fileID: 1945269359277807493, guid: a241be51b5e09fd4e9b712764c8ae4c5, type: 3}
     - {fileID: 1945269359277807493, guid: 9b01cf42b89097e43b4ae909e324b449, type: 3}
-    - {fileID: -5786171806343803191, guid: d8373adfcca69244b86578a22f32c4b4, type: 3}
+    - {fileID: 1945269359277807493, guid: 4a9b815bf1ca35649a052412a94a0f95, type: 3}
   - image: {fileID: 1722707970}
     spritesPerSelection:
-    - {fileID: -5485327256500454033, guid: 933b79a9695ac5541befc871b8b07dcc, type: 3}
-    - {fileID: -5786171806343803191, guid: f0a2a700ed3c0bb40a9a216d246aab96, type: 3}
-    - {fileID: 6044900561747845676, guid: adcf67e64cb003d4eaf80e1930a8ef0b, type: 3}
+    - {fileID: -5735555053582993575, guid: 38f6a2dbdd291da4faf0c8a8f25c5522, type: 3}
+    - {fileID: -3246563186061863986, guid: a4afc857d74af0e40be2fcebe6f032a3, type: 3}
+    - {fileID: -5786171806343803191, guid: 705b485035b44dd49a646a9793ec3be6, type: 3}
     - {fileID: -5786171806343803191, guid: 4b80116c5d0de574aadb4460acb9ca18, type: 3}
-    - {fileID: 6044900561747845676, guid: 8ac8609dfaa21b64abfe5e23f0bda5e0, type: 3}
+    - {fileID: -5786171806343803191, guid: d8373adfcca69244b86578a22f32c4b4, type: 3}
   - image: {fileID: 294365261}
     spritesPerSelection:
-    - {fileID: -6929585902386205631, guid: 9d1c84f066b3eb04ca401ee8b3f1691c, type: 3}
-    - {fileID: 6044900561747845676, guid: d9c29cba92a3f624e8ffa87c25eeb687, type: 3}
-    - {fileID: -1810986743989078012, guid: 9573d118d161e6d47b971d286f366037, type: 3}
+    - {fileID: -5123399184254694185, guid: 72c453aa38bd63c42b5c4d2f5cdadfa5, type: 3}
+    - {fileID: -5786171806343803191, guid: f0a2a700ed3c0bb40a9a216d246aab96, type: 3}
+    - {fileID: 6044900561747845676, guid: adcf67e64cb003d4eaf80e1930a8ef0b, type: 3}
     - {fileID: 6044900561747845676, guid: ce732eda04508a7419f017af180044d8, type: 3}
-    - {fileID: -1810986743989078012, guid: ee7a339b8c37ce24699aa6db6fd1d206, type: 3}
+    - {fileID: 6044900561747845676, guid: 8ac8609dfaa21b64abfe5e23f0bda5e0, type: 3}
   - image: {fileID: 1641898562}
     spritesPerSelection:
-    - {fileID: -3246563186061863986, guid: c96a6586946a2044fbc9661d027056bc, type: 3}
-    - {fileID: -1810986743989078012, guid: 0c1f5bc32a293ca4384e51e8aea2e321, type: 3}
-    - {fileID: -3374114407827880018, guid: a47196f84d97af04a8708343f96e12f9, type: 3}
+    - {fileID: 8812693751421421481, guid: a9a29a6c2708dd349a8a806682bec94b, type: 3}
+    - {fileID: 6044900561747845676, guid: d9c29cba92a3f624e8ffa87c25eeb687, type: 3}
+    - {fileID: -1810986743989078012, guid: 9573d118d161e6d47b971d286f366037, type: 3}
     - {fileID: -1810986743989078012, guid: 2dbcd9730eebc664a90d051c7a986d18, type: 3}
-    - {fileID: -3374114407827880018, guid: fd95e9baac610b84fa14fd9c508332ec, type: 3}
+    - {fileID: -1810986743989078012, guid: ee7a339b8c37ce24699aa6db6fd1d206, type: 3}
   - image: {fileID: 831243419}
     spritesPerSelection:
-    - {fileID: -5786171806343803191, guid: 415fecd97ec27aa4aab26b301d76fe06, type: 3}
-    - {fileID: -3374114407827880018, guid: 160353d55f5dd1f45ae2ef1174073f81, type: 3}
-    - {fileID: -488870583233422417, guid: fc529aacb7c9f9c49b346dedcaa5e039, type: 3}
+    - {fileID: -4978955759659777537, guid: 5c5d2fcb40400d141b5d58fcb8f93f7e, type: 3}
+    - {fileID: -1810986743989078012, guid: 0c1f5bc32a293ca4384e51e8aea2e321, type: 3}
+    - {fileID: -3374114407827880018, guid: a47196f84d97af04a8708343f96e12f9, type: 3}
     - {fileID: -3374114407827880018, guid: 4a45987d6b7e8ff44a0253b91bc6a1a5, type: 3}
-    - {fileID: -488870583233422417, guid: 474181028cdbd6c44b775abffdb8fd62, type: 3}
+    - {fileID: -3374114407827880018, guid: fd95e9baac610b84fa14fd9c508332ec, type: 3}
   imgBackground: {fileID: 1436850406}
   imgRotatingCircle: {fileID: 1087611853}
   textCharacterName: {fileID: 1303619250}
@@ -1203,7 +1309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6929585902386205631, guid: 9d1c84f066b3eb04ca401ee8b3f1691c, type: 3}
+  m_Sprite: {fileID: -5123399184254694185, guid: 72c453aa38bd63c42b5c4d2f5cdadfa5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2532,7 +2638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5786171806343803191, guid: 415fecd97ec27aa4aab26b301d76fe06, type: 3}
+  m_Sprite: {fileID: -4978955759659777537, guid: 5c5d2fcb40400d141b5d58fcb8f93f7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4174,7 +4280,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'PICK YOUR
 
-    CHAMPION !'
+    BIAS !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4458,7 +4564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3246563186061863986, guid: c96a6586946a2044fbc9661d027056bc, type: 3}
+  m_Sprite: {fileID: 8812693751421421481, guid: a9a29a6c2708dd349a8a806682bec94b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4799,7 +4905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5485327256500454033, guid: 933b79a9695ac5541befc871b8b07dcc, type: 3}
+  m_Sprite: {fileID: -5735555053582993575, guid: 38f6a2dbdd291da4faf0c8a8f25c5522, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

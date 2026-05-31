@@ -220,12 +220,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1723
-        width: 192
-        height: 204
+        x: 0
+        y: 1722
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,12 +242,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_1
       rect:
         serializedVersion: 2
-        x: 215
-        y: 1723
-        width: 193
-        height: 203
+        x: 213
+        y: 1722
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -264,12 +264,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_2
       rect:
         serializedVersion: 2
-        x: 428
-        y: 1723
-        width: 194
-        height: 202
+        x: 426
+        y: 1722
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_3
       rect:
         serializedVersion: 2
-        x: 642
-        y: 1723
-        width: 194
-        height: 201
+        x: 639
+        y: 1722
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -308,12 +308,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_4
       rect:
         serializedVersion: 2
-        x: 855
-        y: 1724
-        width: 195
-        height: 200
+        x: 852
+        y: 1722
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -330,12 +330,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_5
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1482
-        width: 194
-        height: 199
+        x: 0
+        y: 1476
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -352,12 +352,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_6
       rect:
         serializedVersion: 2
-        x: 218
-        y: 1487
-        width: 192
-        height: 198
+        x: 213
+        y: 1476
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -374,12 +374,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_7
       rect:
         serializedVersion: 2
-        x: 433
-        y: 1492
-        width: 190
-        height: 197
+        x: 426
+        y: 1476
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -396,12 +396,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_8
       rect:
         serializedVersion: 2
-        x: 646
-        y: 1497
-        width: 190
-        height: 195
+        x: 639
+        y: 1476
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -418,12 +418,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_9
       rect:
         serializedVersion: 2
-        x: 859
-        y: 1499
-        width: 191
-        height: 194
+        x: 852
+        y: 1476
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -440,12 +440,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_10
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1255
-        width: 193
-        height: 193
+        x: 0
+        y: 1230
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -462,12 +462,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_11
       rect:
         serializedVersion: 2
-        x: 218
-        y: 1256
-        width: 196
-        height: 193
+        x: 213
+        y: 1230
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -484,12 +484,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_12
       rect:
         serializedVersion: 2
-        x: 431
-        y: 1259
-        width: 196
-        height: 192
+        x: 426
+        y: 1230
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -506,12 +506,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_13
       rect:
         serializedVersion: 2
-        x: 644
-        y: 1263
-        width: 196
-        height: 192
+        x: 639
+        y: 1230
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -528,12 +528,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_14
       rect:
         serializedVersion: 2
-        x: 857
-        y: 1269
-        width: 196
-        height: 191
+        x: 852
+        y: 1230
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -550,12 +550,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_15
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1027
-        width: 195
-        height: 192
+        x: 0
+        y: 984
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -572,12 +572,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_16
       rect:
         serializedVersion: 2
-        x: 219
-        y: 1032
-        width: 195
-        height: 191
+        x: 213
+        y: 984
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -594,12 +594,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_17
       rect:
         serializedVersion: 2
-        x: 432
-        y: 1033
-        width: 196
-        height: 191
+        x: 426
+        y: 984
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -616,12 +616,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_18
       rect:
         serializedVersion: 2
-        x: 646
-        y: 1033
-        width: 195
-        height: 191
+        x: 639
+        y: 984
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -638,12 +638,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_19
       rect:
         serializedVersion: 2
-        x: 858
-        y: 1033
-        width: 197
-        height: 191
+        x: 852
+        y: 984
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -660,12 +660,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_20
       rect:
         serializedVersion: 2
-        x: 7
-        y: 786
-        width: 196
-        height: 192
+        x: 0
+        y: 738
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -682,12 +682,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_21
       rect:
         serializedVersion: 2
-        x: 220
-        y: 787
-        width: 196
-        height: 192
+        x: 213
+        y: 738
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -704,12 +704,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_22
       rect:
         serializedVersion: 2
-        x: 433
-        y: 787
-        width: 195
-        height: 193
+        x: 426
+        y: 738
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -726,12 +726,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_23
       rect:
         serializedVersion: 2
-        x: 647
-        y: 787
-        width: 194
-        height: 194
+        x: 639
+        y: 738
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -748,12 +748,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_24
       rect:
         serializedVersion: 2
-        x: 860
-        y: 786
-        width: 193
-        height: 195
+        x: 852
+        y: 738
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -770,12 +770,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_25
       rect:
         serializedVersion: 2
-        x: 7
-        y: 535
-        width: 194
-        height: 197
+        x: 0
+        y: 492
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -792,12 +792,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_26
       rect:
         serializedVersion: 2
-        x: 220
-        y: 531
-        width: 194
-        height: 198
+        x: 213
+        y: 492
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -814,12 +814,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_27
       rect:
         serializedVersion: 2
-        x: 432
-        y: 525
-        width: 195
-        height: 200
+        x: 426
+        y: 492
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -836,12 +836,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_28
       rect:
         serializedVersion: 2
-        x: 644
-        y: 521
-        width: 196
-        height: 200
+        x: 639
+        y: 492
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -858,12 +858,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_29
       rect:
         serializedVersion: 2
-        x: 856
-        y: 518
-        width: 197
-        height: 201
+        x: 852
+        y: 492
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -880,12 +880,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_30
       rect:
         serializedVersion: 2
-        x: 4
-        y: 271
-        width: 195
-        height: 200
+        x: 0
+        y: 246
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -902,12 +902,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_31
       rect:
         serializedVersion: 2
-        x: 217
-        y: 269
-        width: 194
-        height: 200
+        x: 213
+        y: 246
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -924,12 +924,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_32
       rect:
         serializedVersion: 2
-        x: 430
-        y: 267
-        width: 193
-        height: 200
+        x: 426
+        y: 246
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -946,12 +946,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_33
       rect:
         serializedVersion: 2
-        x: 641
-        y: 262
-        width: 195
-        height: 201
+        x: 639
+        y: 246
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -968,12 +968,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_34
       rect:
         serializedVersion: 2
-        x: 854
-        y: 257
-        width: 195
-        height: 201
+        x: 852
+        y: 246
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -990,12 +990,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_35
       rect:
         serializedVersion: 2
-        x: 1
-        y: 6
-        width: 197
-        height: 202
+        x: 0
+        y: 0
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1013,11 +1013,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 213
-        y: 2
-        width: 198
-        height: 203
+        y: 0
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1034,12 +1034,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_37
       rect:
         serializedVersion: 2
-        x: 427
-        y: 1
-        width: 196
-        height: 203
+        x: 426
+        y: 0
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1056,12 +1056,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_38
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1
-        width: 195
-        height: 203
+        x: 639
+        y: 0
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1078,12 +1078,12 @@ TextureImporter:
       name: Yumepressing-ezgif.com-gif-to-sprite-converter_39
       rect:
         serializedVersion: 2
-        x: 854
-        y: 1
-        width: 193
-        height: 204
+        x: 852
+        y: 0
+        width: 213
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1100,7 +1100,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e3844e1d37c7c6e4887604d90b45d03a
     internalID: 0
     vertices: []
     indices: 
@@ -1108,7 +1108,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":8.0},"gridSpriteSize":{"x":213.0,"y":246.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Yumepressing-ezgif.com-gif-to-sprite-converter_0: -951939324265319185
       Yumepressing-ezgif.com-gif-to-sprite-converter_1: -1043400007945923919

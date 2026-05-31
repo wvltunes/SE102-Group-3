@@ -96,6 +96,9 @@ public class UIManager : MonoBehaviour
         public string characterName;
         public string traits;
 
+        [Header("CHARACTER ANIMATION")]
+        public RuntimeAnimatorController characterAnimator;
+
         [Header("COLORS")]
         public Color nameColor = Color.white;
         public Color titleColor = Color.white;
@@ -109,11 +112,15 @@ public class UIManager : MonoBehaviour
         public ProfilePanelData profile;
         public StoryPanelData story;
         public SkillPanelData skill;
+
     }
 
     // ═══════════════════════════════════════════════
     // INSPECTOR
     // ═══════════════════════════════════════════════
+    [Header("── CHARACTER ─────────────────────────────")]
+    public Animator characterAnimator;
+    public Image characterImage;
 
     [Header("── CHAMPIONS ──────────────────────────")]
     public ChampionData[] champions;
@@ -279,7 +286,14 @@ public class UIManager : MonoBehaviour
 
         int prev = currentChampion;
         currentChampion = index;
+        if (characterAnimator != null)
+        {
+            characterAnimator.runtimeAnimatorController =
+                champions[index].characterAnimator;
 
+            characterAnimator.Rebind();
+            characterAnimator.Update(0f);
+        }
         SwapAllImages(index);
         AnimateButtonScale(prev, false);
         AnimateButtonScale(index, true);
@@ -296,6 +310,8 @@ public class UIManager : MonoBehaviour
         if (bgLayerA != null && d.backgroundSprite != null) bgLayerA.sprite = d.backgroundSprite;
         if (circleLayerA != null && d.rotatingCircleSprite != null) circleLayerA.sprite = d.rotatingCircleSprite;
 
+        if (characterAnimator != null)
+            characterAnimator.runtimeAnimatorController = d.characterAnimator;
         ApplyTexts(d);
         ApplyPanelData(d);
         SwapAllImages(index);

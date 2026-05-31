@@ -1,0 +1,1199 @@
+fileFormatVersion: 2
+guid: e7bc234df5af18a4e91a2a5058b38558
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -115852603629757390
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_0
+  - first:
+      213: -9130740155849097806
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_1
+  - first:
+      213: 5440634453342778042
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_2
+  - first:
+      213: -8775218525872142644
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_3
+  - first:
+      213: 4963131365227459226
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_4
+  - first:
+      213: -5291626277567096866
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_5
+  - first:
+      213: 6818144451232242032
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_6
+  - first:
+      213: -4917311845356274791
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_7
+  - first:
+      213: 9051547861331193730
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_8
+  - first:
+      213: -1977123257476580051
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_9
+  - first:
+      213: 158537619619795371
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_10
+  - first:
+      213: -1824310659567964318
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_11
+  - first:
+      213: 4487090893737155694
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_12
+  - first:
+      213: 7834819964870715360
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_13
+  - first:
+      213: -4972508604995154376
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_14
+  - first:
+      213: -6050937670792361259
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_15
+  - first:
+      213: -7640040438892588822
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_16
+  - first:
+      213: -1552701144343170238
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_17
+  - first:
+      213: 6724493949144639428
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_18
+  - first:
+      213: 1818350313170427366
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_19
+  - first:
+      213: -8451661430783503179
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_20
+  - first:
+      213: 388549731112660582
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_21
+  - first:
+      213: -8696827590870946171
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_22
+  - first:
+      213: -8008866300609962393
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_23
+  - first:
+      213: -7703989478752352933
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_24
+  - first:
+      213: -6734247621539382817
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_25
+  - first:
+      213: 5366938948333253045
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_26
+  - first:
+      213: 4525356803029299040
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_27
+  - first:
+      213: -206485971090753320
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_28
+  - first:
+      213: -6958023575597768570
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_29
+  - first:
+      213: 4660205730785252738
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_30
+  - first:
+      213: -2779441422933967927
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_31
+  - first:
+      213: -4666482259169682080
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_32
+  - first:
+      213: -5707961797374029219
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_33
+  - first:
+      213: -2336571873419111535
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_34
+  - first:
+      213: -1438710144994744486
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_35
+  - first:
+      213: -1319256005142614279
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_36
+  - first:
+      213: 997447292093672857
+    second: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c185abba8646ef0800000000000000
+      internalID: -115852603629757390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_1
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd383a7438194180800000000000000
+      internalID: -9130740155849097806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_2
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab27f38a534018b40800000000000000
+      internalID: 5440634453342778042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_3
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc6c6fa6e39283680800000000000000
+      internalID: -8775218525872142644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_4
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a927bfd4ea590e440800000000000000
+      internalID: 4963131365227459226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_5
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 6240
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed79d71dfed5096b0800000000000000
+      internalID: -5291626277567096866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0799ffa114aee9e50800000000000000
+      internalID: 6818144451232242032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bf7bffde232cbb0800000000000000
+      internalID: -4917311845356274791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_8
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fa71e92de8d9d70800000000000000
+      internalID: 9051547861331193730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_9
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2df1f06fd8df84e0800000000000000
+      internalID: -1977123257476580051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_10
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba159f4002d333200800000000000000
+      internalID: 158537619619795371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_11
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 5200
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f2e78ee1fbea6e0800000000000000
+      internalID: -1824310659567964318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6cd71ce469554e30800000000000000
+      internalID: 4487090893737155694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_13
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7e1455f3fdabc60800000000000000
+      internalID: 7834819964870715360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_14
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ec0bce4c91efab0800000000000000
+      internalID: -4972508604995154376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_15
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da44666f30c60ca0800000000000000
+      internalID: -6050937670792361259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_16
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0103213bf19f590800000000000000
+      internalID: -7640040438892588822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_17
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 4160
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24335192982b37ae0800000000000000
+      internalID: -1552701144343170238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7a70d6e93325d50800000000000000
+      internalID: 6724493949144639428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_19
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed5ebdc9f31c3910800000000000000
+      internalID: 1818350313170427366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_20
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4974025baa5ba80800000000000000
+      internalID: -8451661430783503179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_21
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e2b8cfbe7646500800000000000000
+      internalID: 388549731112660582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_22
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e22554269ae4780800000000000000
+      internalID: -8696827590870946171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_23
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 3120
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76edb8a488acad090800000000000000
+      internalID: -8008866300609962393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b558e95f26ee51590800000000000000
+      internalID: -7703989478752352933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_25
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd930a0c7752b82a0800000000000000
+      internalID: -6734247621539382817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_26
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1bc9ac9823b7a40800000000000000
+      internalID: 5366938948333253045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_27
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f6576390c4dce30800000000000000
+      internalID: 4525356803029299040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_28
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8b8027a1a622df0800000000000000
+      internalID: -206485971090753320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_29
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 2080
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680a3b55c62207f90800000000000000
+      internalID: -6958023575597768570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285d1bbdb606ca040800000000000000
+      internalID: 4660205730785252738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_31
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cbb30080c07d69d0800000000000000
+      internalID: -2779441422933967927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_32
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d578ffb135d3fb0800000000000000
+      internalID: -4666482259169682080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_33
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d525504ccfe39c0b0800000000000000
+      internalID: -5707961797374029219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_34
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1935fa4c244d29fd0800000000000000
+      internalID: -2336571873419111535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_35
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 1040
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5766d8eebca80ce0800000000000000
+      internalID: -1438710144994744486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe6cad27af01bde0800000000000000
+      internalID: -1319256005142614279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_37
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d2b670705a7dd00800000000000000
+      internalID: 997447292093672857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_38
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7d18eca7556eb4ab5b5eb035ac2e55
+      internalID: -544906367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_39
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14b5c7e324666e4e9c3c4960c481099
+      internalID: 1841314105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_40
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60af0451243eab34ab77c4ceef54d6ae
+      internalID: 1603851792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_41
+      rect:
+        serializedVersion: 2
+        x: 5040
+        y: 0
+        width: 1008
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67dfb56ec9602f44a357e05cf2bfe8e
+      internalID: 628412809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a9fd8b0482e9fee4285847f16c5a8964
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":7.0},"gridSpriteSize":{"x":1008.0,"y":1040.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_0: -115852603629757390
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_1: -9130740155849097806
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_10: 158537619619795371
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_11: -1824310659567964318
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_12: 4487090893737155694
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_13: 7834819964870715360
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_14: -4972508604995154376
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_15: -6050937670792361259
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_16: -7640040438892588822
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_17: -1552701144343170238
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_18: 6724493949144639428
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_19: 1818350313170427366
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_2: 5440634453342778042
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_20: -8451661430783503179
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_21: 388549731112660582
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_22: -8696827590870946171
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_23: -8008866300609962393
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_24: -7703989478752352933
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_25: -6734247621539382817
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_26: 5366938948333253045
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_27: 4525356803029299040
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_28: -206485971090753320
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_29: -6958023575597768570
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_3: -8775218525872142644
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_30: 4660205730785252738
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_31: -2779441422933967927
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_32: -4666482259169682080
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_33: -5707961797374029219
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_34: -2336571873419111535
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_35: -1438710144994744486
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_36: -1319256005142614279
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_37: 997447292093672857
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_38: -544906367
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_39: 1841314105
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_4: 4963131365227459226
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_40: 1603851792
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_41: 628412809
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_5: -5291626277567096866
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_6: 6818144451232242032
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_7: -4917311845356274791
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_8: 9051547861331193730
+      Rin-BassistUnusedanimation-ezgif.com-gif-to-sprite-converter_9: -1977123257476580051
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

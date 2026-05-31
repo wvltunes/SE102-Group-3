@@ -196,12 +196,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 4535
-        width: 473
-        height: 647
+        x: 0
+        y: 4536
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_1
       rect:
         serializedVersion: 2
-        x: 588
-        y: 4557
-        width: 473
-        height: 661
+        x: 540
+        y: 4536
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,12 +240,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_2
       rect:
         serializedVersion: 2
-        x: 1129
-        y: 4581
-        width: 472
-        height: 655
+        x: 1080
+        y: 4536
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_3
       rect:
         serializedVersion: 2
-        x: 1648
-        y: 4579
-        width: 492
-        height: 669
+        x: 1620
+        y: 4536
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,12 +284,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_4
       rect:
         serializedVersion: 2
-        x: 2178
-        y: 4597
-        width: 501
-        height: 661
+        x: 2160
+        y: 4536
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,12 +306,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_5
       rect:
         serializedVersion: 2
-        x: 7
-        y: 3849
-        width: 514
-        height: 661
+        x: 0
+        y: 3780
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_6
       rect:
         serializedVersion: 2
-        x: 559
-        y: 3859
-        width: 502
-        height: 657
+        x: 540
+        y: 3780
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_7
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 3867
-        width: 493
-        height: 654
+        x: 1080
+        y: 3780
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,12 +372,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_8
       rect:
         serializedVersion: 2
-        x: 1666
-        y: 3873
-        width: 478
-        height: 651
+        x: 1620
+        y: 3780
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,12 +394,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_9
       rect:
         serializedVersion: 2
-        x: 2208
-        y: 3870
-        width: 476
-        height: 653
+        x: 2160
+        y: 3780
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -416,12 +416,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_10
       rect:
         serializedVersion: 2
-        x: 50
-        y: 3109
-        width: 473
-        height: 654
+        x: 0
+        y: 3024
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,12 +438,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_11
       rect:
         serializedVersion: 2
-        x: 590
-        y: 3101
-        width: 473
-        height: 657
+        x: 540
+        y: 3024
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -460,12 +460,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_12
       rect:
         serializedVersion: 2
-        x: 1130
-        y: 3093
-        width: 474
-        height: 656
+        x: 1080
+        y: 3024
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -482,12 +482,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_13
       rect:
         serializedVersion: 2
-        x: 1670
-        y: 3082
-        width: 473
-        height: 656
+        x: 1620
+        y: 3024
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_14
       rect:
         serializedVersion: 2
-        x: 2210
-        y: 3069
-        width: 473
-        height: 655
+        x: 2160
+        y: 3024
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -526,12 +526,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_15
       rect:
         serializedVersion: 2
-        x: 49
-        y: 2299
-        width: 475
-        height: 650
+        x: 0
+        y: 2268
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -548,12 +548,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_16
       rect:
         serializedVersion: 2
-        x: 589
-        y: 2274
-        width: 474
-        height: 638
+        x: 540
+        y: 2268
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -570,12 +570,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_17
       rect:
         serializedVersion: 2
-        x: 1130
-        y: 2304
-        width: 476
-        height: 647
+        x: 1080
+        y: 2268
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -592,12 +592,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_18
       rect:
         serializedVersion: 2
-        x: 1670
-        y: 2327
-        width: 477
-        height: 643
+        x: 1620
+        y: 2268
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -614,12 +614,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_19
       rect:
         serializedVersion: 2
-        x: 2177
-        y: 2330
-        width: 513
-        height: 654
+        x: 2160
+        y: 2268
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -636,12 +636,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_20
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1579
-        width: 513
-        height: 659
+        x: 0
+        y: 1512
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -658,12 +658,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_21
       rect:
         serializedVersion: 2
-        x: 565
-        y: 1593
-        width: 508
-        height: 655
+        x: 540
+        y: 1512
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -680,12 +680,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_22
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 1589
-        width: 505
-        height: 667
+        x: 1080
+        y: 1512
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -702,12 +702,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_23
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 1596
-        width: 503
-        height: 665
+        x: 1620
+        y: 1512
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -724,12 +724,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_24
       rect:
         serializedVersion: 2
-        x: 2197
-        y: 1608
-        width: 501
-        height: 656
+        x: 2160
+        y: 1512
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -746,12 +746,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_25
       rect:
         serializedVersion: 2
-        x: 37
-        y: 848
-        width: 502
-        height: 660
+        x: 0
+        y: 756
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -768,12 +768,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_26
       rect:
         serializedVersion: 2
-        x: 578
-        y: 842
-        width: 501
-        height: 662
+        x: 540
+        y: 756
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -790,12 +790,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_27
       rect:
         serializedVersion: 2
-        x: 1118
-        y: 835
-        width: 500
-        height: 663
+        x: 1080
+        y: 756
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -812,12 +812,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_28
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 826
-        width: 496
-        height: 664
+        x: 1620
+        y: 756
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -834,12 +834,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_29
       rect:
         serializedVersion: 2
-        x: 2204
-        y: 816
-        width: 489
-        height: 662
+        x: 2160
+        y: 756
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -856,12 +856,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_30
       rect:
         serializedVersion: 2
-        x: 52
-        y: 45
-        width: 477
-        height: 661
+        x: 0
+        y: 0
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -878,12 +878,12 @@ TextureImporter:
       name: char_13_len-run-ezgif.com-gif-to-sprite-converter_31
       rect:
         serializedVersion: 2
-        x: 590
-        y: 30
-        width: 476
-        height: 656
+        x: 540
+        y: 0
+        width: 540
+        height: 756
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -900,7 +900,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b8085becd974524bb2af82b9c7db8c7
     internalID: 0
     vertices: []
     indices: 
@@ -908,7 +908,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":7.0},"gridSpriteSize":{"x":540.0,"y":756.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       char_13_len-run-ezgif.com-gif-to-sprite-converter_0: -7373869047156049246
       char_13_len-run-ezgif.com-gif-to-sprite-converter_1: 8809388583496780947

@@ -1,7 +1,20 @@
 using UnityEngine;
-using DG.Tweening; 
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 public class PlayerController : MonoBehaviour
 {
+    /// <summary>
+    /// Raised once, the moment the player dies. The GameManager (and any other
+    /// interested systems) subscribe to this so the PlayerController never needs
+    /// to know who reacts to a death. Static so listeners can subscribe without
+    /// holding a reference to the (per-scene) player instance.
+    /// </summary>
+    public static event System.Action OnPlayerDeath;
+
+    // Guards against the death event being raised more than once
+    // (e.g. overlapping hazards in the same frame).
+    private bool isDead = false;
+
     [SerializeField] private float laneHeight = 2f;
     [SerializeField] private int maxLanes = 3;
     [SerializeField] private int minLanes = 0;
@@ -42,6 +55,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // A dead player no longer reacts to input or recovers energy.
+        if (isDead) return;
+
         HandleEnergyRecovery();
         HandleJump();
         UpdateAnimation();
@@ -159,6 +175,37 @@ public class PlayerController : MonoBehaviour
     private void OnDestroy()
     {
         transform.DOKill();
+    }
+
+    /// <summary>
+    /// Kills the player and raises <see cref="OnPlayerDeath"/>.
+    /// Safe to call multiple times - the event is only raised once.
+    /// Hazards (spikes, enemies, blocks, ...) call this on contact instead of
+    /// reloading the scene themselves, so the GameManager owns the game-over flow.
+    /// </summary>
+    public void Die()
+    {
+        if (isDead) return; // Already dead - ignore any further hits.
+        isDead = true;
+
+        // Freeze the player in place by cancelling any in-progress lane tween.
+        transform.DOKill();
+
+        if (OnPlayerDeath != null)
+        {
+            // A GameManager (or other system) is listening - let it drive the
+            // game-over state, pausing, UI and scene reload.
+            OnPlayerDeath.Invoke();
+        }
+        else
+        {
+            // Fallback for scenes that don't yet have a GameManager: reload the
+            // current scene so death still behaves like before this system existed.
+            Debug.LogWarning(
+                "[PlayerController] Player died but no OnPlayerDeath listener was found. " +
+                "Reloading the current scene as a fallback. Add a GameManager to handle this properly.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void UpdateAnimation()

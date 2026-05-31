@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Enemy object that kills the player on hitbox contact.
@@ -38,12 +37,14 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player") && killsPlayer)
         {
-            if (killsPlayer)
+            // Let the player raise its death event so the GameManager owns the
+            // game-over flow (same kill, handled centrally instead of here).
+            PlayerController player = other.GetComponentInParent<PlayerController>();
+            if (player != null)
             {
-                // Reload the scene (same as spike behaviour)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                player.Die();
             }
         }
     }
