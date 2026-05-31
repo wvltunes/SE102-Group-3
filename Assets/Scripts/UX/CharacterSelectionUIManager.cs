@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
+
     // ═══════════════════════════════════════════════
     // STRUCTS
     // ═══════════════════════════════════════════════
@@ -121,6 +124,8 @@ public class UIManager : MonoBehaviour
     [Header("── CHARACTER ─────────────────────────────")]
     public Animator characterAnimator;
     public Image characterImage;
+    [Header("── BACK BUTTON ──────────────────────────")]
+    public SwappableImage backButton;
 
     [Header("── CHAMPIONS ──────────────────────────")]
     public ChampionData[] champions;
@@ -598,7 +603,10 @@ public class UIManager : MonoBehaviour
     {
         SwapSingle(belowTitle, idx);
         SwapGroup(charButtonImages, idx);
+
         SwapSingle(deathEffectButton, idx);
+        SwapSingle(backButton, idx);
+
         RefreshToggleSprite();
         RefreshTabSprites();
         RefreshActivePanelSprite();
@@ -629,6 +637,13 @@ public class UIManager : MonoBehaviour
     }
 
     Color ForceAlpha(Color c) { c.a = 1f; return c; }
+
+    public void OnBackButtonClicked()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
 
     // ═══════════════════════════════════════════════
     // EDITOR TEST
