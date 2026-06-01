@@ -6,8 +6,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Vector3 offset = new Vector3(5f, 0, -10f);
     
     [Header("Camera Bounds")]
-    [SerializeField] private float minY = -2f;
-    [SerializeField] private float maxY = 6f;
+    [SerializeField] private float minY = 0f;
+    [SerializeField] private float maxY = 0f;
     
     private Transform player;
 

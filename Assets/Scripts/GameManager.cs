@@ -150,33 +150,31 @@ public class GameManager : MonoBehaviour
     // --- Public scene helpers ----------------------------------------------
 
     /// <summary>
-    /// Reloads the current scene from the start. Restores normal time first so
-    /// the freshly loaded scene is not stuck paused.
+    /// Reloads the current scene from the start with fade transition.
+    /// Uses SceneTransitionManager to handle the fade effect.
     /// </summary>
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneTransitionManager.ReloadCurrentLevel();
     }
 
     /// <summary>
-    /// Loads the next scene in the Build Settings order. If the current scene is
-    /// the last one, it reloads the current scene instead and logs a warning.
+    /// Loads the next scene in the Build Settings order with fade transition.
+    /// If the current scene is the last one, it reloads the current scene instead
+    /// and logs a warning. Uses SceneTransitionManager to handle the fade effect.
     /// </summary>
     public void LoadNextLevel()
     {
-        Time.timeScale = 1f;
-
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextIndex < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(nextIndex);
+            SceneTransitionManager.LoadLevel(nextIndex);
         }
         else
         {
             Debug.LogWarning(
                 "[GameManager] No next level found in Build Settings. Reloading the current scene.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneTransitionManager.ReloadCurrentLevel();
         }
     }
 }

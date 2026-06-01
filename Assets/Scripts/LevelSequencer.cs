@@ -3,14 +3,15 @@ using UnityEngine;
 /// <summary>
 /// Spawns obstacles based on LevelData and audio timing.
 /// Converts beat timestamps into world positions relative to player.
+/// Automatically extends the map/background and places LevelCompleteZone at level end.
 /// </summary>
 public class LevelSequencer : MonoBehaviour
 {
     [SerializeField] private LevelData levelData;
-    
+
     [Header("Spawn Offset (relative to player)")]
     [SerializeField] private float spawnOffsetX = 8f;
-    
+
     [Header("Obstacle Prefabs")]
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private GameObject enemyPrefab;
@@ -20,14 +21,26 @@ public class LevelSequencer : MonoBehaviour
     [SerializeField] private GameObject jumpPadPrefab;
     [SerializeField] private GameObject gravityPadPrefab;
 
+    [Header("Level Completion")]
+    [SerializeField] private GameObject levelCompleteZonePrefab;
+    [Tooltip("Time in seconds after the last beat event to place the completion zone")]
+    [SerializeField] private float completionZoneDelay = 1f;
+
     [Header("Lane Settings")]
     [SerializeField] private float laneHeight = 2f;
     [SerializeField] private float laneBaseY = 0f;
+
+    [Header("Map Extension")]
+    [SerializeField] private GameObject backgroundObject;
+    [Tooltip("Scale to extend background in X direction")]
+    [SerializeField] private float backgroundExtensionScale = 2f;
 
     private int eventIndex = 0;
     private PlayerController playerController;
     private float levelStartTime;
     private bool levelStarted = false;
+    private bool completionZonePlaced = false;
+    private float levelEndTime = 0f;
 
     void Start()
     {
@@ -50,26 +63,52 @@ public class LevelSequencer : MonoBehaviour
         }
 
         Debug.Log($"[LevelSequencer] Level started with {levelData.GetEventCount()} beat events");
+
+        // Calculate level end time (last event + completion delay)
+        if (levelData.GetEventCount() > 0)
+        {
+            BeatEvent lastEvent = levelData.GetEventAt(levelData.GetEventCount() - 1);
+            if (lastEvent != null)
+            {
+                levelEndTime = lastEvent.timestamp + completionZoneDelay;
+                Debug.Log($"[LevelSequencer] Level end time set to: {levelEndTime}s (last event at {lastEvent.timestamp}s + {completionZoneDelay}s delay)");
+            }
+        }
+
+        // Extend background/map if reference is provided
+        if (backgroundObject != null)
+        {
+            ExtendBackground();
+        }
     }
 
     void Update()
     {
-        if (!levelStarted || levelData == null || eventIndex >= levelData.GetEventCount())
+        if (!levelStarted || levelData == null)
             return;
 
         // Get elapsed time since level start
         float elapsedTime = Time.time - levelStartTime;
 
-        // Get next beat event
-        BeatEvent nextEvent = levelData.GetEventAt(eventIndex);
-        if (nextEvent == null)
-            return;
-
-        // Check if it's time to spawn
-        if (elapsedTime >= nextEvent.timestamp)
+        // Spawn obstacles while there are events remaining
+        if (eventIndex < levelData.GetEventCount())
         {
-            SpawnObstacle(nextEvent);
-            eventIndex++;
+            BeatEvent nextEvent = levelData.GetEventAt(eventIndex);
+            if (nextEvent == null)
+                return;
+
+            // Check if it's time to spawn
+            if (elapsedTime >= nextEvent.timestamp)
+            {
+                SpawnObstacle(nextEvent);
+                eventIndex++;
+            }
+        }
+
+        // Place completion zone when level end time is reached
+        if (!completionZonePlaced && levelEndTime > 0f && elapsedTime >= levelEndTime)
+        {
+            PlaceLevelCompleteZone();
         }
     }
 
@@ -129,5 +168,96 @@ public class LevelSequencer : MonoBehaviour
         if (levelData == null)
             return 0f;
         return (float)eventIndex / levelData.GetEventCount();
+    }
+
+    /// <summary>
+    /// Extends the background object to cover the full level length
+    /// </summary>
+    private void ExtendBackground()
+    {
+        if (backgroundObject == null)
+            return;
+
+        RectTransform rectTransform = backgroundObject.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            // Scale background horizontally
+            Vector3 newScale = rectTransform.localScale;
+            newScale.x *= backgroundExtensionScale;
+            rectTransform.localScale = newScale;
+            Debug.Log($"[LevelSequencer] Extended background X scale by {backgroundExtensionScale}x");
+        }
+        else
+        {
+            // Try SpriteRenderer scale instead
+            SpriteRenderer spriteRenderer = backgroundObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                Vector3 newScale = backgroundObject.transform.localScale;
+                newScale.x *= backgroundExtensionScale;
+                backgroundObject.transform.localScale = newScale;
+                Debug.Log($"[LevelSequencer] Extended background sprite X scale by {backgroundExtensionScale}x");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Places the LevelCompleteZone at the end of the level
+    /// </summary>
+    private void PlaceLevelCompleteZone()
+    {
+        if (completionZonePlaced)
+            return;
+
+        completionZonePlaced = true;
+
+        // Calculate position based on level end time
+        float worldX = playerController.transform.position.x + spawnOffsetX;
+        float worldY = laneBaseY; // Place at base lane
+        Vector3 spawnPosition = new Vector3(worldX, worldY, 0);
+
+        // Instantiate completion zone prefab
+        if (levelCompleteZonePrefab != null)
+        {
+            GameObject completionZone = Instantiate(levelCompleteZonePrefab, spawnPosition, Quaternion.identity);
+
+            // Get LevelCompleteZone component and set position
+            LevelCompleteZone zoneScript = completionZone.GetComponent<LevelCompleteZone>();
+            if (zoneScript != null)
+            {
+                zoneScript.SetZonePosition(spawnPosition);
+                zoneScript.SetColliderSize(2f, 8f);
+            }
+
+            Debug.Log($"[LevelSequencer] Placed LevelCompleteZone at position ({worldX}, {worldY}, 0) at time {levelEndTime}s");
+        }
+        else
+        {
+            // Fallback: create completion zone from scratch if no prefab is assigned
+            CreateLevelCompleteZone(spawnPosition);
+        }
+    }
+
+    /// <summary>
+    /// Creates a LevelCompleteZone from scratch if no prefab is provided
+    /// </summary>
+    private void CreateLevelCompleteZone(Vector3 position)
+    {
+        GameObject completionZone = new GameObject("LevelCompleteZone");
+        completionZone.transform.position = position;
+
+        // Add BoxCollider2D as trigger
+        BoxCollider2D collider = completionZone.AddComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+        collider.size = new Vector2(2f, 8f); // Wide vertical trigger to catch player
+
+        // Add LevelCompleteZone script
+        LevelCompleteZone completeScript = completionZone.AddComponent<LevelCompleteZone>();
+
+        // Set position and collider via script methods
+        completeScript.SetZonePosition(position);
+        completeScript.SetColliderSize(2f, 8f);
+
+        Debug.Log($"[LevelSequencer] Created LevelCompleteZone at {position}");
     }
 }

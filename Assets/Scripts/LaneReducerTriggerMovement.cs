@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LaneReducerTriggerMovement : MonoBehaviour
 {
-    [SerializeField] private float gameSpeed = 5f; 
     [SerializeField] private float triggerRangeX = 1f;
     [SerializeField] private bool isEnabled = true;
     
@@ -16,9 +15,6 @@ public class LaneReducerTriggerMovement : MonoBehaviour
 
     void Update()
     {
-        // Move trigger from right to left
-        transform.position += Vector3.left * gameSpeed * Time.deltaTime;
-
         // Trigger logic
         if (playerController != null && !hasTriggered)
         {

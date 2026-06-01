@@ -36,6 +36,9 @@ public class UniversalKillZone : MonoBehaviour
             case "MapObject":
                 Destroy(other.gameObject); 
                 break;
+            default:
+                // Do Nothing for untagged or other tags
+                break;
         }
     }
 }
