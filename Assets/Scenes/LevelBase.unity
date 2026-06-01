@@ -2123,6 +2123,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &662583435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8678732934581698009, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+  m_PrefabInstance: {fileID: 1156654896}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6159e8b2d6a324ea70cc14f571dd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &662606216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,8 +2412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01251cf13bf5d5842a85cbe4a3c75273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundDetector
-  raycastDistance: 1
-  showDebugRay: 1
 --- !u!1 &711584345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,8 +2593,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.52992654, y: -0.9307034}
-      - {x: -0.22180915, y: -0.9209915}
+    - - {x: 0.50626516, y: -1.0332372}
+      - {x: -0.21392179, y: -1.0629609}
       - {x: -0.43969947, y: 0.8454526}
       - {x: 0.5644171, y: 0.89610165}
       - {x: 1.0094185, y: 0.42493892}
@@ -2656,6 +2665,8 @@ MonoBehaviour:
   minLanes: 0
   transitionDuration: 0.1
   laneChangeEase: 6
+  fallDuration: 0.02
+  fallEase: 5
   runSpeed: 6
 --- !u!95 &733421847
 Animator:
@@ -2747,7 +2758,7 @@ Transform:
   m_GameObject: {fileID: 733421842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.07, y: -2.7, z: 0}
+  m_LocalPosition: {x: -4.07, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3755,6 +3766,63 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1001 &907317156
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_Name
+      value: JumpPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7730951
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128773154267970341, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
 --- !u!1 &931125067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4291,8 @@ MonoBehaviour:
   offset: {x: 5, y: 0, z: -10}
   minY: 0
   maxY: 0
+  shakeDuration: 0.3
+  shakeMagnitude: 0.15
 --- !u!114 &1076763820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6625,7 +6695,7 @@ Transform:
   m_GameObject: {fileID: 1515337534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.61, y: -1.8299999, z: 0}
+  m_LocalPosition: {x: -21.66, y: -1.8299999, z: 0}
   m_LocalScale: {x: 19.135809, y: 2.11969, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7352,7 +7422,7 @@ Transform:
   m_GameObject: {fileID: 1658420004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.61, y: -1.8299999, z: 0}
+  m_LocalPosition: {x: 15.97, y: -1.8299999, z: 0}
   m_LocalScale: {x: 19.135809, y: 2.11969, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8141,9 +8211,9 @@ MonoBehaviour:
   gravityPadPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
   levelCompleteZonePrefab: {fileID: 5453482316125499217, guid: 07d4adb0b393d664491d466e71267f78, type: 3}
   completionZoneDelay: 1
-  laneHeight: 2
+  laneHeight: 1.8
   laneBaseY: 0
-  backgroundObject: {fileID: 0}
+  backgroundObject: {fileID: 720329433}
   backgroundExtensionScale: 2
 --- !u!4 &1838451734
 Transform:
@@ -8214,7 +8284,6 @@ MonoBehaviour:
   image: {fileID: 1866232742}
   normalSprite: {fileID: -7462460272061149094, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
   hoverSprite: {fileID: 7052865562323203559, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
-  clickedSprite: {fileID: -1447448183596630268, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
 --- !u!114 &1866232741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8258,7 +8327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1866232742}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 662583435}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1866232742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9271,3 +9352,4 @@ SceneRoots:
   - {fileID: 208396883}
   - {fileID: 1156654896}
   - {fileID: 1170478460}
+  - {fileID: 907317156}

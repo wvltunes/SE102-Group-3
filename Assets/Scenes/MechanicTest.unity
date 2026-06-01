@@ -2242,7 +2242,7 @@ MonoBehaviour:
   randomSpawn: 0
   bpm: 120
   spawnPoint: {x: 0, y: 0}
-  padLaneMultiplierToSpawn: 0
+  padLaneMultiplierToSpawn: 4
 --- !u!1 &499910571
 GameObject:
   m_ObjectHideFlags: 0
