@@ -4756,6 +4756,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1729216346143378913, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729216346143378913, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729216346143378913, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.57745
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729216346143378913, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -364.88394
+      objectReference: {fileID: 0}
     - target: {fileID: 1840075318677143523, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4839,6 +4855,58 @@ PrefabInstance:
     - target: {fileID: 2494629195493984941, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
       propertyPath: m_Name
       value: Game_Pause_Menu_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863958728138237302, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863958728138237302, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863958728138237302, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.57745
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863958728138237302, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -257.77426
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692220896428524991, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507515022485449755, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507515022485449755, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507515022485449755, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.57745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507515022485449755, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150.66455
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560591289465386922, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560591289465386922, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560591289465386922, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 112.57745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560591289465386922, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.55485
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8146,6 +8214,7 @@ MonoBehaviour:
   image: {fileID: 1866232742}
   normalSprite: {fileID: -7462460272061149094, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
   hoverSprite: {fileID: 7052865562323203559, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
+  clickedSprite: {fileID: -1447448183596630268, guid: 39dfc1f536cb0754b9b3dfd41d9fba3b, type: 3}
 --- !u!114 &1866232741
 MonoBehaviour:
   m_ObjectHideFlags: 0
