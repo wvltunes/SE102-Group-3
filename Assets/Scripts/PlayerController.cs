@@ -165,8 +165,18 @@ public class PlayerController : MonoBehaviour
         UpdateLanePosition();
         beatsToSkip = 1; // Bypass the next beat after pad/orb jump
         ConsumeEnergy();
+        animator.SetBool("IsPadding", true);
+        StartCoroutine(ResetPaddingFlag());
     }
+    private System.Collections.IEnumerator ResetPaddingFlag()
+    {
+        // Tự lấy độ dài của clip đang play trên layer 0
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.3f;
 
+        yield return new WaitForSeconds(clipLength);
+        animator.SetBool("IsPadding", false);
+    }
     public void JumpPlayerToGround()
     {
         currentLane = !reversedGravity ? minLanes : maxLanes;
@@ -202,33 +212,36 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Die()
     {
-        if (isDead) return; // Already dead - ignore any further hits.
+        if (isDead) return;
         isDead = true;
 
-        // Freeze the player in place by cancelling any in-progress lane tween.
         transform.DOKill();
 
-        // Kill any momentum so a fatal hit (e.g. running into a block face) can never
-        // keep shoving the body around in the frame before time is frozen.
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
 
+        animator.SetBool("IsDying", true);
+
+        StartCoroutine(DieSequence());
+    }
+
+    private System.Collections.IEnumerator DieSequence()
+    {
+        // Chờ animation IsDying chạy xong
+        yield return null; // chờ 1 frame để Animator cập nhật state mới
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.5f;
+
+        yield return new WaitForSeconds(clipLength);
+
         if (OnPlayerDeath != null)
-        {
-            // A GameManager (or other system) is listening - let it drive the
-            // game-over state, pausing, UI and scene reload.
             OnPlayerDeath.Invoke();
-        }
         else
         {
-            // Fallback for scenes that don't yet have a GameManager: reload the
-            // current scene so death still behaves like before this system existed.
-            Debug.LogWarning(
-                "[PlayerController] Player died but no OnPlayerDeath listener was found. " +
-                "Reloading the current scene as a fallback. Add a GameManager to handle this properly.");
+            Debug.LogWarning("[PlayerController] No OnPlayerDeath listener. Reloading scene.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
