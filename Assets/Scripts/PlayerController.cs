@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float runSpeed = 6f;
     private bool isRunning = true;
+    private bool isJumping = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -98,10 +99,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void HandleJump(bool consumesEnergy = true)
+{
+    if (Input.GetButtonDown("Jump"))
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (consumesEnergy && currentEnergy <= 0) return;
+        if (consumesEnergy && currentEnergy <= 0) return;
 
             if (!reversedGravity)
             {
@@ -109,8 +110,11 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
+                    beatsToSkip = 1;
                     if (consumesEnergy) ConsumeEnergy();
+                    isJumping = true;
+                    animator.SetBool("IsJumping", true);
+                    StartCoroutine(WaitForJumpAnimation()); 
                 }
             }
             else
@@ -119,38 +123,47 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
+                    beatsToSkip = 1;
                     if (consumesEnergy) ConsumeEnergy();
+                    isJumping = true;
+                    animator.SetBool("IsJumping", true);
+                    StartCoroutine(WaitForJumpAnimation()); 
                 }
             }
+
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+    // Nhảy xuống (S) — không set IsJumping
+    if (Input.GetKeyDown(KeyCode.S))
+    {
+        if (consumesEnergy && currentEnergy <= 0) return;
+
+        if (!reversedGravity)
         {
-            if (consumesEnergy && currentEnergy <= 0) return;
-
-            if (!reversedGravity)
+            if (currentLane > 0)
             {
-                if (currentLane > 0)
-                {
-                    currentLane--;
-                    UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping down
-                    if (consumesEnergy) ConsumeEnergy();
-                }
-            }
-            else
-            {
-                if (currentLane < maxLanes)
-                {
-                    currentLane++;
-                    UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
-                    if (consumesEnergy) ConsumeEnergy();
-                }
+                currentLane--;
+                UpdateLanePosition();
+                beatsToSkip = 1;
+                if (consumesEnergy) ConsumeEnergy();
             }
         }
+        else
+        {
+            if (currentLane < maxLanes)
+            {
+                currentLane++;
+                UpdateLanePosition();
+                beatsToSkip = 1;
+                if (consumesEnergy) ConsumeEnergy();
+            }
+        }
+       
     }
+
+}
+
+
 
     public void JumpPlayer(int lane)
     {
@@ -193,12 +206,24 @@ public class PlayerController : MonoBehaviour
         transform.DOKill();
 
         transform.DOMoveY(targetY, duration)
-                 .SetEase(ease);
+                 .SetEase(ease); 
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
     }
 
-    
+    private System.Collections.IEnumerator WaitForJumpAnimation()
+    {
+        yield return null; 
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.3f;
+
+        yield return new WaitForSeconds(clipLength);
+
+        isJumping = false;
+        animator.SetBool("IsJumping", false);
+    }
+
+
     private void OnDestroy()
     {
         transform.DOKill();
@@ -249,10 +274,8 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimation()
     {
         animator.SetBool("IsRunning", isRunning);
-        // The Jumping clip is a single static pose, so keeping IsJumping true the whole
-        // time the player is on an upper lane freezes the character (no run cycle).
-        // The player keeps running while elevated, so stay in the Running state instead.
-        animator.SetBool("IsJumping", false);
+        // Bỏ phần check IsOnGroundLane() ở đây, đã xử lý trong OnComplete
+        animator.SetBool("IsJumping", isJumping);
     }
 
     /// <summary>
