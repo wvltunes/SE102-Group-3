@@ -10,6 +10,8 @@ public class LevelSequencer : MonoBehaviour
     [SerializeField] private LevelData levelData;
 
     [Header("Spawn Offset (relative to player)")]
+    // Keep this in sync with BpmSpawner.lookAheadOffset so that obstacles and beat
+    // lines spawned on the same beat reach the player at the same time.
     [SerializeField] private float spawnOffsetX = 8f;
 
     [Header("Obstacle Prefabs")]

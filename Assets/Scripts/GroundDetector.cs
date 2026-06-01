@@ -3,58 +3,13 @@ using UnityEngine;
 public class GroundDetector : MonoBehaviour
 {
     private PlayerController playerController;
-    private bool isGroundedLocally = false;
     private bool isOnBlock = false; // Set by BlockBehaviour when player touches top/bottom of a block
-    
-    [SerializeField] private float raycastDistance = 2f; // Distance to raycast downward - INCREASED
-    [SerializeField] private bool showDebugRay = true; // Show raycast in editor
-    
-    private int updateCounter = 0; // Track how many times Update runs
 
     private void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
-        raycastDistance = 3f; // Force set raycast distance to be large enough
     }
-    
-    private void Update()
-    {
-        // Raycast to detect ground instead of trigger collider
-        DetectGroundWithRaycast();
-    }
-    
-    private void DetectGroundWithRaycast()
-    {
-        // Cast raycast ignoring player's own colliders
-        Vector3 rayStartPos;
-        Vector2 rayDirection;
-        if (!playerController.isReversedGravity())
-        {
-            rayStartPos = transform.position - Vector3.up * 0.2f; // Start raycast from slightly below
-            rayDirection = Vector2.down;
-        }
-        else
-        {
-            rayStartPos = transform.position + Vector3.up * 0.2f; // Start raycast from slightly above
-            rayDirection = Vector2.up;
-        }
-        RaycastHit2D[] hits = Physics2D.RaycastAll(rayStartPos, rayDirection, raycastDistance);
 
-        isGroundedLocally = false;
-
-        // Check all hits
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.collider != null && hit.collider.CompareTag("Ground"))
-            {
-                isGroundedLocally = true;
-                break;
-            }
-        }
-
-
-    }
-    
     /// <summary>
     /// Called by BlockBehaviour to set whether the player is standing on a block (top or bottom).
     /// When on a block, the player is considered grounded.
@@ -63,11 +18,14 @@ public class GroundDetector : MonoBehaviour
     {
         isOnBlock = onBlock;
     }
-    
+
     public bool IsGrounded()
     {
-        // Always recalculate ground detection when called (to fix execution order issue)
-        DetectGroundWithRaycast();
-        return isGroundedLocally || isOnBlock;
+        // Use the player's logical lane, not a world-position raycast. A raycast lags
+        // behind the lane-change tween (~0.1s), so right after a jump it would still
+        // report "grounded" and the beat line crossing that same beat would refund the
+        // jump cost. The lane flips instantly on jump, so this can't be fooled by the tween.
+        bool onGroundLane = playerController != null && playerController.IsOnGroundLane();
+        return onGroundLane || isOnBlock;
     }
 }
