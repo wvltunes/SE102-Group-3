@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class MapScrolling : MonoBehaviour
+public class ParallaxAndLoop : MonoBehaviour
 {
     [SerializeField] Transform cameraTransform;
     [SerializeField] float parallaxSpeed = 0.1f;

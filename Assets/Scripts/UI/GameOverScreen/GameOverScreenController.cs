@@ -15,6 +15,7 @@ public class GameOverScreenController : MonoBehaviour
         // Static fields survive scene reloads, so reset the flag here to make
         // sure a freshly loaded scene never starts in a stale "game over" state.
         gameOver = false;
+        gameOverScreen.SetActive(false);
     }
 
     private void OnEnable()
