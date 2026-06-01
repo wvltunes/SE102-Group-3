@@ -11,9 +11,9 @@ public class CameraFollow : MonoBehaviour
 
     [Header("Death Shake")]
     [Tooltip("How long the camera shakes after the player dies (seconds).")]
-    [SerializeField] private float shakeDuration = 0.4f;
+    [SerializeField] private float shakeDuration = 0.3f;
     [Tooltip("How far the camera is jolted at the start of the shake (world units).")]
-    [SerializeField] private float shakeMagnitude = 0.35f;
+    [SerializeField] private float shakeMagnitude = 0.15f;
 
     private Transform player;
 
