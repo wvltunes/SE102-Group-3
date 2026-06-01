@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public enum GameState
     {
-        Playing,        // Normal gameplay.
-        GameOver,       // Player died - awaiting restart.
-        LevelComplete   // Player reached the finish - awaiting next level.
+        Playing,
+        Paused,
+        GameOver,
+        LevelComplete
     }
 
     /// <summary>
@@ -99,16 +100,28 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
+            case GameState.Playing:
+                Time.timeScale = 1f;
+
+                if (AudioManager.instance != null)
+                    AudioManager.instance.Resume();
+
+                break;
+
+            case GameState.Paused:
+                Time.timeScale = 0f;
+
+                if (AudioManager.instance != null)
+                    AudioManager.instance.Pause();
+
+                break;
+
             case GameState.GameOver:
                 EnterGameOver();
                 break;
 
             case GameState.LevelComplete:
                 EnterLevelComplete();
-                break;
-
-            case GameState.Playing:
-                Time.timeScale = 1f;
                 break;
         }
     }
@@ -176,5 +189,14 @@ public class GameManager : MonoBehaviour
                 "[GameManager] No next level found in Build Settings. Reloading the current scene.");
             SceneTransitionManager.ReloadCurrentLevel();
         }
+    }
+    public void PauseGame()
+    {
+        SetState(GameState.Paused);
+    }
+
+    public void ResumeGame()
+    {
+        SetState(GameState.Playing);
     }
 }

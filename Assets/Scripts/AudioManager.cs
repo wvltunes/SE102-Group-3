@@ -128,7 +128,10 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        audioSource.Pause();
+        if (audioSource != null)
+        {
+            audioSource.Pause();
+        }
     }
 
     /// <summary>
@@ -138,7 +141,13 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
-
+    public void Resume()
+    {
+        if (audioSource != null)
+        {
+            audioSource.UnPause();
+        }
+    }
     /// <summary>
     /// BPM của bài hát hiện tại
     /// </summary>
