@@ -96,8 +96,9 @@ public class UIManager : MonoBehaviour
     public class ChampionData
     {
         [Header("GAME")]
-        public Sprite gameSprite;                            // sprite dùng trong game
+        public Sprite gameSprite;
         public RuntimeAnimatorController gameAnimator;
+        public RuntimeAnimatorController menuAnimator; // ← thêm dòng này
 
         [Header("IDENTITY")]
         public string characterName;
@@ -326,21 +327,16 @@ public class UIManager : MonoBehaviour
     // ═══════════════════════════════════════════════
     public void OnSelectButtonClicked()
     {
-        Debug.Log($"OnSelectButtonClicked - CharacterManager={CharacterManager.instance}, currentChampion={currentChampion}");
-
-        if (CharacterManager.instance == null)
-        {
-            Debug.LogError("CharacterManager.instance is NULL! Chưa có GameObject CharacterManager trong scene!");
-            return;
-        }
-
         if (currentChampion < 0 || currentChampion >= champions.Length) return;
 
-        CharacterManager.instance.selectedSprite = champions[currentChampion].gameSprite;
-        CharacterManager.instance.selectedAnimator = champions[currentChampion].gameAnimator;
-        CharacterManager.instance.selectedIndex = currentChampion;
+        if (CharacterManager.instance != null)
+        {
+            CharacterManager.instance.selectedSprite = champions[currentChampion].gameSprite;
+            CharacterManager.instance.selectedAnimator = champions[currentChampion].gameAnimator;
+            CharacterManager.instance.selectedMenuAnimator = champions[currentChampion].menuAnimator; // ← thêm
+            CharacterManager.instance.selectedIndex = currentChampion;
+        }
 
-        Debug.Log($"Saved selectedIndex={currentChampion}");
         UpdateSelectArrow();
     }
     public void SelectChampion(int index)
