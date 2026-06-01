@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float transitionDuration = 0.1f;
     [SerializeField] private DG.Tweening.Ease laneChangeEase = DG.Tweening.Ease.OutQuad;
 
+    [Tooltip("Falling back down to the ground is quicker and accelerates (gravity-like) so it doesn't feel floaty.")]
+    [SerializeField] private float fallDuration = 0.02f;
+    [SerializeField] private DG.Tweening.Ease fallEase = DG.Tweening.Ease.InQuad;
+
     [Header("Movement Settings")]
     [SerializeField] private float runSpeed = 6f;
     private bool isRunning = true;
@@ -73,25 +77,25 @@ public class PlayerController : MonoBehaviour
         UpdateAnimation();
     }
 
+    /// <summary>
+    /// Recovers 1 energy every beat, whether the player is on the ground lane or up on the
+    /// beat lines. This lives here (not on the beat-line objects) because the BeatLine script
+    /// only exists in a couple of scenes - driving it from a per-beat timer on the player
+    /// guarantees a single, steady source of recovery in every level so jumping stays
+    /// sustainable. The recovery is on a beat clock rather than tied to the jump frame, so a
+    /// jump's -1 still shows as a dip until the next beat tick.
+    /// </summary>
     private void HandleEnergyRecovery()
     {
-        if (groundDetector != null && groundDetector.IsGrounded())
-        {
-            float secondsPerBeat = AudioManager.instance != null ? AudioManager.instance.GetSecondsPerBeat() : 0.5f;
+        float secondsPerBeat = AudioManager.instance != null ? AudioManager.instance.GetSecondsPerBeat() : 0.5f;
 
-            energyRecoveryTimer += Time.deltaTime;
-            if (energyRecoveryTimer >= secondsPerBeat)
-            {
-                RecoverEnergy();
-                energyRecoveryTimer = 0f;
-            }
-        }
-        else
+        energyRecoveryTimer += Time.deltaTime;
+        if (energyRecoveryTimer >= secondsPerBeat)
         {
+            RecoverEnergy();
             energyRecoveryTimer = 0f;
         }
     }
-
 
     private void HandleJump(bool consumesEnergy = true)
     {
@@ -166,17 +170,20 @@ public class PlayerController : MonoBehaviour
     public void JumpPlayerToGround()
     {
         currentLane = !reversedGravity ? minLanes : maxLanes;
-        UpdateLanePosition();
+        UpdateLanePosition(fallDuration, fallEase);
     }
 
-    private void UpdateLanePosition()
+    // Normal lane change (jumping up): uses the standard transition feel.
+    private void UpdateLanePosition() => UpdateLanePosition(transitionDuration, laneChangeEase);
+
+    private void UpdateLanePosition(float duration, DG.Tweening.Ease ease)
     {
         float targetY = startPosition.y + (currentLane * laneHeight);
 
         transform.DOKill();
 
-        transform.DOMoveY(targetY, transitionDuration)
-                 .SetEase(laneChangeEase);
+        transform.DOMoveY(targetY, duration)
+                 .SetEase(ease);
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
     }
@@ -229,6 +236,9 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimation()
     {
         animator.SetBool("IsRunning", isRunning);
+        // The Jumping clip is a single static pose, so keeping IsJumping true the whole
+        // time the player is on an upper lane freezes the character (no run cycle).
+        // The player keeps running while elevated, so stay in the Running state instead.
         animator.SetBool("IsJumping", false);
     }
 
@@ -259,7 +269,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentLane < maxLanes) currentLane++;
         }
-        UpdateLanePosition();
+        UpdateLanePosition(fallDuration, fallEase);
     }
 
     public void ToggleReverseGravity()
@@ -274,6 +284,14 @@ public class PlayerController : MonoBehaviour
     public int GetCurrentEnergy() => currentEnergy;
     public int GetMaxEnergy() => maxEnergy;
     public bool isReversedGravity() => reversedGravity;
+
+    /// <summary>
+    /// True when the player is logically resting on the ground lane (lane 0 normally,
+    /// or the top lane under reversed gravity). This flips the instant a jump starts,
+    /// unlike a world-position raycast which lags behind the lane-change tween. Used to
+    /// gate energy recovery so the beat line on the jump beat can't refund the jump cost.
+    /// </summary>
+    public bool IsOnGroundLane() => !reversedGravity ? currentLane == minLanes : currentLane == maxLanes;
 
     public void SetRunning(bool running)
     {

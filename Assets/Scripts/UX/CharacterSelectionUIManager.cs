@@ -640,7 +640,7 @@ public class UIManager : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneTransitionManager.GoToMainMenu();
     }
 
 

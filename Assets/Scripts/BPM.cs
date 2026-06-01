@@ -7,7 +7,9 @@ public class BpmSpawner : MonoBehaviour
     public GameObject prefabToSpawn;
 
     [Header("Look-Ahead Settings")]
-    [SerializeField] private float lookAheadOffset = 5f;
+    // Keep this in sync with LevelSequencer.spawnOffsetX so that beat lines and
+    // obstacles spawned on the same beat reach the player at the same time.
+    [SerializeField] private float lookAheadOffset = 8f;
 
     private Transform playerTransform;
     private Coroutine spawnCoroutine; // Reference to the running loop

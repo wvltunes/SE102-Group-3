@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01251cf13bf5d5842a85cbe4a3c75273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundDetector
-  raycastDistance: 2
+  raycastDistance: 1
   showDebugRay: 1
 --- !u!1 &711584345
 GameObject:
@@ -2605,10 +2605,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnergyBarUI
   energyBars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1353496280}
+  - {fileID: 1551990665}
+  - {fileID: 711584347}
+  - {fileID: 1183681633}
   filledColor: {r: 0, g: 1, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   playerController: {fileID: 733421846}
@@ -7582,7 +7582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   prefabToSpawn: {fileID: 1495974972}
-  lookAheadOffset: 10
+  lookAheadOffset: 16
 --- !u!1 &1788053798
 GameObject:
   m_ObjectHideFlags: 0

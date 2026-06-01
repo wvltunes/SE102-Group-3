@@ -31,7 +31,7 @@ public class PlayMenuController : MonoBehaviour
     }
     public void OnCharacterClick()
     {
-        SceneManager.LoadScene("CharacterSelection");
+        SceneTransitionManager.LoadLevel("CharacterSelection");
     }
 
     public void OnOptionsClick()
@@ -91,11 +91,11 @@ public class PlayMenuController : MonoBehaviour
 
     public void LoadCampaignScene()
     {
-        SceneManager.LoadScene("GameSelection");
+        SceneTransitionManager.LoadLevel("GameSelection");
     }
 
     public void LoadCustomScene()
     {
-        SceneManager.LoadScene("LevelEditor");
+        SceneTransitionManager.LoadLevel("LevelEditor");
     }
 }

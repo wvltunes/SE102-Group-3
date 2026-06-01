@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01251cf13bf5d5842a85cbe4a3c75273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundDetector
-  raycastDistance: 2
+  raycastDistance: 1
   showDebugRay: 1
 --- !u!1 &122796045
 GameObject:
@@ -8514,7 +8514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   prefabToSpawn: {fileID: 851272084}
-  lookAheadOffset: 8
+  lookAheadOffset: 16
 --- !u!114 &2136597421
 MonoBehaviour:
   m_ObjectHideFlags: 0
