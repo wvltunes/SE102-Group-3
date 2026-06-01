@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 9b6a92ea5c3526d4eb3a6db447b04e8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8144037375126619597
+    second: Ellipse 53_0
+  - first:
+      213: 2475110132947847967
+    second: Ellipse 53_1
+  - first:
+      213: 5923872960615411063
+    second: Ellipse 53_2
+  - first:
+      213: -3386011957803554007
+    second: Ellipse 53_3
+  - first:
+      213: 4858338816313272690
+    second: Ellipse 53_4
+  - first:
+      213: 5697051689479522175
+    second: Ellipse 53_5
+  - first:
+      213: -883545245786256551
+    second: Ellipse 53_6
+  - first:
+      213: -5098148884897446438
+    second: Ellipse 53_7
+  - first:
+      213: 1080440805501194521
+    second: Ellipse 53_8
+  - first:
+      213: 2721456724496909628
+    second: Ellipse 53_9
+  - first:
+      213: -3288683533277363779
+    second: Ellipse 53_10
+  - first:
+      213: -6014677137452651398
+    second: Ellipse 53_11
+  - first:
+      213: -3526375015191216922
+    second: Ellipse 53_12
+  - first:
+      213: 7889265302863918467
+    second: Ellipse 53_13
+  - first:
+      213: 7215817885802160870
+    second: Ellipse 53_14
+  - first:
+      213: 1975805351449439543
+    second: Ellipse 53_15
+  - first:
+      213: 8754001521240308397
+    second: Ellipse 53_16
+  - first:
+      213: -4994549357274051257
+    second: Ellipse 53_17
+  - first:
+      213: 6875047248117927076
+    second: Ellipse 53_18
+  - first:
+      213: -8292637602753154691
+    second: Ellipse 53_19
+  - first:
+      213: -8046952407801567387
+    second: Ellipse 53_20
+  - first:
+      213: -1158750853823884776
+    second: Ellipse 53_21
+  - first:
+      213: 5848769419307821634
+    second: Ellipse 53_22
+  - first:
+      213: -1537733095261850646
+    second: Ellipse 53_23
+  - first:
+      213: 5732867077079650443
+    second: Ellipse 53_24
+  - first:
+      213: -3538899438121412228
+    second: Ellipse 53_25
+  - first:
+      213: -4850990693059415625
+    second: Ellipse 53_26
+  - first:
+      213: -3457456277512175455
+    second: Ellipse 53_27
+  - first:
+      213: -929029460790134720
+    second: Ellipse 53_28
+  - first:
+      213: 7614191501432753004
+    second: Ellipse 53_29
+  - first:
+      213: -9018969081940254495
+    second: Ellipse 53_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ellipse 53_0
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 293
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ab21208219afe80800000000000000
+      internalID: -8144037375126619597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 293
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b835e5d8b595220800000000000000
+      internalID: 2475110132947847967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 253
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77de5085213d53250800000000000000
+      internalID: 5923872960615411063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 253
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92be4e170187201d0800000000000000
+      internalID: -3386011957803554007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 253
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27928d0b9694c6340800000000000000
+      internalID: 4858338816313272690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 213
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77477ac35eff0f40800000000000000
+      internalID: 5697051689479522175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 213
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95bcce9b7440db3f0800000000000000
+      internalID: -883545245786256551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 213
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad542afa99cbf39b0800000000000000
+      internalID: -5098148884897446438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 213
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9115cbc203f7efe00800000000000000
+      internalID: 1080440805501194521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_9
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 173
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c358c37d87e84c520800000000000000
+      internalID: 2721456724496909628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_10
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 173
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1835c20cf3c52d0800000000000000
+      internalID: -3288683533277363779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_11
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 173
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ca877b203978ca0800000000000000
+      internalID: -6014677137452651398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_12
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 173
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecf6b27b9ccf0fc0800000000000000
+      internalID: -3526375015191216922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_13
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 173
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385b40c6efc4c7d60800000000000000
+      internalID: 7889265302863918467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 133
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2e527d22cb32460800000000000000
+      internalID: 7215817885802160870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_15
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 133
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73da576bf787b6b10800000000000000
+      internalID: 1975805351449439543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_16
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 133
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaf1ccb0067c7970800000000000000
+      internalID: 8754001521240308397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_17
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 133
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d468262dbcfaab0800000000000000
+      internalID: -4994549357274051257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_18
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 133
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac881eeb03196f50800000000000000
+      internalID: 6875047248117927076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_19
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 93
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71f9dc5902aaec80800000000000000
+      internalID: -8292637602753154691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_20
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 93
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56763807b6b735090800000000000000
+      internalID: -8046952407801567387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_21
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 93
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81295aedc3a4befe0800000000000000
+      internalID: -1158750853823884776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_22
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 93
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24aa20b7cc00b2150800000000000000
+      internalID: 5848769419307821634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_23
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 93
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae33e89a5efd8aae0800000000000000
+      internalID: -1537733095261850646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_24
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 53
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b805dd98b3c3f8f40800000000000000
+      internalID: 5732867077079650443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_25
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 53
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7991fef5bd43eec0800000000000000
+      internalID: -3538899438121412228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_26
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 53
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1b7739aa1ddacb0800000000000000
+      internalID: -4850990693059415625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_27
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 53
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0417085d5a400d0800000000000000
+      internalID: -3457456277512175455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_28
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 13
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0483bbba0ac6b13f0800000000000000
+      internalID: -929029460790134720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_29
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 13
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b82be24da0ba960800000000000000
+      internalID: 7614191501432753004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellipse 53_30
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 17
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e068be876f26d280800000000000000
+      internalID: -9018969081940254495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ellipse 53_0: -8144037375126619597
+      Ellipse 53_1: 2475110132947847967
+      Ellipse 53_10: -3288683533277363779
+      Ellipse 53_11: -6014677137452651398
+      Ellipse 53_12: -3526375015191216922
+      Ellipse 53_13: 7889265302863918467
+      Ellipse 53_14: 7215817885802160870
+      Ellipse 53_15: 1975805351449439543
+      Ellipse 53_16: 8754001521240308397
+      Ellipse 53_17: -4994549357274051257
+      Ellipse 53_18: 6875047248117927076
+      Ellipse 53_19: -8292637602753154691
+      Ellipse 53_2: 5923872960615411063
+      Ellipse 53_20: -8046952407801567387
+      Ellipse 53_21: -1158750853823884776
+      Ellipse 53_22: 5848769419307821634
+      Ellipse 53_23: -1537733095261850646
+      Ellipse 53_24: 5732867077079650443
+      Ellipse 53_25: -3538899438121412228
+      Ellipse 53_26: -4850990693059415625
+      Ellipse 53_27: -3457456277512175455
+      Ellipse 53_28: -929029460790134720
+      Ellipse 53_29: 7614191501432753004
+      Ellipse 53_3: -3386011957803554007
+      Ellipse 53_30: -9018969081940254495
+      Ellipse 53_4: 4858338816313272690
+      Ellipse 53_5: 5697051689479522175
+      Ellipse 53_6: -883545245786256551
+      Ellipse 53_7: -5098148884897446438
+      Ellipse 53_8: 1080440805501194521
+      Ellipse 53_9: 2721456724496909628
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
