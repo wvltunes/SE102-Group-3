@@ -95,6 +95,10 @@ public class UIManager : MonoBehaviour
     [System.Serializable]
     public class ChampionData
     {
+        [Header("GAME")]
+        public Sprite gameSprite;                            // sprite dùng trong game
+        public RuntimeAnimatorController gameAnimator;
+
         [Header("IDENTITY")]
         public string characterName;
         public string traits;
@@ -121,6 +125,9 @@ public class UIManager : MonoBehaviour
     // ═══════════════════════════════════════════════
     // INSPECTOR
     // ═══════════════════════════════════════════════
+    [Header("── SELECT ARROW ─────────────────────────")]
+    public Image selectArrow; // ← đổi từ RectTransform thành Image
+    public Vector2 arrowOffset = new Vector2(-60f, 0f);
     [Header("── CHARACTER ─────────────────────────────")]
     public Animator characterAnimator;
     public Image characterImage;
@@ -190,7 +197,7 @@ public class UIManager : MonoBehaviour
     // ═══════════════════════════════════════════════
     // PRIVATE
     // ═══════════════════════════════════════════════
-
+    private Vector2 arrowOrigin;
     private int currentChampion = -1;
     private int currentTab = 0;
     private bool panelsHidden = false;
@@ -235,6 +242,21 @@ public class UIManager : MonoBehaviour
             ApplyImmediate(0);
 
         SelectTab(0);
+
+        // Mặc định select char đầu tiên nếu chưa chọn
+        if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex == -1)
+        {
+            CharacterManager.instance.selectedIndex = 0;
+            CharacterManager.instance.selectedSprite = champions[0].gameSprite;
+            CharacterManager.instance.selectedAnimator = champions[0].gameAnimator;
+        }
+        // Lưu vị trí gốc của arrow (đặt đúng vị trí trong editor trước)
+        if (selectArrow != null)
+            arrowOrigin = selectArrow.GetComponent<RectTransform>().anchoredPosition;
+
+    
+
+        UpdateSelectArrow();
     }
 
     void Update()
@@ -248,7 +270,26 @@ public class UIManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow))
             SelectChampion(Mathf.Min(champions.Length - 1, currentChampion + 1));
     }
+    void UpdateSelectArrow()
+    {
+        if (selectArrow == null) return;
 
+        int idx = CharacterManager.instance != null ? CharacterManager.instance.selectedIndex : -1;
+
+        if (idx < 0 || idx >= charButtons.Length || charButtons[idx] == null)
+        {
+            selectArrow.enabled = false;
+            return;
+        }
+
+        selectArrow.enabled = true;
+
+        RectTransform arrowRect = selectArrow.GetComponent<RectTransform>();
+        arrowRect.anchoredPosition = new Vector2(
+            arrowOrigin.x,
+            arrowOrigin.y + arrowOffset.y * idx // ← tịnh tiến Y theo index
+        );
+    }
     // ═══════════════════════════════════════════════
     // CROSSFADE LAYERS
     // ═══════════════════════════════════════════════
@@ -283,7 +324,25 @@ public class UIManager : MonoBehaviour
     // ═══════════════════════════════════════════════
     // SELECT CHAMPION
     // ═══════════════════════════════════════════════
+    public void OnSelectButtonClicked()
+    {
+        Debug.Log($"OnSelectButtonClicked - CharacterManager={CharacterManager.instance}, currentChampion={currentChampion}");
 
+        if (CharacterManager.instance == null)
+        {
+            Debug.LogError("CharacterManager.instance is NULL! Chưa có GameObject CharacterManager trong scene!");
+            return;
+        }
+
+        if (currentChampion < 0 || currentChampion >= champions.Length) return;
+
+        CharacterManager.instance.selectedSprite = champions[currentChampion].gameSprite;
+        CharacterManager.instance.selectedAnimator = champions[currentChampion].gameAnimator;
+        CharacterManager.instance.selectedIndex = currentChampion;
+
+        Debug.Log($"Saved selectedIndex={currentChampion}");
+        UpdateSelectArrow();
+    }
     public void SelectChampion(int index)
     {
         if (champions == null || index < 0 || index >= champions.Length) return;
@@ -643,6 +702,7 @@ public class UIManager : MonoBehaviour
         SceneTransitionManager.GoToMainMenu();
     }
 
+    
 
 
     // ═══════════════════════════════════════════════
