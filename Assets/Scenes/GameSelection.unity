@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 736754233}
   - component: {fileID: 736754232}
   - component: {fileID: 736754235}
+  - component: {fileID: 736754236}
   m_Layer: 5
   m_Name: BtnPlay
   m_TagString: Untagged
@@ -1112,12 +1113,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1490957643}
+  m_Father: {fileID: 1399612003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.035}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 712, y: 312.16022}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 751, y: -462.89}
+  m_SizeDelta: {x: 423, y: 103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736754232
 MonoBehaviour:
@@ -1188,14 +1189,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 1}
+  m_Color: {r: 1, g: 0.9803922, b: 0.9803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5441009541913305315, guid: f8d60a757a954c5419b1ba06e9ddd3ae, type: 3}
+  m_Sprite: {fileID: 610908720128868772, guid: 614d66b70c1fdb145805cd5bc0ae7e9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1227,6 +1228,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonJuice
   hoverScale: 1.1
   speed: 15
+--- !u!114 &736754236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736754230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1f1200579e4ba41bc91b1846e29a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeButton
+  image: {fileID: 736754233}
+  normalSprite: {fileID: 610908720128868772, guid: 614d66b70c1fdb145805cd5bc0ae7e9e, type: 3}
+  hoverSprite: {fileID: -6823754517530532564, guid: 778b5d5d096c31841aa782099d6ff3f7, type: 3}
 --- !u!1 &738593812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,6 +2230,7 @@ RectTransform:
   - {fileID: 458263600}
   - {fileID: 1342910581}
   - {fileID: 1563249861}
+  - {fileID: 736754231}
   m_Father: {fileID: 1711238681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2256,7 +2273,6 @@ RectTransform:
   m_Children:
   - {fileID: 922449815}
   - {fileID: 141151696}
-  - {fileID: 736754231}
   m_Father: {fileID: 1711238681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
