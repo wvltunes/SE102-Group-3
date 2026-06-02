@@ -9,7 +9,7 @@ public class BpmSpawner : MonoBehaviour
     [Header("Look-Ahead Settings")]
     // Keep this in sync with LevelSequencer.spawnOffsetX so that beat lines and
     // obstacles spawned on the same beat reach the player at the same time.
-    [SerializeField] private float lookAheadOffsetSeconds = 3f; //Calculate offset based on BPM instead of hardcoding
+    [SerializeField] private int lookAheadOffsetBeats = 3; //Calculate offset based on BPM instead of hardcoding
 
     private Transform playerTransform;
     PlayerController playerController;
@@ -60,7 +60,7 @@ public class BpmSpawner : MonoBehaviour
             if (playerTransform != null)
             {
                 Vector3 spawnPosition = new Vector3(
-                    playerTransform.position.x + playerController.GetRunSpeed() * lookAheadOffsetSeconds,
+                    playerTransform.position.x + playerController.GetRunSpeed() * lookAheadOffsetBeats * secondsPerBeat,
                     prefabToSpawn.transform.position.y,
                     0
                 );

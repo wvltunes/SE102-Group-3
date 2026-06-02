@@ -12,7 +12,7 @@ public class LevelSequencer : MonoBehaviour
     [Header("Spawn Offset (relative to player)")]
     // Keep this in sync with BpmSpawner.lookAheadOffset so that obstacles and beat
     // lines spawned on the same beat reach the player at the same time.
-    [SerializeField] private float spawnOffsetSeconds = 3f; //Calculate offset based on BPM instead of hardcoding
+    [SerializeField] private int spawnOffsetBeats = 3; //Calculate offset based on BPM instead of hardcoding
     private float spawnOffsetX;
     
     [Header("Obstacle Prefabs")]
@@ -49,17 +49,6 @@ public class LevelSequencer : MonoBehaviour
 
     void Start()
     {
-        // Auto-find player
-        playerController = FindFirstObjectByType<PlayerController>();
-        if (playerController == null)
-        {
-            Debug.LogError("[LevelSequencer] Player not found!");
-            return;
-        }
-        else
-        {
-            spawnOffsetX = playerController.GetRunSpeed() * spawnOffsetSeconds;
-        }
 
         // Mark level start
         levelStartTime = Time.time;
@@ -80,11 +69,23 @@ public class LevelSequencer : MonoBehaviour
 
         Debug.Log($"[LevelSequencer] Level started with {levelData.GetEventCount()} beat events");
 
+        // Auto-find player
+        playerController = FindFirstObjectByType<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("[LevelSequencer] Player not found!");
+            return;
+        }
+        else
+        {
+            spawnOffsetX = playerController.GetRunSpeed() * spawnOffsetBeats * (levelSecondsPerEvent);
+        }
+
         // Calculate level end time (last event + completion delay)
         if (levelData.GetEventCount() > 0)
         {
             BeatEvent lastEvent = levelData.GetEventAt(levelData.GetEventCount() - 1);
-            float lastEventTime = lastEvent.beatIndex * levelSecondsPerEvent;
+            float lastEventTime = (spawnOffsetBeats + lastEvent.beatIndex) * levelSecondsPerEvent;
             if (lastEvent != null)
             {
                 levelEndTime = lastEventTime + completionZoneDelay;
