@@ -12,8 +12,9 @@ public class LevelSequencer : MonoBehaviour
     [Header("Spawn Offset (relative to player)")]
     // Keep this in sync with BpmSpawner.lookAheadOffset so that obstacles and beat
     // lines spawned on the same beat reach the player at the same time.
-    [SerializeField] private float spawnOffsetX = 8f;
-
+    [SerializeField] private float spawnOffsetSeconds = 1f; //Calculate offset based on BPM instead of hardcoding
+    private float spawnOffsetX;
+    
     [Header("Obstacle Prefabs")]
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private GameObject enemyPrefab;
@@ -47,15 +48,19 @@ public class LevelSequencer : MonoBehaviour
     void Start()
     {
         // Auto-find player
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindFirstObjectByType<PlayerController>();
         if (playerController == null)
         {
             Debug.LogError("[LevelSequencer] Player not found!");
             return;
         }
+        else
+        {
+            spawnOffsetX = playerController.GetRunSpeed() * spawnOffsetSeconds;
+        }
 
-        // Mark level start
-        levelStartTime = Time.time;
+            // Mark level start
+            levelStartTime = Time.time;
         levelStarted = true;
 
         if (levelData == null)

@@ -320,6 +320,7 @@ public class PlayerController : MonoBehaviour
     public int GetCurrentEnergy() => currentEnergy;
     public int GetMaxEnergy() => maxEnergy;
     public bool isReversedGravity() => reversedGravity;
+    public float GetRunSpeed() => runSpeed; 
 
     /// <summary>
     /// True when the player is logically resting on the ground lane (lane 0 normally,
