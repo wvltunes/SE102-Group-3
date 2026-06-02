@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96cbed98fe00cd43999002e431aaef2, type: 3}
+  m_Name: test_data
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelName: Test data
+  bpm: 120
+  beatEvents:
+  - beatIndex: 0
+    type: 5
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 1
+    type: 5
+    lane: 0
+    laneToJump: 2
+  - beatIndex: 2
+    type: 5
+    lane: 0
+    laneToJump: 3
+  - beatIndex: 3
+    type: 3
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 4
+    type: 3
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 5
+    type: 3
+    lane: 1
+    laneToJump: 2
+  - beatIndex: 6
+    type: 3
+    lane: 1
+    laneToJump: 3
+  - beatIndex: 7
+    type: 3
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 8
+    type: 3
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 0
+    type: 3
+    lane: 1
+    laneToJump: 1

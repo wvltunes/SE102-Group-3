@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1257287141745169988}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,7 +172,6 @@ MonoBehaviour:
   SingleLaneOrbSprite: {fileID: 4894958912737950700, guid: 753cd2c2f1d435141b4aa4ffe52c990f, type: 3}
   DoubleLaneOrbSprite: {fileID: 582412997527318975, guid: 774134113f948244f8ef23faaec9ebb5, type: 3}
   TripleLaneOrbSprite: {fileID: -3874893322918122030, guid: 814ec20d1e1ceb14ba5115f02908b154, type: 3}
-  JumpToGroundOrbSprite: {fileID: -2323475315545171561, guid: 69adddd95da6db9498294f83ce90f716, type: 3}
 --- !u!61 &3872588093282670983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +206,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.005781859, y: -0.012277782}
+  m_Offset: {x: 0.05, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -217,7 +216,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8842814, y: 1.6079766}
+  m_Size: {x: 1.8, y: 1.6}
   m_EdgeRadius: 0
 --- !u!50 &1260162582633317467
 Rigidbody2D:

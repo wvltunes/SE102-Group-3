@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d96cbed98fe00cd43999002e431aaef2, type: 3}
-  m_Name: level 1
+  m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelName: Level 1
-  bpm: 160
+  bpm: 120
   beatEvents:
-  - timestamp: 2
-    type: 4
+  - beatIndex: 0
+    type: 0
     lane: 0
-  - timestamp: 5
-    type: 4
-    lane: 2
-  - timestamp: 10
-    type: 3
+    laneToJump: 0
+  - beatIndex: 3
+    type: 0
     lane: 1
-  - timestamp: 12
-    type: 3
-    lane: 1
+    laneToJump: 0
