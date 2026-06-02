@@ -3281,7 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioInitializer
   audioClip: {fileID: 8300000, guid: 586b4edb76d34094fa02c9137625e6c9, type: 3}
-  bpm: 160
+  bpm: 120
   playOnStart: 1
 --- !u!82 &824037855
 AudioSource:
