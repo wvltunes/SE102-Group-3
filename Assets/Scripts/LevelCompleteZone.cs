@@ -20,6 +20,14 @@ public class LevelCompleteZone : MonoBehaviour
     /// </summary>
     public static event System.Action OnLevelComplete;
 
+    /// <summary>
+    /// Debug helper used to simulate level completion from keyboard shortcuts.
+    /// </summary>
+    public static void DebugTriggerLevelComplete()
+    {
+        OnLevelComplete?.Invoke();
+    }
+
     [Tooltip("Tag used to identify the player object that completes the level.")]
     [SerializeField] private string playerTag = "Player";
 

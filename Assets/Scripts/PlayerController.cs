@@ -67,6 +67,13 @@ public class PlayerController : MonoBehaviour
         // A dead player no longer reacts to input or recovers energy.
         if (isDead) return;
 
+        // Debug: Press 'D' to trigger death
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Die();
+            return;
+        }
+
         // Constant forward movement
         if (isRunning)
         {
@@ -93,7 +100,11 @@ public class PlayerController : MonoBehaviour
         energyRecoveryTimer += Time.deltaTime;
         if (energyRecoveryTimer >= secondsPerBeat)
         {
-            RecoverEnergy();
+            // Only recover energy if the player is grounded (on ground lane or touching a block)
+            if (groundDetector != null && groundDetector.IsGrounded())
+            {
+                RecoverEnergy();
+            }
             energyRecoveryTimer = 0f;
         }
     }
