@@ -60,7 +60,8 @@ public class BpmSpawner : MonoBehaviour
             float secondsPerBeat = AudioManager.instance.GetSecondsPerBeat();
             if (playerBeatPulse != null)
                 playerBeatPulse.Pulse();
-            beatSideFlash.Flash();
+            if (beatSideFlash != null)
+                beatSideFlash.Flash();
             // Spawn beat line at player.x + lookAheadOffset
             if (playerTransform != null)
             {
