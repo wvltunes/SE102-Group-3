@@ -8,8 +8,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class BeatEvent
 {
-    [Tooltip("Time in seconds (relative to music start) when this obstacle should appear")]
-    public float timestamp;
+    [Tooltip("Index of this event in the beat map (0-based, used for timing calculations)")]
+    public int beatIndex; // Optional: index of this event in the beat map for easier reference
 
     [Tooltip("Type of obstacle to spawn")]
     public ObstacleType type;
@@ -22,9 +22,8 @@ public class BeatEvent
     [Range(1, 3)]
     public int laneToJump;
 
-    public BeatEvent(float timestamp, ObstacleType type, int lane, int laneToJump = 1)
+    public BeatEvent(ObstacleType type, int lane, int laneToJump = 1)
     {
-        this.timestamp = timestamp;
         this.type = type;
         this.lane = lane;
         this.laneToJump = laneToJump;
@@ -52,21 +51,21 @@ public class LevelData : ScriptableObject
     public List<BeatEvent> GetBeatEvents() => beatEvents;
 
     /// <summary>
-    /// Get all beat events that should spawn at or after a specific time
+    /// Get all beat events that should spawn at or after a beat
     /// </summary>
-    public List<BeatEvent> GetEventsAfter(float timestamp)
+    public List<BeatEvent> GetEventsAfter(int beatIndex)
     {
-        return beatEvents.FindAll(e => e.timestamp >= timestamp);
+        return beatEvents.FindAll(e => e.beatIndex >= beatIndex);
     }
 
     /// <summary>
-    /// Get the next beat event after a specific time
+    /// Get the next beat event after a specific beat index
     /// </summary>
-    public BeatEvent GetNextEvent(float timestamp)
+    public BeatEvent GetNextEvent(int beatIndex)
     {
         foreach (BeatEvent e in beatEvents)
         {
-            if (e.timestamp > timestamp)
+            if (e.beatIndex > beatIndex)
             {
                 return e;
             }
@@ -86,17 +85,22 @@ public class LevelData : ScriptableObject
         return null;
     }
 
+    public void SortBeatEvent()
+    {
+        beatEvents.Sort((a, b) => a.beatIndex.CompareTo(b.beatIndex));
+    }
+
     public int GetEventCount() => beatEvents.Count;
 
 #if UNITY_EDITOR
     /// <summary>
     /// Editor-only helper to add beat events
     /// </summary>
-    public void AddBeatEvent(float timestamp, ObstacleType type, int lane)
+    public void AddBeatEvent(int beatIndex, ObstacleType type, int lane)
     {
-        beatEvents.Add(new BeatEvent(timestamp, type, lane));
-        // Sort by timestamp for easier editing
-        beatEvents.Sort((a, b) => a.timestamp.CompareTo(b.timestamp));
+        beatEvents.Add(new BeatEvent(type, lane));
+        // Sort by beatIndex for easier editing
+        beatEvents.Sort((a, b) => a.beatIndex.CompareTo(b.beatIndex));
     }
 
     /// <summary>

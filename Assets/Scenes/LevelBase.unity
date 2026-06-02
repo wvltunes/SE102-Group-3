@@ -7427,7 +7427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   prefabToSpawn: {fileID: 8123218604176001231, guid: 954bf40980700474c93227f469111402, type: 3}
-  lookAheadOffsetSeconds: 1
+  lookAheadOffsetSeconds: 3
 --- !u!1 &1788053798
 GameObject:
   m_ObjectHideFlags: 0
@@ -7976,7 +7976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
   levelData: {fileID: 11400000, guid: 9a84752a2a111fa4991a32744bc8f461, type: 2}
-  spawnOffsetSeconds: 1
+  spawnOffsetSeconds: 3
   blockPrefab: {fileID: 5560530659682682780, guid: ec6d0a5e1ebc4e54488b18eff741626f, type: 3}
   enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
   spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
@@ -7985,7 +7985,7 @@ MonoBehaviour:
   jumpPadPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
   gravityPadPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
   levelCompleteZonePrefab: {fileID: 5453482316125499217, guid: 07d4adb0b393d664491d466e71267f78, type: 3}
-  completionZoneDelay: 1
+  completionZoneDelay: 3
   laneHeight: 2.2
   laneBaseY: -3
   backgroundObject: {fileID: 720329433}

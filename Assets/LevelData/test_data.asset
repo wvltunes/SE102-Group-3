@@ -15,33 +15,43 @@ MonoBehaviour:
   levelName: Test data
   bpm: 120
   beatEvents:
-  - timestamp: 0
-    type: 4
-    lane: 0
-  - timestamp: 2
-    type: 1
-    lane: 0
-  - timestamp: 3
-    type: 2
-    lane: 0
-  - timestamp: 4
+  - beatIndex: 0
     type: 5
     lane: 0
-  - timestamp: 5
+    laneToJump: 0
+  - beatIndex: 1
+    type: 5
+    lane: 0
+    laneToJump: 2
+  - beatIndex: 2
+    type: 5
+    lane: 0
+    laneToJump: 3
+  - beatIndex: 3
+    type: 3
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 4
     type: 3
     lane: 1
-  - timestamp: 6
+    laneToJump: 0
+  - beatIndex: 5
     type: 3
     lane: 1
-  - timestamp: 7
+    laneToJump: 2
+  - beatIndex: 6
     type: 3
     lane: 1
-  - timestamp: 8
+    laneToJump: 3
+  - beatIndex: 7
     type: 3
     lane: 1
-  - timestamp: 9
+    laneToJump: 0
+  - beatIndex: 8
     type: 3
     lane: 1
-  - timestamp: 10
+    laneToJump: 0
+  - beatIndex: 0
     type: 3
     lane: 1
+    laneToJump: 1

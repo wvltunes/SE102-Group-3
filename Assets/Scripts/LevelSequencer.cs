@@ -12,7 +12,7 @@ public class LevelSequencer : MonoBehaviour
     [Header("Spawn Offset (relative to player)")]
     // Keep this in sync with BpmSpawner.lookAheadOffset so that obstacles and beat
     // lines spawned on the same beat reach the player at the same time.
-    [SerializeField] private float spawnOffsetSeconds = 1f; //Calculate offset based on BPM instead of hardcoding
+    [SerializeField] private float spawnOffsetSeconds = 3f; //Calculate offset based on BPM instead of hardcoding
     private float spawnOffsetX;
     
     [Header("Obstacle Prefabs")]
@@ -27,7 +27,7 @@ public class LevelSequencer : MonoBehaviour
     [Header("Level Completion")]
     [SerializeField] private GameObject levelCompleteZonePrefab;
     [Tooltip("Time in seconds after the last beat event to place the completion zone")]
-    [SerializeField] private float completionZoneDelay = 1f;
+    [SerializeField] private float completionZoneDelay = 2f;
 
     [Header("Lane Settings")]
     [SerializeField] private float laneHeight = 2f;
@@ -44,6 +44,8 @@ public class LevelSequencer : MonoBehaviour
     private bool levelStarted = false;
     private bool completionZonePlaced = false;
     private float levelEndTime = 0f;
+    private float levelBPM = 120f; // Default BPM if not set in LevelData
+    private float levelSecondsPerEvent = 0.5f;
 
     void Start()
     {
@@ -59,8 +61,8 @@ public class LevelSequencer : MonoBehaviour
             spawnOffsetX = playerController.GetRunSpeed() * spawnOffsetSeconds;
         }
 
-            // Mark level start
-            levelStartTime = Time.time;
+        // Mark level start
+        levelStartTime = Time.time;
         levelStarted = true;
 
         if (levelData == null)
@@ -68,6 +70,13 @@ public class LevelSequencer : MonoBehaviour
             Debug.LogWarning("[LevelSequencer] Level Data not assigned!");
             return;
         }
+        else
+        {
+            levelData = Instantiate(levelData); // Create instance to avoid modifying original asset
+            levelData.SortBeatEvent();
+        }
+        levelBPM = levelData.GetBPM();
+        levelSecondsPerEvent = 60f / levelBPM;
 
         Debug.Log($"[LevelSequencer] Level started with {levelData.GetEventCount()} beat events");
 
@@ -75,10 +84,11 @@ public class LevelSequencer : MonoBehaviour
         if (levelData.GetEventCount() > 0)
         {
             BeatEvent lastEvent = levelData.GetEventAt(levelData.GetEventCount() - 1);
+            float lastEventTime = lastEvent.beatIndex * levelSecondsPerEvent;
             if (lastEvent != null)
             {
-                levelEndTime = lastEvent.timestamp + completionZoneDelay;
-                Debug.Log($"[LevelSequencer] Level end time set to: {levelEndTime}s (last event at {lastEvent.timestamp}s + {completionZoneDelay}s delay)");
+                levelEndTime = lastEventTime + completionZoneDelay;
+                Debug.Log($"[LevelSequencer] Level end time set to: {levelEndTime}s (last event at {lastEventTime}s + {completionZoneDelay}s delay)");
             }
         }
 
@@ -105,7 +115,7 @@ public class LevelSequencer : MonoBehaviour
                 return;
 
             // Check if it's time to spawn
-            if (elapsedTime >= nextEvent.timestamp)
+            if (elapsedTime >= nextEvent.beatIndex * levelSecondsPerEvent)
             {
                 SpawnObstacle(nextEvent);
                 eventIndex++;
