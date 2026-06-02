@@ -12,8 +12,9 @@ public class LevelSequencer : MonoBehaviour
     [Header("Spawn Offset (relative to player)")]
     // Keep this in sync with BpmSpawner.lookAheadOffset so that obstacles and beat
     // lines spawned on the same beat reach the player at the same time.
-    [SerializeField] private float spawnOffsetX = 8f;
-
+    [SerializeField] private int spawnOffsetBeats = 3; //Calculate offset based on BPM instead of hardcoding
+    private float spawnOffsetX;
+    
     [Header("Obstacle Prefabs")]
     [SerializeField] private GameObject blockPrefab;
     [SerializeField] private GameObject enemyPrefab;
@@ -26,7 +27,7 @@ public class LevelSequencer : MonoBehaviour
     [Header("Level Completion")]
     [SerializeField] private GameObject levelCompleteZonePrefab;
     [Tooltip("Time in seconds after the last beat event to place the completion zone")]
-    [SerializeField] private float completionZoneDelay = 1f;
+    [SerializeField] private float completionZoneDelay = 2f;
 
     [Header("Lane Settings")]
     [SerializeField] private float laneHeight = 2f;
@@ -43,16 +44,11 @@ public class LevelSequencer : MonoBehaviour
     private bool levelStarted = false;
     private bool completionZonePlaced = false;
     private float levelEndTime = 0f;
+    private float levelBPM = 120f; // Default BPM if not set in LevelData
+    private float levelSecondsPerEvent = 0.5f;
 
     void Start()
     {
-        // Auto-find player
-        playerController = FindObjectOfType<PlayerController>();
-        if (playerController == null)
-        {
-            Debug.LogError("[LevelSequencer] Player not found!");
-            return;
-        }
 
         // Mark level start
         levelStartTime = Time.time;
@@ -63,17 +59,37 @@ public class LevelSequencer : MonoBehaviour
             Debug.LogWarning("[LevelSequencer] Level Data not assigned!");
             return;
         }
+        else
+        {
+            levelData = Instantiate(levelData); // Create instance to avoid modifying original asset
+            levelData.SortBeatEvent();
+        }
+        levelBPM = levelData.GetBPM();
+        levelSecondsPerEvent = 60f / levelBPM;
 
         Debug.Log($"[LevelSequencer] Level started with {levelData.GetEventCount()} beat events");
+
+        // Auto-find player
+        playerController = FindFirstObjectByType<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("[LevelSequencer] Player not found!");
+            return;
+        }
+        else
+        {
+            spawnOffsetX = playerController.GetRunSpeed() * spawnOffsetBeats * (levelSecondsPerEvent);
+        }
 
         // Calculate level end time (last event + completion delay)
         if (levelData.GetEventCount() > 0)
         {
             BeatEvent lastEvent = levelData.GetEventAt(levelData.GetEventCount() - 1);
+            float lastEventTime = (spawnOffsetBeats + lastEvent.beatIndex) * levelSecondsPerEvent;
             if (lastEvent != null)
             {
-                levelEndTime = lastEvent.timestamp + completionZoneDelay;
-                Debug.Log($"[LevelSequencer] Level end time set to: {levelEndTime}s (last event at {lastEvent.timestamp}s + {completionZoneDelay}s delay)");
+                levelEndTime = lastEventTime + completionZoneDelay;
+                Debug.Log($"[LevelSequencer] Level end time set to: {levelEndTime}s (last event at {lastEventTime}s + {completionZoneDelay}s delay)");
             }
         }
 
@@ -100,7 +116,7 @@ public class LevelSequencer : MonoBehaviour
                 return;
 
             // Check if it's time to spawn
-            if (elapsedTime >= nextEvent.timestamp)
+            if (elapsedTime >= nextEvent.beatIndex * levelSecondsPerEvent)
             {
                 SpawnObstacle(nextEvent);
                 eventIndex++;
@@ -135,6 +151,26 @@ public class LevelSequencer : MonoBehaviour
 
         // Spawn obstacle
         GameObject obstacle = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        if (beatEvent.type == ObstacleType.JumpOrb)
+        {
+            // Set laneToJump for orbs
+            JumpOrbVariables orbController = obstacle.GetComponent<JumpOrbVariables>();
+            if (orbController != null)
+            {
+                orbController.setLaneMultiplier(beatEvent.laneToJump);
+            }
+        }
+
+        if (beatEvent.type == ObstacleType.JumpPad)
+        {
+            // Set laneToJump for jump pads
+            JumpPadVariables padController = obstacle.GetComponent<JumpPadVariables>();
+            if (padController != null)
+            {
+                padController.setLaneMultiplier(beatEvent.laneToJump);
+            }
+        }
         Debug.Log($"[LevelSequencer] Spawned {beatEvent.type} at x={worldX} (offset +{spawnOffsetX} from player), lane={beatEvent.lane}");
     }
 

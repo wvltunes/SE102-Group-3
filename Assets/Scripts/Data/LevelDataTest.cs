@@ -24,7 +24,7 @@ public class LevelDataTest : MonoBehaviour
         // Log all beat events
         foreach (BeatEvent e in levelData.GetBeatEvents())
         {
-            Debug.Log($"  Event: timestamp={e.timestamp}s, type={e.type}, lane={e.lane}");
+            Debug.Log($"  Event: beatIndex={e.beatIndex}, type={e.type}, lane={e.lane}");
         }
 
         Debug.Log($"=== Test Complete ===");

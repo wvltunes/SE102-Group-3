@@ -3,7 +3,7 @@ using System.Collections;
 
 public class JumpOrbBehaviour : MonoBehaviour
 {
-    [SerializeField] private int laneToJump = 1; //  1,2,3,4 for normal lanes jump
+    [SerializeField] private int laneToJump = 1; //  1,2,3 for normal lanes jump
 
     private bool playerInside = false;
     private PlayerController player;
