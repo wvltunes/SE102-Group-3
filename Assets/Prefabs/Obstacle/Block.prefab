@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockBehaviour
   groundContactThreshold: 0.3
+  killOnSideCollision: 1
   showDebugGizmos: 1
 --- !u!114 &6857480365875158013
 MonoBehaviour:

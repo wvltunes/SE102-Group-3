@@ -13,14 +13,35 @@ MonoBehaviour:
   m_Name: test_data
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelName: Test data
-  bpm: 160
+  bpm: 120
   beatEvents:
-  - timestamp: 0.5
-    type: 0
+  - timestamp: 0
+    type: 4
     lane: 0
-  - timestamp: 1
-    type: 0
-    lane: 2
-  - timestamp: 1.5
-    type: 0
+  - timestamp: 2
+    type: 1
+    lane: 0
+  - timestamp: 3
+    type: 2
+    lane: 0
+  - timestamp: 4
+    type: 5
+    lane: 0
+  - timestamp: 5
+    type: 3
+    lane: 1
+  - timestamp: 6
+    type: 3
+    lane: 1
+  - timestamp: 7
+    type: 3
+    lane: 1
+  - timestamp: 8
+    type: 3
+    lane: 1
+  - timestamp: 9
+    type: 3
+    lane: 1
+  - timestamp: 10
+    type: 3
     lane: 1
