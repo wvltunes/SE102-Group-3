@@ -140,6 +140,26 @@ public class LevelSequencer : MonoBehaviour
 
         // Spawn obstacle
         GameObject obstacle = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+        if (beatEvent.type == ObstacleType.JumpOrb)
+        {
+            // Set laneToJump for orbs
+            JumpOrbVariables orbController = obstacle.GetComponent<JumpOrbVariables>();
+            if (orbController != null)
+            {
+                orbController.setLaneMultiplier(beatEvent.laneToJump);
+            }
+        }
+
+        if (beatEvent.type == ObstacleType.JumpPad)
+        {
+            // Set laneToJump for jump pads
+            JumpPadVariables padController = obstacle.GetComponent<JumpPadVariables>();
+            if (padController != null)
+            {
+                padController.setLaneMultiplier(beatEvent.laneToJump);
+            }
+        }
         Debug.Log($"[LevelSequencer] Spawned {beatEvent.type} at x={worldX} (offset +{spawnOffsetX} from player), lane={beatEvent.lane}");
     }
 

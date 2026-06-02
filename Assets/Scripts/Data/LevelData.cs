@@ -18,11 +18,16 @@ public class BeatEvent
     [Range(0, 3)]
     public int lane;
 
-    public BeatEvent(float timestamp, ObstacleType type, int lane)
+    [Tooltip("Lane to jump over (only used for Jump obstacles)")]
+    [Range(1, 3)]
+    public int laneToJump;
+
+    public BeatEvent(float timestamp, ObstacleType type, int lane, int laneToJump = 1)
     {
         this.timestamp = timestamp;
         this.type = type;
         this.lane = lane;
+        this.laneToJump = laneToJump;
     }
 }
 
