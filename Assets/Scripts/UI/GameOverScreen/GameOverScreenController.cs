@@ -9,6 +9,8 @@ public class GameOverScreenController : MonoBehaviour
 {
     public static bool gameOver = false;
     [SerializeField] private GameObject gameOverScreen;
+    private OrbsScoreDisplay orbsScoreDisplay;
+    private SongProgressDisplay songProgressDisplay;
 
     private void Awake()
     {
@@ -16,6 +18,10 @@ public class GameOverScreenController : MonoBehaviour
         // sure a freshly loaded scene never starts in a stale "game over" state.
         gameOver = false;
         gameOverScreen.SetActive(false);
+        
+        // Find display components
+        orbsScoreDisplay = gameOverScreen.GetComponentInChildren<OrbsScoreDisplay>();
+        songProgressDisplay = gameOverScreen.GetComponentInChildren<SongProgressDisplay>();
     }
 
     private void OnEnable()
@@ -58,6 +64,17 @@ public class GameOverScreenController : MonoBehaviour
         if (gameOverScreen != null)
         {
             gameOverScreen.SetActive(true);
+            
+            // Update display values
+            if (orbsScoreDisplay != null)
+            {
+                orbsScoreDisplay.UpdateOrbsDisplay();
+            }
+            
+            if (songProgressDisplay != null)
+            {
+                songProgressDisplay.UpdateProgressDisplay();
+            }
         }
         gameOver = true;
     }

@@ -53,6 +53,9 @@ public class JumpToGroundOrbBehaviour : MonoBehaviour
         {
             player.JumpPlayerToGround();
             isTriggered = true;
+            
+            // Count this orb as collected
+            ScoreTracker.AddOrb();
 
             StartCoroutine(ShrinkAndDestroy());
         }

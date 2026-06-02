@@ -33,6 +33,32 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public GameState CurrentState { get; private set; }
 
+    /// <summary>
+    /// Total orbs in this level (for score tracking).
+    /// Set this in the Inspector or initialize from a level data source.
+    /// </summary>
+    [SerializeField] private int totalOrbsInLevel = 0;
+
+    /// <summary>
+    /// Reference to orbs score display script (from Game Over canvas).
+    /// </summary>
+    [SerializeField] private OrbsScoreDisplay orbsScoreDisplay;
+
+    /// <summary>
+    /// Reference to song progress display script (from Game Over canvas).
+    /// </summary>
+    [SerializeField] private SongProgressDisplay songProgressDisplay;
+
+    /// <summary>
+    /// Reference to orbs score display script (from Level Complete canvas).
+    /// </summary>
+    [SerializeField] private OrbsScoreDisplay levelCompleteOrbsDisplay;
+
+    /// <summary>
+    /// Reference to song progress display script (from Level Complete canvas).
+    /// </summary>
+    [SerializeField] private SongProgressDisplay levelCompleteSongProgressDisplay;
+
     private void Awake()
     {
         // Enforce a single instance per scene.
@@ -48,6 +74,15 @@ public class GameManager : MonoBehaviour
         // running again here.
         Time.timeScale = 1f;
         CurrentState = GameState.Playing;
+
+        // Reset UI display references so they get re-discovered from the fresh scene
+        orbsScoreDisplay = null;
+        songProgressDisplay = null;
+        levelCompleteOrbsDisplay = null;
+        levelCompleteSongProgressDisplay = null;
+
+        // Initialize score tracker
+        ScoreTracker.Initialize(totalOrbsInLevel);
     }
 
     private void OnEnable()
@@ -139,6 +174,50 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.Pause();
         }
 
+        // Update score tracker and display
+        ScoreTracker.UpdateSongProgress();
+
+        // Find Game Over Canvas and get components from it
+        Canvas gameOverCanvas = FindObjectOfType<Canvas>(includeInactive: true);
+        if (gameOverCanvas != null && gameOverCanvas.name.Contains("Over"))
+        {
+            Debug.Log($"[GameManager] Found game over canvas: {gameOverCanvas.name}");
+            
+            // Find components in this canvas's hierarchy
+            orbsScoreDisplay = gameOverCanvas.GetComponentInChildren<OrbsScoreDisplay>(includeInactive: true);
+            songProgressDisplay = gameOverCanvas.GetComponentInChildren<SongProgressDisplay>(includeInactive: true);
+        }
+
+        // Fallback: search entire scene if not found in canvas
+        if (orbsScoreDisplay == null)
+        {
+            orbsScoreDisplay = FindObjectOfType<OrbsScoreDisplay>(includeInactive: true);
+        }
+        if (songProgressDisplay == null)
+        {
+            songProgressDisplay = FindObjectOfType<SongProgressDisplay>(includeInactive: true);
+        }
+
+        if (orbsScoreDisplay != null)
+        {
+            orbsScoreDisplay.UpdateOrbsDisplay();
+            Debug.Log($"[GameManager] Updated orbs display: {orbsScoreDisplay.gameObject.name}");
+        }
+        else
+        {
+            Debug.LogWarning("[GameManager] OrbsScoreDisplay not found in scene!");
+        }
+
+        if (songProgressDisplay != null)
+        {
+            songProgressDisplay.UpdateProgressDisplay();
+            Debug.Log($"[GameManager] Updated progress display: {songProgressDisplay.gameObject.name}");
+        }
+        else
+        {
+            Debug.LogWarning("[GameManager] SongProgressDisplay not found in scene!");
+        }
+
         // The scene is now ready to be reloaded via RestartLevel(); a game-over
         // UI can read CurrentState (or listen to PlayerController.OnPlayerDeath)
         // and call that helper when the player chooses to retry.
@@ -154,6 +233,51 @@ public class GameManager : MonoBehaviour
         if (AudioManager.instance != null)
         {
             AudioManager.instance.Pause();
+        }
+
+        // Update score tracker and display
+        ScoreTracker.UpdateSongProgress();
+
+        // Find or use cached levelCompleteOrbsDisplay (search inactive objects too)
+        if (levelCompleteOrbsDisplay == null)
+        {
+            OrbsScoreDisplay[] allDisplays = FindObjectsOfType<OrbsScoreDisplay>(includeInactive: true);
+            if (allDisplays.Length > 0)
+            {
+                levelCompleteOrbsDisplay = allDisplays[allDisplays.Length - 1];
+                Debug.Log($"[GameManager] Found level complete orbs display: {levelCompleteOrbsDisplay.gameObject.name}");
+            }
+        }
+
+        if (levelCompleteOrbsDisplay != null)
+        {
+            levelCompleteOrbsDisplay.UpdateOrbsDisplay();
+            Debug.Log("[GameManager] Updated orbs display on level complete.");
+        }
+        else
+        {
+            Debug.LogWarning("[GameManager] Level complete orbs display not found in scene!");
+        }
+
+        // Find or use cached levelCompleteSongProgressDisplay (search inactive objects too)
+        if (levelCompleteSongProgressDisplay == null)
+        {
+            SongProgressDisplay[] allDisplays = FindObjectsOfType<SongProgressDisplay>(includeInactive: true);
+            if (allDisplays.Length > 0)
+            {
+                levelCompleteSongProgressDisplay = allDisplays[allDisplays.Length - 1];
+                Debug.Log($"[GameManager] Found level complete progress display: {levelCompleteSongProgressDisplay.gameObject.name}");
+            }
+        }
+
+        if (levelCompleteSongProgressDisplay != null)
+        {
+            levelCompleteSongProgressDisplay.UpdateProgressDisplay();
+            Debug.Log("[GameManager] Updated progress display on level complete.");
+        }
+        else
+        {
+            Debug.LogWarning("[GameManager] Level complete progress display not found in scene!");
         }
 
         // A level-complete UI can read CurrentState and call LoadNextLevel()

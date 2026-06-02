@@ -67,6 +67,13 @@ public class PlayerController : MonoBehaviour
         // A dead player no longer reacts to input or recovers energy.
         if (isDead) return;
 
+        // Debug: Press 'D' to trigger death
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Die();
+            return;
+        }
+
         // Constant forward movement
         if (isRunning)
         {
