@@ -542,20 +542,45 @@ public class UIManager : MonoBehaviour
         if (toggleViewButton == null) return;
 
         toggleViewButton.isOn = !toggleViewButton.isOn;
+
         panelsHidden = toggleViewButton.isOn;
 
+        // Ẩn/hiện arrow
+        if (selectArrow != null)
+        {
+            selectArrow.enabled = !panelsHidden;
+        }
+        // Ẩn nút DeathFX
+        if (deathEffectButton != null && deathEffectButton.image != null)
+        {
+            deathEffectButton.image.gameObject.SetActive(!panelsHidden);
+        }
         if (leftPanel != null)
         {
-            if (leftPanelCoroutine != null) StopCoroutine(leftPanelCoroutine);
-            Vector2 target = panelsHidden ? leftPanelOrigin + new Vector2(leftPanelSlideOffset, 0f) : leftPanelOrigin;
-            leftPanelCoroutine = StartCoroutine(SlidePanel(leftPanel, target, panelsHidden));
+            if (leftPanelCoroutine != null)
+                StopCoroutine(leftPanelCoroutine);
+
+            Vector2 target = panelsHidden
+                ? leftPanelOrigin + new Vector2(leftPanelSlideOffset, 0f)
+                : leftPanelOrigin;
+
+            leftPanelCoroutine = StartCoroutine(
+                SlidePanel(leftPanel, target, panelsHidden)
+            );
         }
 
         if (rightPanel != null)
         {
-            if (rightPanelCoroutine != null) StopCoroutine(rightPanelCoroutine);
-            Vector2 target = panelsHidden ? rightPanelOrigin + new Vector2(rightPanelSlideOffset, 0f) : rightPanelOrigin;
-            rightPanelCoroutine = StartCoroutine(SlidePanel(rightPanel, target, panelsHidden));
+            if (rightPanelCoroutine != null)
+                StopCoroutine(rightPanelCoroutine);
+
+            Vector2 target = panelsHidden
+                ? rightPanelOrigin + new Vector2(rightPanelSlideOffset, 0f)
+                : rightPanelOrigin;
+
+            rightPanelCoroutine = StartCoroutine(
+                SlidePanel(rightPanel, target, panelsHidden)
+            );
         }
 
         RefreshToggleSprite();

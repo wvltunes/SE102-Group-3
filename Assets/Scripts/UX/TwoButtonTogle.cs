@@ -81,11 +81,10 @@ public class TwoButtonToggle : MonoBehaviour
 
     void HandleMute()
     {
-        bool muted = options[currentIndex] == "ON";
-        float val = muted ? 0f : 0.5f;
+        if (!isMuteControl) return;
 
-        if (musicSlider != null) musicSlider.value = val;
-        if (sfxSlider != null) sfxSlider.value = val;
-        if (masterSlider != null) masterSlider.value = val;
+        bool muted = options[currentIndex] == "ON";
+
+        AudioListener.volume = muted ? 0f : 1f;
     }
 }

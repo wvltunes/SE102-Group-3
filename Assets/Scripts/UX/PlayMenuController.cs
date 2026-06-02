@@ -15,6 +15,7 @@ public class PlayMenuController : MonoBehaviour
 
     void Start()
     {
+        optionCanvas.gameObject.SetActive(false);
         optionCanvas.alpha = 0;
         optionCanvas.interactable = false;
         optionCanvas.blocksRaycasts = false;
@@ -36,27 +37,17 @@ public class PlayMenuController : MonoBehaviour
 
     public void OnOptionsClick()
     {
-        if (!isOptionsOpen)
-        {
-            optionCanvas.alpha = 1;
-            optionCanvas.interactable = true;
-            optionCanvas.blocksRaycasts = true;
-            isOptionsOpen = true;
+        Debug.Log("OPTIONS CLICK");
+        isOptionsOpen = !isOptionsOpen;
 
-            if (optionController != null)
-            optionController.gameObject.SetActive(true);
-        }
-        else
-        {
-            optionCanvas.alpha = 0;
-            optionCanvas.interactable = false;
-            optionCanvas.blocksRaycasts = false;
-            isOptionsOpen = false;
+        optionCanvas.gameObject.SetActive(isOptionsOpen);
 
-            
-            if (optionController != null)
-                optionController.gameObject.SetActive(false);
-        }
+        optionCanvas.alpha = isOptionsOpen ? 1 : 0;
+        optionCanvas.interactable = isOptionsOpen;
+        optionCanvas.blocksRaycasts = isOptionsOpen;
+
+        if (optionController != null)
+            optionController.gameObject.SetActive(isOptionsOpen);
     }
     public void CloseOptions()
     {
