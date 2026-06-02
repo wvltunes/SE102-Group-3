@@ -8,6 +8,8 @@ public class DiscMenuController : MonoBehaviour
     private int currentIndex = 0;
     private float targetAngle;
 
+    [Header("Background")]
+    public ParallaxBackgroundController parallaxBackground;
     void Start()
     {
         Canvas.ForceUpdateCanvases();
@@ -93,21 +95,25 @@ public class DiscMenuController : MonoBehaviour
         Highlight();
     }
 
+    // Sửa hàm Highlight():
     void Highlight()
     {
         for (int i = 0; i < segmentParent.childCount; i++)
         {
             LevelItem item = segmentParent.GetChild(i).GetComponent<LevelItem>();
+
             if (item != null)
             {
-                
                 bool isSelected = (i == currentIndex);
-
                 item.UpdateUI(isSelected);
             }
         }
-    }
 
+        Debug.Log(parallaxBackground);
+
+        if (parallaxBackground != null)
+            parallaxBackground.SetBackground(currentIndex);
+    }
     void HitEffect()
     {
         StopAllCoroutines();
@@ -145,4 +151,9 @@ public class DiscMenuController : MonoBehaviour
         string sceneName = "Level" + (currentIndex + 1);
         SceneTransitionManager.LoadLevel(sceneName);
     }
+
+    
+
+
+    
 }
