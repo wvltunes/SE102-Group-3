@@ -1,11 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     private AudioSource audioSource;
     private float currentBPM = 120f;
+
+    public AudioClip CurrentClip
+    {
+        get { return audioSource.clip; }
+    }
 
     // Build index of the scene the current track belongs to. Used to restart
     // that track from the beginning when the SAME scene is (re)loaded - e.g.
@@ -233,5 +239,70 @@ public class AudioManager : MonoBehaviour
         {
             audioSource.time = time;
         }
+    }
+
+    public void SetVolume(float vol)
+    {
+        audioSource.volume = vol;
+    }
+    private Coroutine fadeCoroutine;
+
+    public void PlayWithFade(AudioClip newClip, float bpm, float fadeDuration = 0.3f)
+    {
+        if (fadeCoroutine != null)
+            StopCoroutine(fadeCoroutine);
+
+        fadeCoroutine = StartCoroutine(FadeSwitch(newClip, bpm, fadeDuration));
+    }
+
+    IEnumerator FadeSwitch(AudioClip newClip, float bpm, float fadeDuration)
+    {
+        if (audioSource.clip == newClip)
+            yield break;
+
+        float startVolume = audioSource.volume;
+
+        // Fade out
+        float t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, t / fadeDuration);
+
+            yield return null;
+        }
+
+        audioSource.volume = 0f;
+
+        // đổi nhạc
+        audioSource.Stop();
+        audioSource.clip = newClip;
+        audioSource.Play();
+
+        currentBPM = bpm;
+
+        // Fade in
+        t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+
+            audioSource.volume = Mathf.Lerp(0f, 1f, t / fadeDuration);
+
+            yield return null;
+        }
+
+        audioSource.volume = 1f;
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        if (clip == null || audioSource == null)
+            return;
+
+        audioSource.PlayOneShot(clip);
     }
 }
