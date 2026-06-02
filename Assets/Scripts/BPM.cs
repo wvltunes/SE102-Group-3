@@ -5,7 +5,8 @@ using UnityEngine;
 public class BpmSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
-
+    private PlayerBeatPulse playerBeatPulse;
+    private BeatSideFlash beatSideFlash;
     [Header("Look-Ahead Settings")]
     // Keep this in sync with LevelSequencer.spawnOffsetX so that beat lines and
     // obstacles spawned on the same beat reach the player at the same time.
@@ -22,6 +23,8 @@ public class BpmSpawner : MonoBehaviour
         if (playerController != null)
         {
             playerTransform = playerController.transform;
+            playerBeatPulse = playerController.GetComponent<PlayerBeatPulse>();
+            beatSideFlash = FindFirstObjectByType<BeatSideFlash>();
         }
         else
         {
@@ -55,7 +58,9 @@ public class BpmSpawner : MonoBehaviour
         {
             // Get BPM from AudioManager instead of hardcoding
             float secondsPerBeat = AudioManager.instance.GetSecondsPerBeat();
-            
+            if (playerBeatPulse != null)
+                playerBeatPulse.Pulse();
+            beatSideFlash.Flash();
             // Spawn beat line at player.x + lookAheadOffset
             if (playerTransform != null)
             {
