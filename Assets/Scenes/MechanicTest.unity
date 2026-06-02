@@ -8975,6 +8975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game_Pause_Menu_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2494629195493984941, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2863958728138237302, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9026,6 +9030,10 @@ PrefabInstance:
     - target: {fileID: 8560591289465386922, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678732934581698009, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8678732934581698009, guid: a2faece00fd7f87459a2715cbf0625ba, type: 3}
       propertyPath: pausePanel

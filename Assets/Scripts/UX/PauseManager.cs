@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
 
@@ -71,14 +70,13 @@ public class PauseManager : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         EventSystem.current.SetSelectedGameObject(null);
+        GameManager.Instance.RestartLevel();
     }
 
     public void BackToMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        EventSystem.current.SetSelectedGameObject(null);
+        SceneTransitionManager.GoToMainMenu();
     }
 }
