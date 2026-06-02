@@ -7,7 +7,7 @@ using UnityEngine;
 public class SongProgressDisplay : MonoBehaviour
 {
     private TextMeshProUGUI progressText;
-
+    
     private void Awake()
     {
         FindProgressText();
@@ -15,13 +15,15 @@ public class SongProgressDisplay : MonoBehaviour
 
     private void FindProgressText()
     {
-        // Method 1: Get from this object
+        // Method 1: Get from this object (this is the CORRECT method if attached to the progress text itself)
         progressText = GetComponent<TextMeshProUGUI>();
         if (progressText != null)
         {
-            Debug.Log($"[SongProgressDisplay] Found on self: {progressText.gameObject.name}");
+            Debug.Log($"[SongProgressDisplay] ✓ Found on self: {progressText.gameObject.name}, Current text: '{progressText.text}'");
             return;
         }
+
+        Debug.LogWarning($"[SongProgressDisplay] ✗ NOT found on self! Searching elsewhere...");
 
         // Method 2: Get from direct children
         progressText = GetComponentInChildren<TextMeshProUGUI>(includeInactive: false);
@@ -59,12 +61,13 @@ public class SongProgressDisplay : MonoBehaviour
         // Try to find again if lost
         if (progressText == null)
         {
+            Debug.LogWarning("[SongProgressDisplay] progressText is null, searching...");
             FindProgressText();
         }
 
         if (progressText == null)
         {
-            Debug.LogError("[SongProgressDisplay] progressText is still null after search!");
+            Debug.LogError("[SongProgressDisplay] ✗ progressText is still null after search! Component may not be attached to correct object.");
             return;
         }
 
@@ -72,8 +75,9 @@ public class SongProgressDisplay : MonoBehaviour
         ScoreTracker.UpdateSongProgress();
 
         float progress = ScoreTracker.GetSongProgressPercent();
+        string oldText = progressText.text;
         progressText.text = $"{progress:F0}%";
 
-        Debug.Log($"[SongProgressDisplay] Updated: {progress:F0}% on {progressText.gameObject.name}");
+        Debug.Log($"[SongProgressDisplay] ✓ Updated on '{progressText.gameObject.name}' (ID: {progressText.gameObject.GetInstanceID()}): '{oldText}' → '{progressText.text}' ({progress:F1}%)");
     }
 }

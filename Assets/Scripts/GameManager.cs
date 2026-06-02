@@ -85,6 +85,14 @@ public class GameManager : MonoBehaviour
         ScoreTracker.Initialize(totalOrbsInLevel);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            LevelCompleteZone.DebugTriggerLevelComplete();
+        }
+    }
+
     private void OnEnable()
     {
         // Subscribe in OnEnable so subscriptions are always balanced by the
@@ -238,14 +246,43 @@ public class GameManager : MonoBehaviour
         // Update score tracker and display
         ScoreTracker.UpdateSongProgress();
 
-        // Find or use cached levelCompleteOrbsDisplay (search inactive objects too)
+        // Find or use cached levelCompleteOrbsDisplay (search from Level Complete Canvas)
         if (levelCompleteOrbsDisplay == null)
         {
-            OrbsScoreDisplay[] allDisplays = FindObjectsOfType<OrbsScoreDisplay>(includeInactive: true);
-            if (allDisplays.Length > 0)
+            Canvas[] allCanvases = FindObjectsOfType<Canvas>(includeInactive: true);
+            foreach (Canvas canvas in allCanvases)
             {
-                levelCompleteOrbsDisplay = allDisplays[allDisplays.Length - 1];
-                Debug.Log($"[GameManager] Found level complete orbs display: {levelCompleteOrbsDisplay.gameObject.name}");
+                if (canvas.gameObject.name.Contains("Level_Complete") || canvas.gameObject.name.Contains("LevelComplete"))
+                {
+                    levelCompleteOrbsDisplay = canvas.GetComponentInChildren<OrbsScoreDisplay>(includeInactive: true);
+                    if (levelCompleteOrbsDisplay != null)
+                    {
+                        Debug.Log($"[GameManager] Found level complete orbs display from canvas: {levelCompleteOrbsDisplay.gameObject.name}");
+                        break;
+                    }
+                }
+            }
+            // Fallback: search all if not found
+            if (levelCompleteOrbsDisplay == null)
+            {
+                OrbsScoreDisplay[] allDisplays = FindObjectsOfType<OrbsScoreDisplay>(includeInactive: true);
+                if (allDisplays.Length > 1)
+                {
+                    // Find the one that's NOT on Game Over canvas
+                    foreach (OrbsScoreDisplay display in allDisplays)
+                    {
+                        if (!display.gameObject.name.Contains("Game") || display.gameObject.name.Contains("LevelComplete"))
+                        {
+                            levelCompleteOrbsDisplay = display;
+                            Debug.Log($"[GameManager] Found level complete orbs display (fallback): {levelCompleteOrbsDisplay.gameObject.name}");
+                            break;
+                        }
+                    }
+                }
+                else if (allDisplays.Length > 0)
+                {
+                    levelCompleteOrbsDisplay = allDisplays[0];
+                }
             }
         }
 
@@ -259,14 +296,43 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("[GameManager] Level complete orbs display not found in scene!");
         }
 
-        // Find or use cached levelCompleteSongProgressDisplay (search inactive objects too)
+        // Find or use cached levelCompleteSongProgressDisplay (search from Level Complete Canvas)
         if (levelCompleteSongProgressDisplay == null)
         {
-            SongProgressDisplay[] allDisplays = FindObjectsOfType<SongProgressDisplay>(includeInactive: true);
-            if (allDisplays.Length > 0)
+            Canvas[] allCanvases = FindObjectsOfType<Canvas>(includeInactive: true);
+            foreach (Canvas canvas in allCanvases)
             {
-                levelCompleteSongProgressDisplay = allDisplays[allDisplays.Length - 1];
-                Debug.Log($"[GameManager] Found level complete progress display: {levelCompleteSongProgressDisplay.gameObject.name}");
+                if (canvas.gameObject.name.Contains("Level_Complete") || canvas.gameObject.name.Contains("LevelComplete"))
+                {
+                    levelCompleteSongProgressDisplay = canvas.GetComponentInChildren<SongProgressDisplay>(includeInactive: true);
+                    if (levelCompleteSongProgressDisplay != null)
+                    {
+                        Debug.Log($"[GameManager] Found level complete progress display from canvas: {levelCompleteSongProgressDisplay.gameObject.name}");
+                        break;
+                    }
+                }
+            }
+            // Fallback: search all if not found
+            if (levelCompleteSongProgressDisplay == null)
+            {
+                SongProgressDisplay[] allDisplays = FindObjectsOfType<SongProgressDisplay>(includeInactive: true);
+                if (allDisplays.Length > 1)
+                {
+                    // Find the one that's NOT on Game Over canvas
+                    foreach (SongProgressDisplay display in allDisplays)
+                    {
+                        if (!display.gameObject.name.Contains("Game") || display.gameObject.name.Contains("LevelComplete"))
+                        {
+                            levelCompleteSongProgressDisplay = display;
+                            Debug.Log($"[GameManager] Found level complete progress display (fallback): {levelCompleteSongProgressDisplay.gameObject.name}");
+                            break;
+                        }
+                    }
+                }
+                else if (allDisplays.Length > 0)
+                {
+                    levelCompleteSongProgressDisplay = allDisplays[0];
+                }
             }
         }
 
