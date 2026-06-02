@@ -100,7 +100,11 @@ public class PlayerController : MonoBehaviour
         energyRecoveryTimer += Time.deltaTime;
         if (energyRecoveryTimer >= secondsPerBeat)
         {
-            RecoverEnergy();
+            // Only recover energy if the player is grounded (on ground lane or touching a block)
+            if (groundDetector != null && groundDetector.IsGrounded())
+            {
+                RecoverEnergy();
+            }
             energyRecoveryTimer = 0f;
         }
     }
