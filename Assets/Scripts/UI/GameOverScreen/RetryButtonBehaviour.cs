@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RetryButtonBehaviour : MonoBehaviour
 {
@@ -12,10 +11,9 @@ public class RetryButtonBehaviour : MonoBehaviour
         }
         else
         {
-            // Fallback when no GameManager is present: restore time (the game may
-            // be paused) and reload the current scene manually.
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // Fallback when no GameManager is present: SceneTransitionManager restores
+            // time (the game may be paused) and reloads the current scene.
+            SceneTransitionManager.ReloadCurrentLevel();
         }
     }
 }

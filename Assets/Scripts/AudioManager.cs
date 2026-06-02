@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -6,23 +7,63 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
     private float currentBPM = 120f;
 
+    // Build index of the scene the current track belongs to. Used to restart
+    // that track from the beginning when the SAME scene is (re)loaded - e.g.
+    // after the player dies and presses Retry.
+    private int musicSceneBuildIndex = -1;
+
     void Awake()
     {
-        // Singleton Pattern
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        // Singleton Pattern. If a persistent instance already exists, this is a
+        // duplicate that shipped inside a (re)loaded scene - destroy it and bail
+        // out so it never replaces the singleton or double-subscribes to events.
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             Debug.LogError("AudioManager must have an AudioSource component!");
+        }
+
+        // Restart the music when its scene is reloaded. This is the key to the
+        // Retry fix: on game-over the persistent AudioSource is Paused, then the
+        // scene reloads. The reloaded scene's AudioInitializer rides on this
+        // SAME GameObject - which is now a duplicate that Awake() destroys above
+        // - so its Start() never runs to restart playback. Handling sceneLoaded
+        // here, on the surviving instance, guarantees the track plays again.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        // Only the persistent instance ever subscribes, so only it unsubscribes.
+        if (instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Restart only when the SAME scene that owns the current track reloads
+        // (the Retry case). This avoids blasting gameplay music into, say, the
+        // main menu. On the very first load there is no track yet, so we skip
+        // and let AudioInitializer.Start() kick off the first play.
+        if (audioSource != null
+            && audioSource.clip != null
+            && scene.buildIndex == musicSceneBuildIndex
+            && !audioSource.isPlaying)
+        {
+            audioSource.Stop();   // clear any Paused state + reset to position 0
+            audioSource.Play();   // play from the beginning
+            Debug.Log("[AudioManager] Restarted track after scene reload.");
         }
     }
 
@@ -50,9 +91,18 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
+            // Stop first to clear any leftover Paused state (e.g. from a
+            // game-over Pause()) and reset playback to position 0. This
+            // AudioSource survives DontDestroyOnLoad, so on a scene reload it
+            // can still be internally paused; calling Play() on a paused source
+            // does not reliably restart it and leaves the music silent.
+            audioSource.Stop();
             audioSource.clip = clip;
             audioSource.Play();
             currentBPM = bpm;
+            // Remember which scene this track belongs to so OnSceneLoaded can
+            // restart it from the beginning when that scene is reloaded (Retry).
+            musicSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
             Debug.Log($"Playing audio with BPM: {bpm}");
         }
         else
@@ -66,6 +116,10 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void Play()
     {
+        // Clear any Paused state before playing so a previously paused source
+        // (which persists across scene reloads) starts cleanly instead of
+        // staying silent.
+        audioSource.UnPause();
         audioSource.Play();
     }
 
@@ -74,7 +128,10 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        audioSource.Pause();
+        if (audioSource != null)
+        {
+            audioSource.Pause();
+        }
     }
 
     /// <summary>
@@ -84,7 +141,13 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
-
+    public void Resume()
+    {
+        if (audioSource != null)
+        {
+            audioSource.UnPause();
+        }
+    }
     /// <summary>
     /// BPM của bài hát hiện tại
     /// </summary>

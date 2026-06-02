@@ -13,7 +13,7 @@ public class BlockBehaviour : MonoBehaviour
     [SerializeField] private float groundContactThreshold = 0.3f;
 
     [Header("Death Settings")]
-    [Tooltip("Kill the player when they run head-on into a side (face) of the block")]
+    [Tooltip("Kill the player the instant they run head-on into the LEFT face of the block")]
     [SerializeField] private bool killOnSideCollision = true;
 
     [Header("Debug")]
@@ -63,29 +63,40 @@ public class BlockBehaviour : MonoBehaviour
     {
         if (boxCollider == null) return;
 
-        // Check each contact point to determine if player is on top or bottom
-        foreach (ContactPoint2D contact in collision.contacts)
+        // Classify the hit by how the two colliders OVERLAP, not by the contact normal
+        // (corner noise) nor by centre position. The block is short (1 unit) and the
+        // player is taller and stands on the same ground line, so the player's CENTRE is
+        // already above the short block's top even when ramming its left face head-on -
+        // which is why a centre-based check wrongly read it as "riding on top" and let
+        // the solid collider just shove the player back instead of killing.
+        Bounds blockBounds = boxCollider.bounds;
+        Bounds playerBounds = collision.collider.bounds;
+
+        // Vertical overlap between the player and the block colliders.
+        //   Standing on top / under  -> the player only touches an edge, overlap ~= 0.
+        //   Ramming a side face       -> the player's body spans the block, overlap is large.
+        float verticalOverlap =
+            Mathf.Min(playerBounds.max.y, blockBounds.max.y)
+            - Mathf.Max(playerBounds.min.y, blockBounds.min.y);
+
+        // Little or no vertical overlap => the player is resting on the top or bottom
+        // face => treat as ground (for energy recovery / grounded checks).
+        bool ridingOnBlock = verticalOverlap <= groundContactThreshold;
+
+        GroundDetector groundDetector = collision.gameObject.GetComponentInChildren<GroundDetector>();
+        if (groundDetector != null)
         {
-            // contact.normal points FROM the block TOWARD the player
-            // If normal.y > 0 => player is on TOP of the block (ground from above)
-            // If normal.y < 0 => player is on BOTTOM of the block (ground from below / ceiling)
-            if (Mathf.Abs(contact.normal.y) > Mathf.Abs(contact.normal.x))
-            {
-                // Vertical contact (top or bottom) => treat as ground
-                GroundDetector groundDetector = collision.gameObject.GetComponentInChildren<GroundDetector>();
-                if (groundDetector != null)
-                {
-                    groundDetector.SetBlockGround(true);
-                }
-                return;
-            }
-            // Horizontal contact (sides) => NOT ground, acts as wall
+            groundDetector.SetBlockGround(ridingOnBlock);
         }
 
-        // No vertical contact was found above — every contact point is dominated
-        // by its horizontal normal, meaning the player ran head-on into a side
-        // face of the block instead of landing on top / under it. Trigger death.
-        if (killOnSideCollision)
+        if (!killOnSideCollision) return;
+
+        // Head-on hit on the LEFT face: the player's body overlaps the block's height
+        // (not riding it) AND sits on the block's left half. The block only ever travels
+        // leftward, so this is the face the player runs into. Hitting it kills instantly -
+        // the GameManager freezes time on death, so there is no pushback once Die() fires.
+        bool hitLeftFace = !ridingOnBlock && playerBounds.center.x < blockBounds.center.x;
+        if (hitLeftFace)
         {
             // Route the kill through the player so the GameManager handles the
             // game-over flow centrally instead of reloading the scene here.
@@ -119,5 +130,13 @@ public class BlockBehaviour : MonoBehaviour
         // Bottom zone
         Vector3 bottomCenter = transform.position + (Vector3)col.offset + Vector3.down * (size.y / 2f);
         Gizmos.DrawWireCube(bottomCenter, new Vector3(size.x, groundContactThreshold, 0));
+
+        // Deadly LEFT face (only border that triggers death). Drawn in red.
+        if (killOnSideCollision)
+        {
+            Gizmos.color = new Color(1f, 0f, 0f, 0.6f);
+            Vector3 leftCenter = transform.position + (Vector3)col.offset + Vector3.left * (size.x / 2f);
+            Gizmos.DrawWireCube(leftCenter, new Vector3(groundContactThreshold, size.y, 0));
+        }
     }
 }

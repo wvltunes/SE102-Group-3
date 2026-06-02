@@ -23,9 +23,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float transitionDuration = 0.1f;
     [SerializeField] private DG.Tweening.Ease laneChangeEase = DG.Tweening.Ease.OutQuad;
 
+    [Tooltip("Falling back down to the ground is quicker and accelerates (gravity-like) so it doesn't feel floaty.")]
+    [SerializeField] private float fallDuration = 0.02f;
+    [SerializeField] private DG.Tweening.Ease fallEase = DG.Tweening.Ease.InQuad;
+
     [Header("Movement Settings")]
     [SerializeField] private float runSpeed = 6f;
     private bool isRunning = true;
+    private bool isJumping = false;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -73,31 +78,31 @@ public class PlayerController : MonoBehaviour
         UpdateAnimation();
     }
 
+    /// <summary>
+    /// Recovers 1 energy every beat, whether the player is on the ground lane or up on the
+    /// beat lines. This lives here (not on the beat-line objects) because the BeatLine script
+    /// only exists in a couple of scenes - driving it from a per-beat timer on the player
+    /// guarantees a single, steady source of recovery in every level so jumping stays
+    /// sustainable. The recovery is on a beat clock rather than tied to the jump frame, so a
+    /// jump's -1 still shows as a dip until the next beat tick.
+    /// </summary>
     private void HandleEnergyRecovery()
     {
-        if (groundDetector != null && groundDetector.IsGrounded())
-        {
-            float secondsPerBeat = AudioManager.instance != null ? AudioManager.instance.GetSecondsPerBeat() : 0.5f;
+        float secondsPerBeat = AudioManager.instance != null ? AudioManager.instance.GetSecondsPerBeat() : 0.5f;
 
-            energyRecoveryTimer += Time.deltaTime;
-            if (energyRecoveryTimer >= secondsPerBeat)
-            {
-                RecoverEnergy();
-                energyRecoveryTimer = 0f;
-            }
-        }
-        else
+        energyRecoveryTimer += Time.deltaTime;
+        if (energyRecoveryTimer >= secondsPerBeat)
         {
+            RecoverEnergy();
             energyRecoveryTimer = 0f;
         }
     }
 
-
     private void HandleJump(bool consumesEnergy = true)
+{
+    if (Input.GetButtonDown("Jump"))
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (consumesEnergy && currentEnergy <= 0) return;
+        if (consumesEnergy && currentEnergy <= 0) return;
 
             if (!reversedGravity)
             {
@@ -105,8 +110,11 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
+                    beatsToSkip = 1;
                     if (consumesEnergy) ConsumeEnergy();
+                    isJumping = true;
+                    animator.SetBool("IsJumping", true);
+                    StartCoroutine(WaitForJumpAnimation()); 
                 }
             }
             else
@@ -115,38 +123,47 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
+                    beatsToSkip = 1;
                     if (consumesEnergy) ConsumeEnergy();
+                    isJumping = true;
+                    animator.SetBool("IsJumping", true);
+                    StartCoroutine(WaitForJumpAnimation()); 
                 }
             }
+
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+    // Nhảy xuống (S) — không set IsJumping
+    if (Input.GetKeyDown(KeyCode.S))
+    {
+        if (consumesEnergy && currentEnergy <= 0) return;
+
+        if (!reversedGravity)
         {
-            if (consumesEnergy && currentEnergy <= 0) return;
-
-            if (!reversedGravity)
+            if (currentLane > 0)
             {
-                if (currentLane > 0)
-                {
-                    currentLane--;
-                    UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping down
-                    if (consumesEnergy) ConsumeEnergy();
-                }
-            }
-            else
-            {
-                if (currentLane < maxLanes)
-                {
-                    currentLane++;
-                    UpdateLanePosition();
-                    beatsToSkip = 1; // Bypass the next beat after jumping
-                    if (consumesEnergy) ConsumeEnergy();
-                }
+                currentLane--;
+                UpdateLanePosition();
+                beatsToSkip = 1;
+                if (consumesEnergy) ConsumeEnergy();
             }
         }
+        else
+        {
+            if (currentLane < maxLanes)
+            {
+                currentLane++;
+                UpdateLanePosition();
+                beatsToSkip = 1;
+                if (consumesEnergy) ConsumeEnergy();
+            }
+        }
+       
     }
+
+}
+
+
 
     public void JumpPlayer(int lane)
     {
@@ -161,27 +178,52 @@ public class PlayerController : MonoBehaviour
         UpdateLanePosition();
         beatsToSkip = 1; // Bypass the next beat after pad/orb jump
         ConsumeEnergy();
+        animator.SetBool("IsPadding", true);
+        StartCoroutine(ResetPaddingFlag());
     }
+    private System.Collections.IEnumerator ResetPaddingFlag()
+    {
+        // Tự lấy độ dài của clip đang play trên layer 0
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.3f;
 
+        yield return new WaitForSeconds(clipLength);
+        animator.SetBool("IsPadding", false);
+    }
     public void JumpPlayerToGround()
     {
         currentLane = !reversedGravity ? minLanes : maxLanes;
-        UpdateLanePosition();
+        UpdateLanePosition(fallDuration, fallEase);
     }
 
-    private void UpdateLanePosition()
+    // Normal lane change (jumping up): uses the standard transition feel.
+    private void UpdateLanePosition() => UpdateLanePosition(transitionDuration, laneChangeEase);
+
+    private void UpdateLanePosition(float duration, DG.Tweening.Ease ease)
     {
         float targetY = startPosition.y + (currentLane * laneHeight);
 
         transform.DOKill();
 
-        transform.DOMoveY(targetY, transitionDuration)
-                 .SetEase(laneChangeEase);
+        transform.DOMoveY(targetY, duration)
+                 .SetEase(ease); 
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
     }
 
-    
+    private System.Collections.IEnumerator WaitForJumpAnimation()
+    {
+        yield return null; 
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.3f;
+
+        yield return new WaitForSeconds(clipLength);
+
+        isJumping = false;
+        animator.SetBool("IsJumping", false);
+    }
+
+
     private void OnDestroy()
     {
         transform.DOKill();
@@ -195,25 +237,36 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void Die()
     {
-        if (isDead) return; // Already dead - ignore any further hits.
+        if (isDead) return;
         isDead = true;
 
-        // Freeze the player in place by cancelling any in-progress lane tween.
         transform.DOKill();
 
-        if (OnPlayerDeath != null)
+        if (rb != null)
         {
-            // A GameManager (or other system) is listening - let it drive the
-            // game-over state, pausing, UI and scene reload.
-            OnPlayerDeath.Invoke();
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
         }
+
+        animator.SetBool("IsDying", true);
+
+        StartCoroutine(DieSequence());
+    }
+
+    private System.Collections.IEnumerator DieSequence()
+    {
+        // Chờ animation IsDying chạy xong
+        yield return null; // chờ 1 frame để Animator cập nhật state mới
+        AnimatorClipInfo[] clips = animator.GetCurrentAnimatorClipInfo(0);
+        float clipLength = clips.Length > 0 ? clips[0].clip.length : 0.5f;
+
+        yield return new WaitForSeconds(clipLength);
+
+        if (OnPlayerDeath != null)
+            OnPlayerDeath.Invoke();
         else
         {
-            // Fallback for scenes that don't yet have a GameManager: reload the
-            // current scene so death still behaves like before this system existed.
-            Debug.LogWarning(
-                "[PlayerController] Player died but no OnPlayerDeath listener was found. " +
-                "Reloading the current scene as a fallback. Add a GameManager to handle this properly.");
+            Debug.LogWarning("[PlayerController] No OnPlayerDeath listener. Reloading scene.");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
@@ -221,7 +274,8 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimation()
     {
         animator.SetBool("IsRunning", isRunning);
-        animator.SetBool("IsJumping", false);
+        // Bỏ phần check IsOnGroundLane() ở đây, đã xử lý trong OnComplete
+        animator.SetBool("IsJumping", isJumping);
     }
 
     /// <summary>
@@ -251,7 +305,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentLane < maxLanes) currentLane++;
         }
-        UpdateLanePosition();
+        UpdateLanePosition(fallDuration, fallEase);
     }
 
     public void ToggleReverseGravity()
@@ -266,6 +320,14 @@ public class PlayerController : MonoBehaviour
     public int GetCurrentEnergy() => currentEnergy;
     public int GetMaxEnergy() => maxEnergy;
     public bool isReversedGravity() => reversedGravity;
+
+    /// <summary>
+    /// True when the player is logically resting on the ground lane (lane 0 normally,
+    /// or the top lane under reversed gravity). This flips the instant a jump starts,
+    /// unlike a world-position raycast which lags behind the lane-change tween. Used to
+    /// gate energy recovery so the beat line on the jump beat can't refund the jump cost.
+    /// </summary>
+    public bool IsOnGroundLane() => !reversedGravity ? currentLane == minLanes : currentLane == maxLanes;
 
     public void SetRunning(bool running)
     {

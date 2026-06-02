@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HomeButtonBehaviour : MonoBehaviour
 {
@@ -8,9 +7,8 @@ public class HomeButtonBehaviour : MonoBehaviour
 
     public void HomeButtonOnClick()
     {
-        // The game is frozen on game-over, so restore normal time before leaving,
-        // otherwise the main menu would load while still paused.
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuSceneName);
+        // The game is frozen on game-over. SceneTransitionManager restores normal time
+        // before loading, otherwise the main menu would load while still paused.
+        SceneTransitionManager.LoadLevel(mainMenuSceneName);
     }
 }

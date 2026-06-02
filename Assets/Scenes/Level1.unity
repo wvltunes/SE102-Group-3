@@ -163,8 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01251cf13bf5d5842a85cbe4a3c75273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundDetector
-  raycastDistance: 2
-  showDebugRay: 1
 --- !u!1 &56383419
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f635f3525826b46a4e0b671c59e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
-  gameSpeed: 5
   triggerRangeX: 1
   isEnabled: 1
 --- !u!61 &187944439
@@ -723,6 +720,7 @@ GameObject:
   - component: {fileID: 327646555}
   - component: {fileID: 327646554}
   - component: {fileID: 327646553}
+  - component: {fileID: 327646560}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -848,6 +846,9 @@ MonoBehaviour:
   minLanes: 0
   transitionDuration: 0.1
   laneChangeEase: 6
+  fallDuration: 0.02
+  fallEase: 5
+  runSpeed: 6
 --- !u!95 &327646557
 Animator:
   serializedVersion: 7
@@ -945,6 +946,19 @@ Transform:
   - {fileID: 7591926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &327646560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327646552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24785eca90c52f34fb0b5f95ed7f7359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterApplier
+  spriteRenderers: []
 --- !u!1 &358759898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f635f3525826b46a4e0b671c59e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
-  gameSpeed: 5
   triggerRangeX: 1
   isEnabled: 1
 --- !u!61 &367099077
@@ -1195,6 +1208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompleteZone
   playerTag: Player
+  positionX: 0
+  positionY: 0
+  positionZ: 0
+  colliderWidth: 2
+  colliderHeight: 8
 --- !u!61 &570960753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1229,7 +1247,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.4468584, y: 0.46209288}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1239,7 +1257,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.4312706, y: 8.667689}
   m_EdgeRadius: 0
 --- !u!4 &570960754
 Transform:
@@ -1250,7 +1268,7 @@ Transform:
   m_GameObject: {fileID: 570960751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.34, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1432,6 +1450,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &962705810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962705812}
+  - component: {fileID: 962705811}
+  m_Layer: 0
+  m_Name: SceneTransitionStartup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &962705811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962705810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd01b1c57d11384a832b651c90177cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionStartup
+--- !u!4 &962705812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962705810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.25668, y: 567.57367, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031951855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,7 +1644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f635f3525826b46a4e0b671c59e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
-  gameSpeed: 5
   triggerRangeX: 1
   isEnabled: 1
 --- !u!61 &1034202006
@@ -1978,7 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f635f3525826b46a4e0b671c59e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaneReducerTriggerMovement
-  gameSpeed: 5
   triggerRangeX: 1
   isEnabled: 1
 --- !u!61 &1148099149
@@ -3168,3 +3228,4 @@ SceneRoots:
   - {fileID: 570960754}
   - {fileID: 1588732957}
   - {fileID: 327646559}
+  - {fileID: 962705812}

@@ -143,6 +143,6 @@ public class DiscMenuController : MonoBehaviour
    public void LoadSelectedLevel()
     {
         string sceneName = "Level" + (currentIndex + 1);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        SceneTransitionManager.LoadLevel(sceneName);
     }
 }
