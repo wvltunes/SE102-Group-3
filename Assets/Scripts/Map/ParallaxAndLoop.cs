@@ -12,12 +12,22 @@ public class ParallaxAndLoop : MonoBehaviour
 
     private void Start()
     {
-        //Use 3 objects to create a seamless loop
+        if (cameraTransform == null)
+            cameraTransform = Camera.main.transform;
+
         lastCameraPosition = cameraTransform.position;
+
         objects = new Transform[transform.childCount];
+
         for (int i = 0; i < transform.childCount; i++)
         {
             objects[i] = transform.GetChild(i);
+        }
+
+        SpriteRenderer sr = objects[0].GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            objectWidth = sr.bounds.size.x;
         }
     }
 

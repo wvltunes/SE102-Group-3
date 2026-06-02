@@ -150,6 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompleteZone
   playerTag: Player
+  positionX: 0
+  positionY: 0
+  positionZ: 0
+  colliderWidth: 2
+  colliderHeight: 8
 --- !u!61 &1927261847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -377,6 +382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb954de077919046abec2bb37044e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  totalOrbsInLevel: 0
+  orbsScoreDisplay: {fileID: 0}
+  songProgressDisplay: {fileID: 0}
+  levelCompleteOrbsDisplay: {fileID: 0}
+  levelCompleteSongProgressDisplay: {fileID: 0}
 --- !u!4 &2061537184
 Transform:
   m_ObjectHideFlags: 0
