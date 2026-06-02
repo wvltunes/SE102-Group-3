@@ -54,6 +54,9 @@ public class GravityOrbBehaviour : MonoBehaviour
         {
             player.ToggleReverseGravity();
             isTriggered = true;
+            
+            // Count this orb as collected
+            ScoreTracker.AddOrb();
 
             StartCoroutine(ShrinkAndDestroy());
         }

@@ -58,11 +58,11 @@ public class AudioManager : MonoBehaviour
         // and let AudioInitializer.Start() kick off the first play.
         if (audioSource != null
             && audioSource.clip != null
-            && scene.buildIndex == musicSceneBuildIndex
-            && !audioSource.isPlaying)
+            && scene.buildIndex == musicSceneBuildIndex)
         {
-            audioSource.Stop();   // clear any Paused state + reset to position 0
-            audioSource.Play();   // play from the beginning
+            audioSource.Stop();     // clear any Paused state + reset to position 0
+            audioSource.UnPause();  // ensure not paused before playing
+            audioSource.Play();     // play from the beginning
             Debug.Log("[AudioManager] Restarted track after scene reload.");
         }
     }

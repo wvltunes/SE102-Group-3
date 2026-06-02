@@ -55,6 +55,9 @@ public class JumpOrbBehaviour : MonoBehaviour
         {
             player.JumpPlayer(laneToJump); 
             isTriggered = true;
+            
+            // Count this orb as collected
+            ScoreTracker.AddOrb();
 
             StartCoroutine(ShrinkAndDestroy());
         }
