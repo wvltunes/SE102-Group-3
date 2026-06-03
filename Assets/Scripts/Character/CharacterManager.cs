@@ -97,6 +97,37 @@ public class CharacterManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Guarantees the runtime selection (index + in-level sprite/animators) is populated
+    /// before gameplay reads it. Resolves the index from PlayerPrefs and the visuals from
+    /// the <see cref="gameRoster"/> whenever the selection screen did not push live
+    /// references this session - e.g. launching a level directly, or any path where the
+    /// live refs were lost between scenes. The persisted index + the Resources roster are
+    /// the source of truth that always survives, so this makes the chosen character show
+    /// up in the level regardless of how the level was entered.
+    ///
+    /// Safe to call from a gameplay Start(): it never clobbers references that are already
+    /// set, so a correct live selection pushed from the menu wins.
+    /// </summary>
+    public void EnsureGameVisuals()
+    {
+        // Recover the chosen index from PlayerPrefs when this session never set it
+        // (direct level launch, or a cold start that skipped the select screen).
+        if (selectedIndex < 0)
+            selectedIndex = PlayerPrefs.GetInt(SelectedCharacterKey, -1);
+        if (selectedIndex < 0) return;
+
+        // Make sure the Resources roster is available (the live instance may be one that
+        // never had it assigned in the Inspector, e.g. the bootstrapped manager).
+        if (gameRoster == null)
+            gameRoster = Resources.Load<CharacterGameRoster>(GameRosterResourcePath);
+
+        // Pull stats from the (optional) CharacterUIData roster, and fill any missing
+        // in-level sprite/animator from the game-visuals roster keyed by the saved index.
+        ApplyFromRoster(selectedIndex, includeSprite: selectedSprite == null);
+        ApplyGameVisuals(selectedIndex);
+    }
+
+    /// <summary>
     /// Fills the runtime sprite/animators from the <see cref="gameRoster"/> entry for
     /// <paramref name="index"/>. Used to restore the chosen look from the saved index
     /// when the selection screen did not push live references this session. Only fills
@@ -135,6 +166,11 @@ public class CharacterManager : MonoBehaviour
         // Roster stats (if any) take precedence over loosely-typed UI values, but
         // never clobber the in-game sprite that was just set from the select screen.
         ApplyFromRoster(index, includeSprite: false);
+
+        // Backfill any in-level sprite/animator the select screen did not provide for
+        // this character from the Resources game-visuals roster, so gameplay always has
+        // a complete set of visuals to apply (only fills values still unset).
+        ApplyGameVisuals(index);
 
         Save();
     }
