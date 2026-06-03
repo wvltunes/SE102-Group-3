@@ -65,6 +65,9 @@ public class LevelCompleteZone : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             triggered = true;
+            // Victory stinger from the dedicated SFX source so it is heard even
+            // though the GameManager pauses the music for the level-complete state.
+            SfxManager.Instance?.PlayVictory();
             OnLevelComplete?.Invoke();
         }
     }

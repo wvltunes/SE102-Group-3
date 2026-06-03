@@ -57,6 +57,7 @@ public class GravityOrbBehaviour : MonoBehaviour
             
             // Count this orb as collected
             ScoreTracker.AddOrb();
+            SfxManager.Instance?.PlayCollect();
 
             StartCoroutine(ShrinkAndDestroy());
         }
