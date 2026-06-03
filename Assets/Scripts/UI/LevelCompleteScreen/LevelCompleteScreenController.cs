@@ -43,6 +43,7 @@ public class LevelCompleteScreenController : MonoBehaviour
 
     private void OnEnable()
     {
+        shown = false; // Reset flag để lần sau vẫn hiển thị được
         LevelCompleteZone.OnLevelComplete += HandleLevelComplete;
     }
 
@@ -124,6 +125,22 @@ public class LevelCompleteScreenController : MonoBehaviour
             Debug.Log("[LevelCompleteScreenController] No next level - returning to menu.");
             SceneTransitionManager.LoadLevel(menuSceneName);
         }
+    }
+
+    /// <summary>Restart button: reload the current level.</summary>
+    public void OnRestartButton()
+    {
+        // Disable the level complete zone collider to prevent immediate re-trigger on scene reload
+        LevelCompleteZone zone = FindObjectOfType<LevelCompleteZone>();
+        if (zone != null)
+        {
+            Collider2D collider = zone.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+        }
+        SceneTransitionManager.LoadLevel(SceneManager.GetActiveScene().name);
     }
 
     // --- Helpers ---------------------------------------------------------------
