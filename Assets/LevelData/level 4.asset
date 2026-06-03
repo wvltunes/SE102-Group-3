@@ -130,7 +130,7 @@ MonoBehaviour:
   - beatIndex: 43
     type: 7
     lane: 3
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 46
     type: 5
     lane: 0
@@ -138,11 +138,11 @@ MonoBehaviour:
   - beatIndex: 47
     type: 1
     lane: 0
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 47
     type: 1
     lane: 1
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 50
     type: 3
     lane: 0
@@ -334,15 +334,15 @@ MonoBehaviour:
   - beatIndex: 108
     type: 0
     lane: 2
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 108
     type: 0
     lane: 3
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 110
     type: 2
     lane: 0
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 112
     type: 5
     lane: 0

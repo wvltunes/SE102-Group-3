@@ -7447,6 +7447,7 @@ GameObject:
   - component: {fileID: 1522260976}
   - component: {fileID: 1522260975}
   - component: {fileID: 1522260974}
+  - component: {fileID: 1522260977}
   m_Layer: 0
   m_Name: KillZone
   m_TagString: Untagged
@@ -7527,6 +7528,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522260977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522260973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae63ae960b84646b9fc47e5eded3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillZoneFollow
+  followSpeed: 5
+  offset: {x: -5, y: 0, z: -10}
+  minY: 0
+  maxY: 0
 --- !u!1 &1534992372
 GameObject:
   m_ObjectHideFlags: 0
