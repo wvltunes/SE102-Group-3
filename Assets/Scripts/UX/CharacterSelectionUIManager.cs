@@ -246,15 +246,12 @@ public class UIManager : MonoBehaviour
 
         toggleViewButton?.button?.onClick.AddListener(OnToggleViewClicked);
 
-        if (champions != null && champions.Length > 0)
-            ApplyImmediate(0);
-
-        SelectTab(0);
-
-        // Mặc định select char đầu tiên nếu chưa chọn. Persist it so a level
-        // launched right after this screen always has a valid saved index, even
-        // if the player never presses the confirm button.
-        if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex == -1
+        int initialIndex = 0;
+        if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex != -1)
+        {
+            initialIndex = CharacterManager.instance.selectedIndex;
+        }
+        else if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex == -1
             && champions != null && champions.Length > 0)
         {
             CharacterManager.instance.SetSelection(
@@ -264,13 +261,24 @@ public class UIManager : MonoBehaviour
                 champions[0].menuAnimator,
                 champions[0].profile != null ? champions[0].profile.speedValue / 100f : -1f,
                 champions[0].skill != null ? champions[0].skill.energyCost / 4f : -1f);
+            initialIndex = 0;
         }
+
+        if (champions != null && champions.Length > 0)
+            ApplyImmediate(initialIndex);
+
+        SelectTab(0);
+
         // Lưu vị trí gốc của arrow (đặt đúng vị trí trong editor trước)
         if (selectArrow != null)
             arrowOrigin = selectArrow.GetComponent<RectTransform>().anchoredPosition;
 
-    
+        StartCoroutine(DelayedUpdateArrow());
+    }
 
+    IEnumerator DelayedUpdateArrow()
+    {
+        yield return new WaitForEndOfFrame();
         UpdateSelectArrow();
     }
 
