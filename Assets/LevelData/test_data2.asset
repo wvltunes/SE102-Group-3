@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96cbed98fe00cd43999002e431aaef2, type: 3}
+  m_Name: test_data2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelName: Test Data 2
+  bpm: 133
+  beatEvents:
+  - beatIndex: 0
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 5
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 8
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 8
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 8
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 7
+    type: 5
+    lane: 0
+    laneToJump: 3
+  - beatIndex: 13
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 14
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 15
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 19
+    type: 5
+    lane: 0
+    laneToJump: 2
+  - beatIndex: 20
+    type: 1
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 20
+    type: 1
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 20
+    type: 1
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 25
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 25
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 25
+    type: 1
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 28
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 32
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 36
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 40
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 40
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 39
+    type: 5
+    lane: 0
+    laneToJump: 3

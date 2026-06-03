@@ -136,7 +136,7 @@ public class BlockBehaviour : MonoBehaviour
         {
             Gizmos.color = new Color(1f, 0f, 0f, 0.6f);
             Vector3 leftCenter = transform.position + (Vector3)col.offset + Vector3.left * (size.x / 2f);
-            Gizmos.DrawWireCube(leftCenter, new Vector3(groundContactThreshold, size.y, 0));
+            Gizmos.DrawWireCube(leftCenter, new Vector3(groundContactThreshold, size.y * 0.75f, 0));
         }
     }
 }

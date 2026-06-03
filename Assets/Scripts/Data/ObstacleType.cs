@@ -11,5 +11,6 @@ public enum ObstacleType
     JumpOrb,
     GravityOrb,
     JumpPad,
-    GravityPad
+    GravityPad,
+    GroundOrb,
 }

@@ -23,6 +23,7 @@ public class LevelSequencer : MonoBehaviour
     [SerializeField] private GameObject gravityOrbPrefab;
     [SerializeField] private GameObject jumpPadPrefab;
     [SerializeField] private GameObject gravityPadPrefab;
+    [SerializeField] private GameObject groundOrbPrefab;
 
     [Header("Level Completion")]
     [SerializeField] private GameObject levelCompleteZonePrefab;
@@ -185,6 +186,7 @@ public class LevelSequencer : MonoBehaviour
             ObstacleType.GravityOrb => gravityOrbPrefab,
             ObstacleType.JumpPad => jumpPadPrefab,
             ObstacleType.GravityPad => gravityPadPrefab,
+            ObstacleType.GroundOrb => groundOrbPrefab,
             _ => null
         };
     }
