@@ -423,6 +423,15 @@ public class PlayerController : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>(); 
         this.reversedGravity = !this.reversedGravity;
         if (sr != null) sr.flipY = reversedGravity;
+        if (reversedGravity)
+        {
+            startPosition.y += 0.16f;
+        }
+        else
+        {
+            startPosition.y -= 0.16f;
+        }
+        beatsToSkip = beatsToSkipAfterJump;
     }
 
     public void RecoverEnergy() { if (currentEnergy < maxEnergy) currentEnergy++; }

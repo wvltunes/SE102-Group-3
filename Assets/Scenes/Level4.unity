@@ -3154,6 +3154,14 @@ MonoBehaviour:
   fallDuration: 0.02
   fallEase: 5
   runSpeed: 6
+  beatsToSkipAfterJump: 2
+  applyCharacterVisuals: 1
+  applyCharacterEnergy: 1
+  applyCharacterSpeed: 0
+  minRunSpeed: 5
+  maxRunSpeed: 8
+  minMaxEnergy: 2
+  maxMaxEnergy: 4
 --- !u!95 &778058539
 Animator:
   serializedVersion: 7
@@ -3330,6 +3338,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808016649}
   m_CullTransparentMesh: 1
+--- !u!1 &808080001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808080003}
+  - component: {fileID: 808080002}
+  m_Layer: 0
+  m_Name: LevelSequencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &808080002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808080001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8313bf44cafd3b4db184afbdb81a170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
+  levelData: {fileID: 11400000, guid: ea4a1e9444efc432ba2b15f9b4412c98, type: 2}
+  spawnOffsetBeats: 8
+  blockPrefab: {fileID: 8753845021385592856, guid: 765482faf0b459a47bb94ffbfc9d5f0a, type: 3}
+  enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
+  spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
+  jumpOrbPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
+  gravityOrbPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
+  jumpPadPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
+  gravityPadPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
+  groundOrbPrefab: {fileID: 2005637956847055857, guid: b553136922f636d42827079b972b8a54, type: 3}
+  levelCompleteZonePrefab: {fileID: 5453482316125499217, guid: 07d4adb0b393d664491d466e71267f78, type: 3}
+  completionZoneDelay: 1
+  laneHeight: 2.2
+  laneBaseY: -3
+  backgroundObject: {fileID: 0}
+  backgroundExtensionScale: 2
+--- !u!4 &808080003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808080001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817139028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,6 +4650,7 @@ MonoBehaviour:
   completeScreen: {fileID: 1114441603}
   popTarget: {fileID: 1114441602}
   menuSceneName: GameSelection
+  totalLevels: 5
   popDuration: 0.35
   popOvershoot: 1.1
 --- !u!1 &1119543954
@@ -7589,6 +7658,7 @@ GameObject:
   - component: {fileID: 1778152976}
   - component: {fileID: 1778152975}
   - component: {fileID: 1778152974}
+  - component: {fileID: 1778152977}
   m_Layer: 0
   m_Name: KillZone
   m_TagString: Untagged
@@ -7669,6 +7739,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1778152977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778152973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eae63ae960b84646b9fc47e5eded3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillZoneFollow
+  followSpeed: 5
+  offset: {x: -5, y: 0, z: -10}
+  minY: 0
+  maxY: 0
 --- !u!1 &1798590360
 GameObject:
   m_ObjectHideFlags: 0
@@ -9201,103 +9287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064945004}
   m_CullTransparentMesh: 1
---- !u!1 &2070017912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2070017915}
-  - component: {fileID: 2070017914}
-  - component: {fileID: 2070017913}
-  m_Layer: 0
-  m_Name: LevelCompleteZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2070017913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070017912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0731b938080cb4d941ab4cd15581f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelCompleteZone
-  playerTag: Player
-  positionX: 0
-  positionY: 0
-  positionZ: 0
-  colliderWidth: 2
-  colliderHeight: 8
---- !u!61 &2070017914
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070017912}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 12.762587, y: 0.5007901}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.98431015, y: 8.858546}
-  m_EdgeRadius: 0
---- !u!4 &2070017915
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070017912}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072687931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9436,66 +9425,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &808080001
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 808080003}
-  - component: {fileID: 808080002}
-  m_Layer: 0
-  m_Name: LevelSequencer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &808080002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808080001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8313bf44cafd3b4db184afbdb81a170, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
-  levelData: {fileID: 11400000, guid: ea4a1e9444efc432ba2b15f9b4412c98, type: 2}
-  spawnOffsetBeats: 8
-  blockPrefab: {fileID: 8753845021385592856, guid: 765482faf0b459a47bb94ffbfc9d5f0a, type: 3}
-  enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
-  spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
-  jumpOrbPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
-  gravityOrbPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}
-  jumpPadPrefab: {fileID: 2005637956847055857, guid: ff21cfa47063be947be9c9ac899b5a3c, type: 3}
-  gravityPadPrefab: {fileID: 2005637956847055857, guid: b24b9ae79d6c527478ff3c411d28eeca, type: 3}
-  groundOrbPrefab: {fileID: 2005637956847055857, guid: b553136922f636d42827079b972b8a54, type: 3}
-  levelCompleteZonePrefab: {fileID: 5453482316125499217, guid: 07d4adb0b393d664491d466e71267f78, type: 3}
-  completionZoneDelay: 1
-  laneHeight: 2.2
-  laneBaseY: -3
-  backgroundObject: {fileID: 0}
-  backgroundExtensionScale: 2
---- !u!4 &808080003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808080001}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9503,7 +9432,6 @@ SceneRoots:
   - {fileID: 808080003}
   - {fileID: 887572170}
   - {fileID: 15003238}
-  - {fileID: 2070017915}
   - {fileID: 778058541}
   - {fileID: 1387531729}
   - {fileID: 1014527206}
