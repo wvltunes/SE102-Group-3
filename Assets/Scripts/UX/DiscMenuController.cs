@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class DiscMenuController : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioClip[] levelMusics;
+    public float musicBPM = 120f;
+
     public RectTransform segmentParent;
     public float rotateSpeed = 8f;
 
@@ -10,6 +14,7 @@ public class DiscMenuController : MonoBehaviour
 
     [Header("Background")]
     public ParallaxBackgroundController parallaxBackground;
+
     void Start()
     {
         Canvas.ForceUpdateCanvases();
@@ -19,13 +24,14 @@ public class DiscMenuController : MonoBehaviour
         for (int i = 0; i < segmentParent.childCount; i++)
         {
             LevelItem item = segmentParent.GetChild(i).GetComponent<LevelItem>();
+
             if (item != null)
             {
                 item.isUnlocked = (i < unlockedCount);
             }
         }
 
-        SetInitialRotation(); 
+        SetInitialRotation();
     }
 
     void Update()
@@ -36,8 +42,11 @@ public class DiscMenuController : MonoBehaviour
     void SetInitialRotation()
     {
         float step = 360f / segmentParent.childCount;
+
         targetAngle = -currentIndex * step;
+
         transform.rotation = Quaternion.Euler(0, 0, targetAngle);
+
         Highlight();
     }
 
@@ -57,23 +66,26 @@ public class DiscMenuController : MonoBehaviour
     public void Next()
     {
         int count = segmentParent.childCount;
+
         int nextIndex = (currentIndex + 1) % count;
 
         LevelItem nextItem = segmentParent.GetChild(nextIndex).GetComponent<LevelItem>();
 
         if (!nextItem.isUnlocked)
         {
-            HitEffect(); 
+            HitEffect();
             return;
         }
 
         currentIndex = nextIndex;
+
         UpdateRotation();
     }
 
     public void Back()
     {
         int count = segmentParent.childCount;
+
         int nextIndex = (currentIndex - 1 + count) % count;
 
         LevelItem nextItem = segmentParent.GetChild(nextIndex).GetComponent<LevelItem>();
@@ -85,17 +97,19 @@ public class DiscMenuController : MonoBehaviour
         }
 
         currentIndex = nextIndex;
+
         UpdateRotation();
     }
 
     void UpdateRotation()
     {
         float step = 360f / segmentParent.childCount;
+
         targetAngle = -currentIndex * step;
+
         Highlight();
     }
 
-    // Sửa hàm Highlight():
     void Highlight()
     {
         for (int i = 0; i < segmentParent.childCount; i++)
@@ -105,18 +119,34 @@ public class DiscMenuController : MonoBehaviour
             if (item != null)
             {
                 bool isSelected = (i == currentIndex);
+
                 item.UpdateUI(isSelected);
             }
         }
 
-        Debug.Log(parallaxBackground);
-
         if (parallaxBackground != null)
+        {
             parallaxBackground.SetBackground(currentIndex);
+        }
+
+        // AUDIO
+        if (AudioManager.instance != null &&
+            levelMusics != null &&
+            currentIndex < levelMusics.Length)
+        {
+            AudioClip clip = levelMusics[currentIndex];
+
+            if (clip != null)
+            {
+                AudioManager.instance.PlayWithFade(clip, musicBPM);
+            }
+        }
     }
+
     void HitEffect()
     {
         StopAllCoroutines();
+
         StartCoroutine(BounceBack());
     }
 
@@ -124,36 +154,39 @@ public class DiscMenuController : MonoBehaviour
     {
         float original = targetAngle;
 
-
         float bump = targetAngle - 10f;
 
         float t = 0;
+
         while (t < 0.2f)
         {
             t += Time.deltaTime;
+
             float z = Mathf.Lerp(original, bump, t / 0.2f);
+
             transform.rotation = Quaternion.Euler(0, 0, z);
+
             yield return null;
         }
 
         t = 0;
+
         while (t < 0.2f)
         {
             t += Time.deltaTime;
+
             float z = Mathf.Lerp(bump, original, t / 0.2f);
+
             transform.rotation = Quaternion.Euler(0, 0, z);
+
             yield return null;
         }
     }
 
-   public void LoadSelectedLevel()
+    public void LoadSelectedLevel()
     {
         string sceneName = "Level" + (currentIndex + 1);
+
         SceneTransitionManager.LoadLevel(sceneName);
     }
-
-    
-
-
-    
 }
