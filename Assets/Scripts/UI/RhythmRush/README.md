@@ -91,5 +91,6 @@ their own.
   **Accuracy** are sample stand-ins (`SampleMaxCombo` / `SampleAccuracy` in
   `RRGameScreenBinder`) until the game tracks them — swap them for real fields then.
   The **gallery** shows the deck's mock values throughout.
-- The neon pause menu follows the design (Resume / Retry / Quit) and so **drops the old
-  "Tutorial" button**. Say the word and I'll add it back.
+- The neon pause menu has **Resume / Retry / Tutorial / Quit to menu**. TUTORIAL opens a
+  neon "HOW TO PLAY" sub-panel (controls: Space = jump up, S = drop down, Esc = pause)
+  with a BACK button — replacing the project's old cartoon tutorial panel.

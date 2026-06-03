@@ -107,6 +107,12 @@ public class PlayerController : MonoBehaviour
         CharacterManager cm = CharacterManager.instance;
         if (cm == null) return;
 
+        // Resolve the choice from the persisted index + Resources roster when the select
+        // screen did not push live references this session (direct launch, lost refs on a
+        // scene change, ...). This is what guarantees the chosen character actually shows
+        // up in the level no matter how the level was entered.
+        cm.EnsureGameVisuals();
+
         // Visuals chosen on the select screen.
         if (applyCharacterVisuals)
         {
@@ -114,6 +120,9 @@ public class PlayerController : MonoBehaviour
             if (sr != null && cm.selectedSprite != null)
                 sr.sprite = cm.selectedSprite;
 
+            // Apply the chosen animator. The Animator drives the SpriteRenderer every
+            // frame, so without this the scene's default-character animator would keep
+            // overwriting the sprite set above and the wrong character would show.
             if (animator != null && cm.selectedAnimator != null)
                 animator.runtimeAnimatorController = cm.selectedAnimator;
         }

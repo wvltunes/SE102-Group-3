@@ -84,24 +84,77 @@ namespace RhythmRush.UI
             return root;
         }
 
-        /// <summary>Dim + PAUSED modal only — for layering over the live game.</summary>
+        /// <summary>Dim + PAUSED modal (with a TUTORIAL sub-panel) — for layering over the live game.</summary>
         public static void PauseOverlay(RectTransform parent, Action onResume, Action onRetry, Action onQuit)
         {
             Dim(parent);
-            var panel = RRUI.Panel(parent, 560, 330);
-            Title(panel, "PAUSED", RRTheme.Cyan, 30, glow: true);
 
-            var resume = RRUI.Capsule(panel, "RESUME", RRBtn.Cyan);
-            var retry  = RRUI.Capsule(panel, "RETRY", RRBtn.Pink);
-            var quit   = RRUI.Capsule(panel, "QUIT TO MENU", RRBtn.Ghost);
-            RRUI.Equalize(resume, retry, quit);   // same size for all three
+            // --- PAUSED modal ---
+            var pause = RRUI.Panel(parent, 560, 400);
+            Title(pause, "PAUSED", RRTheme.Cyan, 30, glow: true);
+
+            var resume = RRUI.Capsule(pause, "RESUME", RRBtn.Cyan);
+            var retry  = RRUI.Capsule(pause, "RETRY", RRBtn.Pink);
+            var tut    = RRUI.Capsule(pause, "TUTORIAL", RRBtn.Purple);
+            var quit   = RRUI.Capsule(pause, "QUIT TO MENU", RRBtn.Ghost);
+            RRUI.Equalize(resume, retry, tut, quit);   // all four the same size
             resume.root.AtTopCenter(110);
             retry.root.AtTopCenter(178);
-            quit.root.AtTopCenter(246);
+            tut.root.AtTopCenter(246);
+            quit.root.AtTopCenter(314);
+
+            // --- HOW TO PLAY modal (hidden until TUTORIAL is pressed) ---
+            var (tutContent, back) = BuildTutorial(parent);
+            GameObject pausePanel = pause.parent.gameObject;
+            GameObject tutPanel = tutContent.parent.gameObject;
+            tutPanel.SetActive(false);
 
             Wire(resume.button, onResume, "Resume");
             Wire(retry.button, onRetry, "Retry");
             Wire(quit.button, onQuit, "Quit to menu");
+            tut.button.onClick.AddListener(() => { pausePanel.SetActive(false); tutPanel.SetActive(true); });
+            back.onClick.AddListener(() => { tutPanel.SetActive(false); pausePanel.SetActive(true); });
+        }
+
+        /// <summary>The "HOW TO PLAY" panel reached from the pause menu. Returns its content node + BACK button.</summary>
+        static (RectTransform content, UnityEngine.UI.Button back) BuildTutorial(RectTransform parent)
+        {
+            var content = RRUI.Panel(parent, 620, 444);
+
+            var t = RRUI.Text("title", content, "HOW TO PLAY", RRFonts.Display, 52, RRTheme.Cyan);
+            t.rectTransform.Size(540, 64).AtTopCenter(26);
+            RRUI.Neon(t, RRTheme.Ink, 0.16f, RRTheme.Cyan, 0.45f);
+
+            var tag = RRUI.Text("tag", content, "Catch the flow, ride the beat.", RRFonts.Ui, 15, RRTheme.Fg2);
+            tag.rectTransform.Size(540, 22).AtTopCenter(96);
+
+            KbdRow(content, "SPACE", "Jump up a lane", 140);
+            KbdRow(content, "S", "Drop down a lane", 188);
+            KbdRow(content, "ESC", "Pause / resume", 236);
+
+            var tip = RRUI.Text("tip", content,
+                "Hit orbs & pads on the beat. Miss and your ENERGY drains — stay grounded to recover. Clear the track to earn your STAR RANK.",
+                RRFonts.Ui, 13, RRTheme.Fg3);
+            tip.rectTransform.Size(520, 52).AtTopCenter(296);
+
+            var back = RRUI.Capsule(content, "BACK", RRBtn.Cyan, small: true);
+            back.root.AtTopCenter(372);
+            return (content, back.button);
+        }
+
+        /// <summary>A keyboard-key chip + description row for the tutorial panel.</summary>
+        static void KbdRow(RectTransform parent, string key, string desc, float yFromTop)
+        {
+            const float rowW = 460f, chipW = 96f, chipH = 34f;
+            var row = RRUI.Node("trow:" + key, parent); row.Size(rowW, 40).AtTopCenter(yFromTop);
+
+            var chip = RRUI.Node("kbd", row); chip.Size(chipW, chipH).AtLeftCenter(0);
+            RRUI.Img("b", chip, RRSprites.Rounded(8), RRTheme.Ink, sliced: true).rectTransform.Stretch();
+            RRUI.Img("f", chip, RRSprites.Rounded(6), RRTheme.A(Color.white, 0.08f), sliced: true).rectTransform.Stretch(2, 2, 2, 2);
+            RRUI.Text("k", chip, key, RRFonts.Hud, 14, RRTheme.Cyan).rectTransform.Stretch();
+
+            var d = RRUI.Text("d", row, desc.ToUpperInvariant(), RRFonts.UiBold, 14, RRTheme.Fg1, TextAlignmentOptions.Left);
+            d.characterSpacing = 1; d.rectTransform.Size(rowW - chipW - 18, 40).AtLeftCenter(chipW + 18);
         }
 
         // ============================================================ GAME OVER
