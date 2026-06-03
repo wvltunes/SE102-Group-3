@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96cbed98fe00cd43999002e431aaef2, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelName: Level 2
+  bpm: 133
+  beatEvents:
+  - beatIndex: 0
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 0
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 3
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 6
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 9
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 9
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 8
+    type: 3
+    lane: 0
+    laneToJump: 2
+  - beatIndex: 10
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 10
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 10
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 9
+    type: 3
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 11
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 15
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 18
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 21
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 22
+    type: 3
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 23
+    type: 3
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 24
+    type: 3
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 23
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 24
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 25
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 26
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 29
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 32
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 34
+    type: 3
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 35
+    type: 3
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 36
+    type: 3
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 35
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 36
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 37
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 38
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 40
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 42
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 42
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 42
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 45
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 47
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 49
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 51
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 53
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 59
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 59
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 59
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 62
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 67
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 68
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 69
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 70
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 74
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 76
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 79
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 83
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 85
+    type: 3
+    lane: 0
+    laneToJump: 2
+  - beatIndex: 86
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 86
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 87
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 88
+    type: 7
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 89
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 89
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 90
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 92
+    type: 3
+    lane: 0
+    laneToJump: 3
+  - beatIndex: 93
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 93
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 93
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 94
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 95
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 95
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 95
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 98
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 98
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 102
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 102
+    type: 3
+    lane: 1
+    laneToJump: 2
+  - beatIndex: 103
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 103
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 103
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 104
+    type: 7
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 105
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 105
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 105
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 111
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 112
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 113
+    type: 0
+    lane: 2
+    laneToJump: 1
+  - beatIndex: 115
+    type: 0
+    lane: 3
+    laneToJump: 1

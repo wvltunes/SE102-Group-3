@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     // (e.g. overlapping hazards in the same frame).
     private bool isDead = false;
 
+
+    
     [SerializeField] private float laneHeight = 2f;
     [SerializeField] private int maxLanes = 3;
     [SerializeField] private int minLanes = 0;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Settings")]
     [SerializeField] private float runSpeed = 6f;
+    [SerializeField] private int beatsToSkipAfterJump = 2; // Number of beats to skip after a jump before allowing lane reduction
     private bool isRunning = true;
     private bool isJumping = false;
 
@@ -218,7 +221,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane++;
                     UpdateLanePosition();
-                    beatsToSkip = 1;
+                    beatsToSkip = beatsToSkipAfterJump;
                     if (consumesEnergy) ConsumeEnergy();
                     isJumping = true;
                     animator.SetBool("IsJumping", true);
@@ -232,7 +235,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentLane--;
                     UpdateLanePosition();
-                    beatsToSkip = 1;
+                    beatsToSkip = beatsToSkipAfterJump;
                     if (consumesEnergy) ConsumeEnergy();
                     isJumping = true;
                     animator.SetBool("IsJumping", true);
@@ -246,16 +249,12 @@ public class PlayerController : MonoBehaviour
     // Nhảy xuống (S) — không set IsJumping
     if (Input.GetKeyDown(KeyCode.S))
     {
-        if (consumesEnergy && currentEnergy <= 0) return;
-
         if (!reversedGravity)
         {
             if (currentLane > 0)
             {
                 currentLane--;
                 UpdateLanePosition();
-                beatsToSkip = 1;
-                if (consumesEnergy) ConsumeEnergy();
             }
         }
         else
@@ -264,8 +263,6 @@ public class PlayerController : MonoBehaviour
             {
                 currentLane++;
                 UpdateLanePosition();
-                beatsToSkip = 1;
-                if (consumesEnergy) ConsumeEnergy();
             }
         }
        
@@ -286,8 +283,7 @@ public class PlayerController : MonoBehaviour
             currentLane = (currentLane - lane) <= minLanes ? minLanes : currentLane - lane;
         }
         UpdateLanePosition();
-        beatsToSkip = 1; // Bypass the next beat after pad/orb jump
-        ConsumeEnergy();
+        beatsToSkip = beatsToSkipAfterJump; // Bypass the next beat after pad/orb jump
         animator.SetBool("IsPadding", true);
         StartCoroutine(ResetPaddingFlag());
     }

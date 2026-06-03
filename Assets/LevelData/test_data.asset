@@ -16,7 +16,7 @@ MonoBehaviour:
   bpm: 120
   beatEvents:
   - beatIndex: 0
-    type: 5
+    type: 0
     lane: 0
     laneToJump: 0
   - beatIndex: 1

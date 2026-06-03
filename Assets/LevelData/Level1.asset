@@ -18,8 +18,224 @@ MonoBehaviour:
   - beatIndex: 0
     type: 0
     lane: 0
+    laneToJump: 1
+  - beatIndex: 4
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 8
+    type: 2
+    lane: 0
     laneToJump: 0
-  - beatIndex: 3
+  - beatIndex: 12
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 13
     type: 0
     lane: 1
     laneToJump: 0
+  - beatIndex: 14
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 20
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 24
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 28
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 34
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 34
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 34
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 40
+    type: 0
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 40
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 40
+    type: 0
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 45
+    type: 0
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 45
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 45
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 50
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 50
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 55
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 55
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 60
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 60
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 64
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 64
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 64
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 66
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 66
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 66
+    type: 0
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 68
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 68
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 68
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 70
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 72
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 74
+    type: 2
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 80
+    type: 0
+    lane: 0
+    laneToJump: 0
+  - beatIndex: 80
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 80
+    type: 0
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 82
+    type: 0
+    lane: 1
+    laneToJump: 0
+  - beatIndex: 82
+    type: 0
+    lane: 3
+    laneToJump: 0
+  - beatIndex: 84
+    type: 0
+    lane: 2
+    laneToJump: 0
+  - beatIndex: 84
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 92
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 92
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 92
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 92
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 98
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 98
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 98
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 104
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 104
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 104
+    type: 2
+    lane: 0
+    laneToJump: 1
+  - beatIndex: 110
+    type: 0
+    lane: 3
+    laneToJump: 1
+  - beatIndex: 110
+    type: 0
+    lane: 1
+    laneToJump: 1
+  - beatIndex: 110
+    type: 2
+    lane: 0
+    laneToJump: 1
