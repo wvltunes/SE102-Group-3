@@ -1485,6 +1485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307972921}
+  - component: {fileID: 307972922}
   m_Layer: 0
   m_Name: Background layer 6
   m_TagString: Untagged
@@ -1510,6 +1511,21 @@ Transform:
   - {fileID: 1999766747}
   m_Father: {fileID: 573536200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307972922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307972920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed43d50623d65241b302bd886ea4208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxAndLoop
+  cameraTransform: {fileID: 0}
+  parallaxSpeed: 0.15
+  objectWidth: 18
 --- !u!1 &327646552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3829,7 @@ MonoBehaviour:
   completeScreen: {fileID: 768793811}
   popTarget: {fileID: 768793810}
   menuSceneName: GameSelection
+  totalLevels: 5
   popDuration: 0.35
   popOvershoot: 1.1
 --- !u!1 &811101740
@@ -6072,6 +6089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197736844}
+  - component: {fileID: 1197736845}
   m_Layer: 0
   m_Name: Background layer 7
   m_TagString: Untagged
@@ -6097,6 +6115,21 @@ Transform:
   - {fileID: 598227123}
   m_Father: {fileID: 573536200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197736845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197736843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed43d50623d65241b302bd886ea4208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxAndLoop
+  cameraTransform: {fileID: 0}
+  parallaxSpeed: 0.16
+  objectWidth: 18
 --- !u!1 &1225860424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6786,6 +6819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387425336}
+  - component: {fileID: 1387425337}
   m_Layer: 0
   m_Name: Background layer 5
   m_TagString: Untagged
@@ -6811,6 +6845,21 @@ Transform:
   - {fileID: 1303252869}
   m_Father: {fileID: 573536200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387425337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387425335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed43d50623d65241b302bd886ea4208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxAndLoop
+  cameraTransform: {fileID: 0}
+  parallaxSpeed: 0.1
+  objectWidth: 18
 --- !u!1 &1405747804
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,6 +7785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1519460518}
+  - component: {fileID: 1519460519}
   m_Layer: 0
   m_Name: Ground layer
   m_TagString: Untagged
@@ -7761,6 +7811,21 @@ Transform:
   - {fileID: 1824229005}
   m_Father: {fileID: 1588732957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519460519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519460517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed43d50623d65241b302bd886ea4208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxAndLoop
+  cameraTransform: {fileID: 0}
+  parallaxSpeed: 0.1
+  objectWidth: 18
 --- !u!1001 &1551337998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8370,7 +8435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8313bf44cafd3b4db184afbdb81a170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
-  levelData: {fileID: 11400000, guid: 9a84752a2a111fa4991a32744bc8f461, type: 2}
+  levelData: {fileID: 11400000, guid: 74272b717ed99764c95ac7740671d906, type: 2}
   spawnOffsetBeats: 8
   blockPrefab: {fileID: 8753845021385592856, guid: 765482faf0b459a47bb94ffbfc9d5f0a, type: 3}
   enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
