@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [SerializeField] private SongProgressDisplay levelCompleteSongProgressDisplay;
 
+    /// <summary>
+    /// Reference to the HUD canvas to hide when level is complete.
+    /// </summary>
+    [SerializeField] private GameObject hudCanvas;
+
     private void Awake()
     {
         // Enforce a single instance per scene.
@@ -348,6 +353,28 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("[GameManager] Level complete progress display not found in scene!");
+        }
+
+        // Hide HUD when level is complete
+        if (hudCanvas == null)
+        {
+            // Try to find HUD canvas if not assigned
+            Canvas[] allCanvases = FindObjectsOfType<Canvas>(includeInactive: true);
+            foreach (Canvas canvas in allCanvases)
+            {
+                if (canvas.gameObject.name.Contains("HUD"))
+                {
+                    hudCanvas = canvas.gameObject;
+                    Debug.Log($"[GameManager] Found HUD canvas: {hudCanvas.name}");
+                    break;
+                }
+            }
+        }
+
+        if (hudCanvas != null)
+        {
+            hudCanvas.SetActive(false);
+            Debug.Log("[GameManager] HUD hidden on level complete.");
         }
 
         // A level-complete UI can read CurrentState and call LoadNextLevel()
