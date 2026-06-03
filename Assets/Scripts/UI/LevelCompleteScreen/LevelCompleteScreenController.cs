@@ -32,6 +32,11 @@ public class LevelCompleteScreenController : MonoBehaviour
              "set it to 'MainMenu' to return all the way home instead.")]
     [SerializeField] private string menuSceneName = "GameSelection";
 
+    [Tooltip("Total number of levels in the game. Clearing the final level unlocks " +
+             "nothing further - this clamp stops a phantom 'Level N+1' from being " +
+             "unlocked when the last level is completed.")]
+    [SerializeField] private int totalLevels = 5;
+
     [Header("Juice")]
     [Tooltip("Duration of the scale-in pop, in unscaled seconds (runs while paused). " +
              "Set to 0 to disable the animation.")]
@@ -67,8 +72,10 @@ public class LevelCompleteScreenController : MonoBehaviour
         shown = true;
 
         // Persist progress: clearing Level N unlocks Level N+1 on the select screen.
+        // Clamp at the last level so finishing Level 5 does not unlock a Level 6 that
+        // does not exist (task: "completing the final level unlocks nothing more").
         int currentLevel = ParseLevelNumber(SceneManager.GetActiveScene().name);
-        if (currentLevel > 0)
+        if (currentLevel > 0 && currentLevel < totalLevels)
         {
             LevelProgress.UnlockUpTo(currentLevel + 1);
         }

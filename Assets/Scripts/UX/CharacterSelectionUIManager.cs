@@ -129,6 +129,13 @@ public class UIManager : MonoBehaviour
     [Header("── SELECT ARROW ─────────────────────────")]
     public Image selectArrow; // ← đổi từ RectTransform thành Image
     public Vector2 arrowOffset = new Vector2(-60f, 0f);
+
+    [Header("── NAVIGATION ───────────────────────────")]
+    [Tooltip("Scene loaded after pressing Select: it confirms the character, then moves " +
+             "on. Default 'GameSelection' = the level-select screen. Set empty to only " +
+             "confirm without leaving this screen.")]
+    public string sceneAfterSelect = "GameSelection";
+
     [Header("── CHARACTER ─────────────────────────────")]
     public Animator characterAnimator;
     public Image characterImage;
@@ -244,12 +251,19 @@ public class UIManager : MonoBehaviour
 
         SelectTab(0);
 
-        // Mặc định select char đầu tiên nếu chưa chọn
-        if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex == -1)
+        // Mặc định select char đầu tiên nếu chưa chọn. Persist it so a level
+        // launched right after this screen always has a valid saved index, even
+        // if the player never presses the confirm button.
+        if (CharacterManager.instance != null && CharacterManager.instance.selectedIndex == -1
+            && champions != null && champions.Length > 0)
         {
-            CharacterManager.instance.selectedIndex = 0;
-            CharacterManager.instance.selectedSprite = champions[0].gameSprite;
-            CharacterManager.instance.selectedAnimator = champions[0].gameAnimator;
+            CharacterManager.instance.SetSelection(
+                0,
+                champions[0].gameSprite,
+                champions[0].gameAnimator,
+                champions[0].menuAnimator,
+                champions[0].profile != null ? champions[0].profile.speedValue / 100f : -1f,
+                champions[0].skill != null ? champions[0].skill.energyCost / 4f : -1f);
         }
         // Lưu vị trí gốc của arrow (đặt đúng vị trí trong editor trước)
         if (selectArrow != null)
@@ -275,7 +289,11 @@ public class UIManager : MonoBehaviour
     {
         if (selectArrow == null) return;
 
-        int idx = CharacterManager.instance != null ? CharacterManager.instance.selectedIndex : -1;
+        // Follow the currently highlighted character (updates as you click/arrow through
+        // the list), falling back to the confirmed selection before any browse happens.
+        int idx = currentChampion >= 0
+            ? currentChampion
+            : (CharacterManager.instance != null ? CharacterManager.instance.selectedIndex : -1);
 
         if (idx < 0 || idx >= charButtons.Length || charButtons[idx] == null)
         {
@@ -285,11 +303,15 @@ public class UIManager : MonoBehaviour
 
         selectArrow.enabled = true;
 
-        RectTransform arrowRect = selectArrow.GetComponent<RectTransform>();
-        arrowRect.anchoredPosition = new Vector2(
-            arrowOrigin.x,
-            arrowOrigin.y + arrowOffset.y * idx // ← tịnh tiến Y theo index
-        );
+        // Snap the arrow vertically onto the selected button, keeping the arrow's own X.
+        // Done in world space so it lines up no matter how the arrow and the buttons are
+        // parented - the previous math used arrowOffset.y, which defaults to 0, so the
+        // arrow never actually moved between rows.
+        RectTransform arrowRect = selectArrow.rectTransform;
+        RectTransform btnRect = charButtons[idx].GetComponent<RectTransform>();
+        Vector3 p = arrowRect.position;
+        p.y = btnRect.position.y;
+        arrowRect.position = p;
     }
     // ═══════════════════════════════════════════════
     // CROSSFADE LAYERS
@@ -331,13 +353,30 @@ public class UIManager : MonoBehaviour
 
         if (CharacterManager.instance != null)
         {
-            CharacterManager.instance.selectedSprite = champions[currentChampion].gameSprite;
-            CharacterManager.instance.selectedAnimator = champions[currentChampion].gameAnimator;
-            CharacterManager.instance.selectedMenuAnimator = champions[currentChampion].menuAnimator; // ← thêm
-            CharacterManager.instance.selectedIndex = currentChampion;
+            // Route through SetSelection so the chosen index is persisted to
+            // PlayerPrefs ("SelectedCharacter"). Gameplay (PlayerController) reads
+            // it back from CharacterManager on Start. The 0..1 stat fallbacks below
+            // are derived from this screen's UI values; if a CharacterUIData roster
+            // is assigned on the CharacterManager those take precedence instead.
+            ChampionData chosen = champions[currentChampion];
+            CharacterManager.instance.SetSelection(
+                currentChampion,
+                chosen.gameSprite,
+                chosen.gameAnimator,
+                chosen.menuAnimator,
+                chosen.profile != null ? chosen.profile.speedValue / 100f : -1f,
+                chosen.skill != null ? chosen.skill.energyCost / 4f : -1f);
         }
 
         UpdateSelectArrow();
+
+        // Move on after confirming so Select actually leads somewhere (the level-select
+        // screen by default). The chosen character persists across the load via
+        // CharacterManager (DontDestroyOnLoad + saved index).
+        if (!string.IsNullOrEmpty(sceneAfterSelect))
+        {
+            SceneTransitionManager.LoadLevel(sceneAfterSelect);
+        }
     }
     public void SelectChampion(int index)
     {
@@ -360,6 +399,9 @@ public class UIManager : MonoBehaviour
 
         if (transitionCoroutine != null) StopCoroutine(transitionCoroutine);
         transitionCoroutine = StartCoroutine(CrossfadeTransition(champions[index]));
+
+        // Move the red arrow onto the character that was just picked.
+        UpdateSelectArrow();
     }
 
     void ApplyImmediate(int index)
