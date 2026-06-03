@@ -86,11 +86,11 @@ their own.
   *substitute* for the unknown UI font; swap it if you have the original.
 - The **perspective grid floor** is an approximation drawn procedurally (UGUI can't do a
   true 3D-projected mesh cheaply); the CSS used a `perspective()` transform.
-- In-game results use the deck's 3-column layout (Score / Max Combo / Cleared|Accuracy).
-  **Score** (orbs collected) and **Cleared** (song %) are real; **Max Combo** and
-  **Accuracy** are sample stand-ins (`SampleMaxCombo` / `SampleAccuracy` in
-  `RRGameScreenBinder`) until the game tracks them — swap them for real fields then.
-  The **gallery** shows the deck's mock values throughout.
+- In-game results are trimmed to the metrics the game actually tracks: **Game Over**
+  shows only **Cleared** (song %); **Level Complete** shows just the star rating (no
+  result metrics). The sample stand-ins (Score / Max Combo / Accuracy) were removed from
+  `RRGameScreenBinder` — re-add result rows there if the game starts tracking them.
+  The **gallery** (`RRScreens`) still shows the deck's full mock values for design review.
 - The neon pause menu has **Resume / Retry / Tutorial / Quit to menu**. TUTORIAL opens a
   neon "HOW TO PLAY" sub-panel (controls: Space = jump up, S = drop down, Esc = pause)
   with a BACK button — replacing the project's old cartoon tutorial panel.

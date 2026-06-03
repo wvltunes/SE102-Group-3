@@ -2545,6 +2545,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 4af3cb752e45959439b86ab53acea8fd, type: 3}
   bpm: 141
   playOnStart: 1
+  skipSilenceTime: 0
 --- !u!82 &797401704
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5725,7 +5726,6 @@ MonoBehaviour:
   beatsToSkipAfterJump: 2
   applyCharacterVisuals: 1
   applyCharacterEnergy: 1
-  applyCharacterSpeed: 0
   minRunSpeed: 5
   maxRunSpeed: 8
   minMaxEnergy: 2
@@ -5999,7 +5999,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: 82e5539080ee63c43b2a773d5452fb5b, type: 2}
   spawnOffsetBeats: 8
   blockPrefab: {fileID: 8753845021385592856, guid: 765482faf0b459a47bb94ffbfc9d5f0a, type: 3}
-  enemyPrefab: {fileID: 8122855387006615395, guid: 20b980d75d880e347a3fb3fcb180bd2b, type: 3}
+  enemyPrefab: {fileID: 2507048517209263936, guid: 40db4cc614354024c89c253ad74167a0, type: 3}
   spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
   jumpOrbPrefab: {fileID: 2005637956847055857, guid: d70fce7ede94c064cbdb7865f35acaf9, type: 3}
   gravityOrbPrefab: {fileID: 2005637956847055857, guid: 1707e5903abd39b49ad1ec0f4387e7a9, type: 3}

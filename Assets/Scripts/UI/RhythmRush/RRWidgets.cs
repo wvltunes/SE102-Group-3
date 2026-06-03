@@ -106,6 +106,7 @@ namespace RhythmRush.UI
         {
             const float gap = 30f, labelSize = 11f, valueSize = 30f;
             var root = RRUI.Node("ResultGrid", parent);
+            if (items == null || items.Length == 0) { root.Size(0, 56); return root; }
 
             float[] colW = new float[items.Length];
             float total = 0f;
