@@ -38,10 +38,10 @@ MonoBehaviour:
   - beatIndex: 6
     type: 2
     lane: 0
-    laneToJump: 0
+    laneToJump: 1
   - beatIndex: 8
     type: 0
-    lane: 0
+    lane: 2
     laneToJump: 0
   - beatIndex: 8
     type: 0
@@ -955,4 +955,3 @@ MonoBehaviour:
     type: 0
     lane: 3
     laneToJump: 0
-

@@ -71,7 +71,7 @@ namespace RhythmRush.UI
 
                 case GameManager.GameState.LevelComplete:
                     UnlockNextLevel();
-                    RRScreens.LevelClearOverlay(NewRoot("LevelClear"), ComputeStars(), ClearResults(), Continue, Retry, QuitToSelect);
+                    RRScreens.LevelClearOverlay(NewRoot("LevelClear"), ComputeStars(), System.Array.Empty<RRWidgets.Result>(), Continue, Retry, QuitToSelect);
                     PopModal();
                     break;
             }
@@ -118,36 +118,13 @@ namespace RhythmRush.UI
 
         // ---------------------------------------------------------------- values
 
-        // Sample stand-ins for metrics the game doesn't track yet (combo / accuracy).
-        const string SampleMaxCombo = "312";
-        const string SampleAccuracy = "98%";
-
-        static string RealScore()
-        {
-            // No point-score system yet → use orbs collected as the real score.
-            return ScoreTracker.GetOrbsCollected().ToString("N0", System.Globalization.CultureInfo.InvariantCulture);
-        }
-
         static RRWidgets.Result[] GameOverResults()
         {
             ScoreTracker.UpdateSongProgress();
             int pct = Mathf.RoundToInt(ScoreTracker.GetSongProgressPercent());
             return new[]
             {
-                new RRWidgets.Result("Score", RealScore(), RRTheme.Yellow),     // real
-                new RRWidgets.Result("Max Combo", SampleMaxCombo, RRTheme.Pink), // sample (not tracked)
                 new RRWidgets.Result("Cleared", pct + "%", RRTheme.Cyan),        // real
-            };
-        }
-
-        static RRWidgets.Result[] ClearResults()
-        {
-            ScoreTracker.UpdateSongProgress();
-            return new[]
-            {
-                new RRWidgets.Result("Score", RealScore(), RRTheme.Yellow),       // real
-                new RRWidgets.Result("Max Combo", SampleMaxCombo, RRTheme.Pink),  // sample (not tracked)
-                new RRWidgets.Result("Accuracy", SampleAccuracy, RRTheme.Cyan),   // sample (not tracked)
             };
         }
 

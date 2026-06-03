@@ -1673,7 +1673,6 @@ MonoBehaviour:
   beatsToSkipAfterJump: 2
   applyCharacterVisuals: 1
   applyCharacterEnergy: 1
-  applyCharacterSpeed: 0
   minRunSpeed: 5
   maxRunSpeed: 8
   minMaxEnergy: 2
@@ -4106,6 +4105,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 586b4edb76d34094fa02c9137625e6c9, type: 3}
   bpm: 120
   playOnStart: 1
+  skipSilenceTime: 0
 --- !u!82 &824037855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4454,7 +4454,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1551337999}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1

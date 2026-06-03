@@ -47,14 +47,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Apply the chosen character's max-energy stat. Timing-safe - energy does " +
              "not affect obstacle/music sync.")]
     [SerializeField] private bool applyCharacterEnergy = true;
-    [Tooltip("Also vary RUN SPEED per character. OFF by default: the shipping levels " +
-             "place obstacles by hand and tune them to a single run speed, so changing " +
-             "it makes those obstacles reach the player off the beat. Only enable if a " +
-             "level is authored to be speed-independent (e.g. obstacles spawned relative " +
-             "to the player by LevelSequencer, where spawn distance scales with speed).")]
-    [SerializeField] private bool applyCharacterSpeed = false;
-    [Tooltip("Run speed when a character's speed stat is at minimum (0). Only used when " +
-             "'Apply Character Speed' is enabled.")]
+    [Tooltip("Run speed when a character's speed stat is at minimum (0).")]
     [SerializeField] private float minRunSpeed = 5f;
     [Tooltip("Run speed when a character's speed stat is at maximum (1).")]
     [SerializeField] private float maxRunSpeed = 8f;
@@ -142,8 +135,8 @@ public class PlayerController : MonoBehaviour
             energy01 = cm.selectedEnergy01;
         }
 
-        // Speed is opt-in: hand-placed obstacle levels are tuned to one run speed.
-        if (applyCharacterSpeed && speed01 >= 0f)
+        // Always apply the chosen character's run speed from the selection screen.
+        if (speed01 >= 0f)
             runSpeed = Mathf.Lerp(minRunSpeed, maxRunSpeed, speed01);
 
         if (applyCharacterEnergy && energy01 >= 0f)
