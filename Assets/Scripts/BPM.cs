@@ -63,7 +63,7 @@ public class BpmSpawner : MonoBehaviour
             if (beatSideFlash != null)
                 beatSideFlash.Flash();
             // Spawn beat line at player.x + lookAheadOffset
-            if (playerTransform != null)
+            if (playerTransform != null && prefabToSpawn != null)
             {
                 Vector3 spawnPosition = new Vector3(
                     playerTransform.position.x + playerController.GetRunSpeed() * lookAheadOffsetBeats * secondsPerBeat,
@@ -72,7 +72,7 @@ public class BpmSpawner : MonoBehaviour
                 );
                 Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
             }
-            else
+            else if (prefabToSpawn != null)
             {
                 // Fallback to original behavior if player not found
                 Instantiate(prefabToSpawn, transform.position, Quaternion.identity);

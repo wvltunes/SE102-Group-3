@@ -62,12 +62,6 @@ public class LevelCompleteZone : MonoBehaviour
     {
         if (triggered) return;
 
-        // Skip triggering in MechanicTest scene (test/development only)
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MechanicTest")
-        {
-            return;
-        }
-
         if (other.CompareTag(playerTag))
         {
             triggered = true;

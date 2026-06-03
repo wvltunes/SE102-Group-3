@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     private AudioSource audioSource;
     private float currentBPM = 120f;
+    
+    // Track which scene this AudioManager belongs to
+    private int ownerSceneBuildIndex = -1;
 
     public AudioClip CurrentClip
     {
@@ -20,16 +23,29 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton Pattern. If a persistent instance already exists, this is a
-        // duplicate that shipped inside a (re)loaded scene - destroy it and bail
-        // out so it never replaces the singleton or double-subscribes to events.
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
+        // If there's an existing instance from a DIFFERENT scene, destroy it and take over
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);
-            return;
+            if (instance.ownerSceneBuildIndex != currentSceneIndex)
+            {
+                // Different level's AudioManager - destroy the old one and use this new one
+                Debug.Log($"[AudioManager] Destroying AudioManager from scene {instance.ownerSceneBuildIndex}, using new one from scene {currentSceneIndex}");
+                Destroy(instance.gameObject);
+                instance = this;
+            }
+            else
+            {
+                // Same level, this is a duplicate - destroy this one and keep the existing
+                Debug.Log("[AudioManager] Duplicate in same scene detected, destroying this instance");
+                Destroy(gameObject);
+                return;
+            }
         }
 
         instance = this;
+        ownerSceneBuildIndex = currentSceneIndex;
         DontDestroyOnLoad(gameObject);
 
         audioSource = GetComponent<AudioSource>();
@@ -38,18 +54,15 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("AudioManager must have an AudioSource component!");
         }
 
-        // Restart the music when its scene is reloaded. This is the key to the
-        // Retry fix: on game-over the persistent AudioSource is Paused, then the
-        // scene reloads. The reloaded scene's AudioInitializer rides on this
-        // SAME GameObject - which is now a duplicate that Awake() destroys above
-        // - so its Start() never runs to restart playback. Handling sceneLoaded
-        // here, on the surviving instance, guarantees the track plays again.
+        // Restart the music when its scene is reloaded.
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        Debug.Log($"[AudioManager] Initialized for scene {currentSceneIndex}");
     }
 
     private void OnDestroy()
     {
-        // Only the persistent instance ever subscribes, so only it unsubscribes.
+        // Only the current instance unsubscribes
         if (instance == this)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
