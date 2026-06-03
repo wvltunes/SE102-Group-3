@@ -9553,6 +9553,7 @@ MonoBehaviour:
   songProgressDisplay: {fileID: 0}
   levelCompleteOrbsDisplay: {fileID: 0}
   levelCompleteSongProgressDisplay: {fileID: 0}
+  hudCanvas: {fileID: 0}
 --- !u!4 &1846444243
 Transform:
   m_ObjectHideFlags: 0

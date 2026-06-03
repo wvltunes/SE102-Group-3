@@ -91,6 +91,12 @@ public class LevelCompleteScreenController : MonoBehaviour
 
     // --- Button handlers (wire these to the UI buttons' OnClick) ---------------
 
+    /// <summary>Test method to check if button is wired correctly.</summary>
+    public void TestButtonClick()
+    {
+        Debug.Log("[LevelCompleteScreenController] TEST: Button was clicked!");
+    }
+
     /// <summary>Menu button: leave to the main menu / level-select scene.</summary>
     public void OnMenuButton()
     {
@@ -104,9 +110,13 @@ public class LevelCompleteScreenController : MonoBehaviour
     /// </summary>
     public void OnNextLevelButton()
     {
-        int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = currentIndex + 1;
+        Debug.Log($"[LevelCompleteScreenController] Current scene index: {currentIndex}, Next index: {nextIndex}, Total scenes: {SceneManager.sceneCountInBuildSettings}");
+        
         if (nextIndex < SceneManager.sceneCountInBuildSettings)
         {
+            Debug.Log($"[LevelCompleteScreenController] Loading next level at index {nextIndex}");
             SceneTransitionManager.LoadLevel(nextIndex);
         }
         else
