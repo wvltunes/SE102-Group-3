@@ -289,7 +289,11 @@ public class UIManager : MonoBehaviour
     {
         if (selectArrow == null) return;
 
-        int idx = CharacterManager.instance != null ? CharacterManager.instance.selectedIndex : -1;
+        // Follow the currently highlighted character (updates as you click/arrow through
+        // the list), falling back to the confirmed selection before any browse happens.
+        int idx = currentChampion >= 0
+            ? currentChampion
+            : (CharacterManager.instance != null ? CharacterManager.instance.selectedIndex : -1);
 
         if (idx < 0 || idx >= charButtons.Length || charButtons[idx] == null)
         {
@@ -299,11 +303,15 @@ public class UIManager : MonoBehaviour
 
         selectArrow.enabled = true;
 
-        RectTransform arrowRect = selectArrow.GetComponent<RectTransform>();
-        arrowRect.anchoredPosition = new Vector2(
-            arrowOrigin.x,
-            arrowOrigin.y + arrowOffset.y * idx // ← tịnh tiến Y theo index
-        );
+        // Snap the arrow vertically onto the selected button, keeping the arrow's own X.
+        // Done in world space so it lines up no matter how the arrow and the buttons are
+        // parented - the previous math used arrowOffset.y, which defaults to 0, so the
+        // arrow never actually moved between rows.
+        RectTransform arrowRect = selectArrow.rectTransform;
+        RectTransform btnRect = charButtons[idx].GetComponent<RectTransform>();
+        Vector3 p = arrowRect.position;
+        p.y = btnRect.position.y;
+        arrowRect.position = p;
     }
     // ═══════════════════════════════════════════════
     // CROSSFADE LAYERS
@@ -391,6 +399,9 @@ public class UIManager : MonoBehaviour
 
         if (transitionCoroutine != null) StopCoroutine(transitionCoroutine);
         transitionCoroutine = StartCoroutine(CrossfadeTransition(champions[index]));
+
+        // Move the red arrow onto the character that was just picked.
+        UpdateSelectArrow();
     }
 
     void ApplyImmediate(int index)
