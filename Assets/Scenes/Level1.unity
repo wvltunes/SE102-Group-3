@@ -1653,6 +1653,13 @@ MonoBehaviour:
   fallDuration: 0.02
   fallEase: 5
   runSpeed: 6
+  applyCharacterVisuals: 1
+  applyCharacterEnergy: 1
+  applyCharacterSpeed: 0
+  minRunSpeed: 5
+  maxRunSpeed: 8
+  minMaxEnergy: 2
+  maxMaxEnergy: 4
 --- !u!95 &327646557
 Animator:
   serializedVersion: 7
@@ -2634,7 +2641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &570960752
 MonoBehaviour:
   m_ObjectHideFlags: 0

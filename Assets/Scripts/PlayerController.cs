@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+// Runs before default-order scripts (e.g. LevelSequencer) so the per-character run
+// speed is applied in Start() before LevelSequencer caches its spawn offset from it -
+// otherwise obstacle spawn distance would be computed from the wrong speed and drift
+// off the beat for the whole level.
+[DefaultExecutionOrder(-50)]
 public class PlayerController : MonoBehaviour
 {
     /// <summary>
@@ -32,6 +37,31 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = true;
     private bool isJumping = false;
 
+    [Header("Character Selection")]
+    [Tooltip("Apply the chosen character's sprite and animator from CharacterManager " +
+             "when the level starts.")]
+    [SerializeField] private bool applyCharacterVisuals = true;
+    [Tooltip("Apply the chosen character's max-energy stat. Timing-safe - energy does " +
+             "not affect obstacle/music sync.")]
+    [SerializeField] private bool applyCharacterEnergy = true;
+    [Tooltip("Also vary RUN SPEED per character. OFF by default: the shipping levels " +
+             "place obstacles by hand and tune them to a single run speed, so changing " +
+             "it makes those obstacles reach the player off the beat. Only enable if a " +
+             "level is authored to be speed-independent (e.g. obstacles spawned relative " +
+             "to the player by LevelSequencer, where spawn distance scales with speed).")]
+    [SerializeField] private bool applyCharacterSpeed = false;
+    [Tooltip("Run speed when a character's speed stat is at minimum (0). Only used when " +
+             "'Apply Character Speed' is enabled.")]
+    [SerializeField] private float minRunSpeed = 5f;
+    [Tooltip("Run speed when a character's speed stat is at maximum (1).")]
+    [SerializeField] private float maxRunSpeed = 8f;
+    [Tooltip("Max energy used when a character's energy stat is at minimum (0). Keep " +
+             "the range within the number of energy-bar images on the HUD (the design " +
+             "caps energy at 4 units) so a high-energy character's bar never overflows.")]
+    [SerializeField] private int minMaxEnergy = 2;
+    [Tooltip("Max energy used when a character's energy stat is at maximum (1).")]
+    [SerializeField] private int maxMaxEnergy = 4;
+
     private Rigidbody2D rb;
     private Animator animator;
     private int currentLane = 0;
@@ -50,7 +80,62 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+
+        // Read the character chosen on the selection screen (saved index in
+        // PlayerPrefs, mirrored on CharacterManager) and apply its visuals/stats
+        // before energy is initialised so currentEnergy starts from the right max.
+        ApplySelectedCharacter();
+
         currentEnergy = maxEnergy;
+    }
+
+    /// <summary>
+    /// Applies the selected character to this player: sprite + animator controller,
+    /// and (optionally) the per-character speed/energy stats.
+    ///
+    /// Stats come from the <see cref="CharacterUIData"/> roster entry for the saved
+    /// index when one is assigned; otherwise the normalized 0..1 values pushed from
+    /// the select screen are used. A negative value means "stat not set", in which
+    /// case the inspector defaults are kept. No-op when no <see cref="CharacterManager"/>
+    /// exists (e.g. launching a level directly without going through the menu).
+    /// </summary>
+    private void ApplySelectedCharacter()
+    {
+        CharacterManager cm = CharacterManager.instance;
+        if (cm == null) return;
+
+        // Visuals chosen on the select screen.
+        if (applyCharacterVisuals)
+        {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null && cm.selectedSprite != null)
+                sr.sprite = cm.selectedSprite;
+
+            if (animator != null && cm.selectedAnimator != null)
+                animator.runtimeAnimatorController = cm.selectedAnimator;
+        }
+
+        // Resolve stats: roster CharacterUIData first, then the runtime 0..1 values.
+        // A negative value means "stat not set", so the inspector defaults are kept.
+        float speed01 = -1f, energy01 = -1f;
+        CharacterUIData data = cm.GetSelectedData();
+        if (data != null)
+        {
+            speed01 = Mathf.Clamp01(data.speed / 100f);
+            energy01 = Mathf.Clamp01(data.energy / 100f);
+        }
+        else
+        {
+            speed01 = cm.selectedSpeed01;
+            energy01 = cm.selectedEnergy01;
+        }
+
+        // Speed is opt-in: hand-placed obstacle levels are tuned to one run speed.
+        if (applyCharacterSpeed && speed01 >= 0f)
+            runSpeed = Mathf.Lerp(minRunSpeed, maxRunSpeed, speed01);
+
+        if (applyCharacterEnergy && energy01 >= 0f)
+            maxEnergy = Mathf.Max(1, Mathf.RoundToInt(Mathf.Lerp(minMaxEnergy, maxMaxEnergy, energy01)));
     }
 
     void Awake()
@@ -67,12 +152,15 @@ public class PlayerController : MonoBehaviour
         // A dead player no longer reacts to input or recovers energy.
         if (isDead) return;
 
-        // Debug: Press 'D' to trigger death
+#if UNITY_EDITOR
+        // Debug (Editor only): Press 'D' to trigger death. Compiled out of builds so a
+        // player can never accidentally kill themselves with a stray key press.
         if (Input.GetKeyDown(KeyCode.D))
         {
             Die();
             return;
         }
+#endif
 
         // Constant forward movement
         if (isRunning)
@@ -125,7 +213,8 @@ public class PlayerController : MonoBehaviour
                     if (consumesEnergy) ConsumeEnergy();
                     isJumping = true;
                     animator.SetBool("IsJumping", true);
-                    StartCoroutine(WaitForJumpAnimation()); 
+                    SfxManager.Instance?.PlayJump();
+                    StartCoroutine(WaitForJumpAnimation());
                 }
             }
             else
@@ -138,7 +227,8 @@ public class PlayerController : MonoBehaviour
                     if (consumesEnergy) ConsumeEnergy();
                     isJumping = true;
                     animator.SetBool("IsJumping", true);
-                    StartCoroutine(WaitForJumpAnimation()); 
+                    SfxManager.Instance?.PlayJump();
+                    StartCoroutine(WaitForJumpAnimation());
                 }
             }
 
@@ -250,6 +340,10 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+
+        // Death stinger. Played from the dedicated SFX source so it is still heard
+        // when the GameManager pauses the music a moment later on game-over.
+        SfxManager.Instance?.PlayDie();
 
         transform.DOKill();
 

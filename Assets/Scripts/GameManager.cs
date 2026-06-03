@@ -87,10 +87,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
+        // Debug (Editor only): Press 'C' to force level-complete. Compiled out of
+        // builds so it cannot be triggered by a player.
         if (Input.GetKeyDown(KeyCode.C))
         {
             LevelCompleteZone.DebugTriggerLevelComplete();
         }
+#endif
     }
 
     private void OnEnable()

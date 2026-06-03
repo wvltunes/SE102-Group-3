@@ -58,6 +58,7 @@ public class JumpOrbBehaviour : MonoBehaviour
             
             // Count this orb as collected
             ScoreTracker.AddOrb();
+            SfxManager.Instance?.PlayCollect();
 
             StartCoroutine(ShrinkAndDestroy());
         }

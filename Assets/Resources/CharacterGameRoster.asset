@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3e9a1c4b6f48a2e5c0d9b3f1a72e60, type: 3}
+  m_Name: CharacterGameRoster
+  m_EditorClassIdentifier:
+  entries:
+  - gameSprite: {fileID: -3742086261934311834, guid: ab48b4ba26fc66e47aa966e1b630ca36, type: 3}
+    gameAnimator: {fileID: 22100000, guid: a28c49b9fa0bbec4ab76560756fcb77f, type: 2}
+    menuAnimator: {fileID: 9100000, guid: 0c638cee8a0ebbc428e0b59f2092e0c0, type: 2}
+  - gameSprite: {fileID: 8606606284660913939, guid: aca26f9ca50fc444d8362d458970f904, type: 3}
+    gameAnimator: {fileID: 22100000, guid: 9832066e4d0126141b3f2630c511ffba, type: 2}
+    menuAnimator: {fileID: 9100000, guid: 2f930b09ab552264e8e4187a8dfb4a8e, type: 2}
+  - gameSprite: {fileID: -1512121792642468911, guid: a830a21e713a4b54c83843500e468161, type: 3}
+    gameAnimator: {fileID: 22100000, guid: 59490d5166ee7b54186bc550a038b6b8, type: 2}
+    menuAnimator: {fileID: 9100000, guid: 669b1c122eb87544ca93332b1b594546, type: 2}
+  - gameSprite: {fileID: 4903347877652887231, guid: a87ce5d9af3793a4ab2ebbe92f60117b, type: 3}
+    gameAnimator: {fileID: 22100000, guid: a312dc024d6cefa4eab5005de5b6b32e, type: 2}
+    menuAnimator: {fileID: 9100000, guid: d134e13a83c311f4a92baf45a81a6015, type: 2}
+  - gameSprite: {fileID: -7373869047156049246, guid: 217e6e94ea4052346b9e5a87e1ab8956, type: 3}
+    gameAnimator: {fileID: 22100000, guid: a72e8112f6f1c9743aadae7afa6ae859, type: 2}
+    menuAnimator: {fileID: 9100000, guid: 62fa61183eaca6446ad4cf49dde2c161, type: 2}

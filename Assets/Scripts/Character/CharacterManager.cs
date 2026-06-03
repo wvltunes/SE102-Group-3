@@ -14,18 +14,45 @@ using UnityEngine;
 /// provides per-character STATS (speed/energy) and a fallback sprite so the choice can
 /// be resolved purely from the saved index when no live selection exists.
 /// </summary>
+// Runs very early so the singleton (and its restored PlayerPrefs selection) is ready
+// before PlayerController.Start reads it to apply the chosen character.
+[DefaultExecutionOrder(-100)]
 public class CharacterManager : MonoBehaviour
 {
     /// <summary>PlayerPrefs key holding the 0-based index of the chosen character.</summary>
     public const string SelectedCharacterKey = "SelectedCharacter";
 
+    /// <summary>Resources path of the game-visuals roster (sprite + animators per index).</summary>
+    private const string GameRosterResourcePath = "CharacterGameRoster";
+
     public static CharacterManager instance;
+
+    /// <summary>
+    /// Guarantees a CharacterManager exists in EVERY scene - even a level launched
+    /// directly in the Editor, or one reached without passing through the character
+    /// select screen. Without this, gameplay had no manager to read the selection
+    /// from and the player fell back to its default look. Runs before any scene Awake;
+    /// a scene-placed instance simply replaces this one via the singleton guard.
+    /// </summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (instance != null) return;
+        var go = new GameObject("CharacterManager");
+        go.AddComponent<CharacterManager>();
+    }
 
     [Header("Roster (optional) — one CharacterUIData per selectable character")]
     [Tooltip("Lets gameplay resolve the saved index to a character's stats (and a " +
              "fallback sprite) even when the selection screen was skipped. Leave empty " +
              "to rely solely on the runtime selection pushed from the select screen.")]
     public CharacterUIData[] roster;
+
+    [Header("Game visuals roster (auto-loaded from Resources/CharacterGameRoster)")]
+    [Tooltip("Per-index in-level sprite + animators. Auto-loaded from Resources if left " +
+             "empty so any scene can restore the chosen character's look from the saved " +
+             "index alone (PlayerPrefs stores the index; asset references cannot be).")]
+    public CharacterGameRoster gameRoster;
 
     [Header("Runtime selection")]
     public Sprite selectedSprite;
@@ -49,6 +76,11 @@ public class CharacterManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // Load the game-visuals roster so the saved index can be resolved back into the
+        // right in-level sprite/animator from any scene (cold start, or skipped select).
+        if (gameRoster == null)
+            gameRoster = Resources.Load<CharacterGameRoster>(GameRosterResourcePath);
+
         // Restore a previously saved choice so a fresh launch straight into a level
         // still shows the right character. Only fills in what the selection screen has
         // not already set this session.
@@ -58,9 +90,29 @@ public class CharacterManager : MonoBehaviour
             if (saved >= 0)
             {
                 selectedIndex = saved;
-                ApplyFromRoster(saved, includeSprite: true);
+                ApplyFromRoster(saved, includeSprite: true);  // stats (+ UIData sprite fallback)
+                ApplyGameVisuals(saved);                       // in-level sprite + animators
             }
         }
+    }
+
+    /// <summary>
+    /// Fills the runtime sprite/animators from the <see cref="gameRoster"/> entry for
+    /// <paramref name="index"/>. Used to restore the chosen look from the saved index
+    /// when the selection screen did not push live references this session. Only fills
+    /// values that are still unset, so a live selection is never overwritten.
+    /// </summary>
+    public void ApplyGameVisuals(int index)
+    {
+        CharacterGameRoster.Entry entry = gameRoster != null ? gameRoster.Get(index) : null;
+        if (entry == null) return;
+
+        if (selectedSprite == null && entry.gameSprite != null)
+            selectedSprite = entry.gameSprite;
+        if (selectedAnimator == null && entry.gameAnimator != null)
+            selectedAnimator = entry.gameAnimator;
+        if (selectedMenuAnimator == null && entry.menuAnimator != null)
+            selectedMenuAnimator = entry.menuAnimator;
     }
 
     /// <summary>
