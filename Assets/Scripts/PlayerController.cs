@@ -185,7 +185,6 @@ public class PlayerController : MonoBehaviour
         }
         UpdateLanePosition();
         beatsToSkip = beatsToSkipAfterJump; // Bypass the next beat after pad/orb jump
-        ConsumeEnergy();
         animator.SetBool("IsPadding", true);
         StartCoroutine(ResetPaddingFlag());
     }

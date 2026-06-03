@@ -8171,7 +8171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSequencer
   levelData: {fileID: 11400000, guid: 74272b717ed99764c95ac7740671d906, type: 2}
-  spawnOffsetBeats: 4
+  spawnOffsetBeats: 6
   blockPrefab: {fileID: 8753845021385592856, guid: 765482faf0b459a47bb94ffbfc9d5f0a, type: 3}
   enemyPrefab: {fileID: 8122855387006615395, guid: 20b980d75d880e347a3fb3fcb180bd2b, type: 3}
   spikePrefab: {fileID: 877258703969783226, guid: 46ebd4d73b66ac14e9155e019472e543, type: 3}
